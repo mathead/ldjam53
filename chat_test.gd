@@ -103,8 +103,8 @@ func _ready():
 
 func ask_gpt(input, time_of_day):
 	# Prefix user input with context
-	var prompt = "(Phone Call, current time is {time_of_day})\n{input}"
-	print("Asking GPT: ", prompt.format({"time_of_day": time_of_day, "input": input}))
+	var prompt = "(Phone Call, current time is {time_of_day})\n{input}".format({"time_of_day": time_of_day, "input": input})
+	print("Asking GPT: ", prompt)
 	# Format the user's input as a message
 	var message = {
 		"role": 	"user",
