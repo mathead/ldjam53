@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpqxmxcvb78qk"]
+
+[ext_resource type="Texture2D" uid="uid://bg4nvyk5mgfu1" path="res://Environment/LegacyToBeDeleted/window.png" id="1_ndrk3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ojkp"]
+albedo_texture = ExtResource("1_ndrk3")
+uv1_scale = Vector3(12, 10, 0)
+uv1_offset = Vector3(5, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdlng"]
+material = SubResource("StandardMaterial3D_7ojkp")
+size = Vector3(1, 1.5, 1)
+
+[node name="Building" type="Node3D"]
+
+[node name="Building" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("BoxMesh_mdlng")

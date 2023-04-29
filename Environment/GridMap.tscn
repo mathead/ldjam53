@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://clp74uwlt2jo4"]
+
+[ext_resource type="MeshLibrary" uid="uid://c5aa0tqr403rk" path="res://Environment/MeshLibrary.tres" id="1_dlpo5"]
+
+[node name="GridMap" type="GridMap"]
+mesh_library = ExtResource("1_dlpo5")
+cell_size = Vector3(5, 5, 5)
+data = {
+"cells": PackedInt32Array(65533, 65534, 0, 65534, 65534, 0, 4, 65534, 0, 3, 65534, 0, 2, 65534, 0, 65535, 65534, 0, 0, 65534, 0, 1, 65534, 0, 65533, 65535, 0, 65533, 0, 0, 65533, 1, 0, 65533, 2, 0, 65533, 4, 0, 65533, 3, 0, 65533, 5, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)

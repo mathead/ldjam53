@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy6adf2mn1prw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ri2it"]
+cull_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_5tow2"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ri2it")
+size = Vector2(0.25, 1)
+
+[node name="Sign" type="Node3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_5tow2")
