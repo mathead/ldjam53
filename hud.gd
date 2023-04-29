@@ -16,4 +16,6 @@ func _input(ev):
 	%TextEdit.visible = focused
 			
 func send_query(query):
-	print(query)
+	### INSERT MAGIC CODE HERE ###
+	$Chat.ask_gpt(query)
+	

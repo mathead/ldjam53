@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://daid6ny0rl1wm"]
+[gd_scene load_steps=4 format=3 uid="uid://cjf4retlkr7ho"]
 
 [ext_resource type="FontFile" uid="uid://pekwxkn6c024" path="res://fff-forward.regular.ttf" id="1_eh54r"]
 [ext_resource type="Script" path="res://hud.gd" id="1_n4awq"]
+[ext_resource type="PackedScene" uid="uid://dfcpbb23iig0u" path="res://chat_test.tscn" id="3_n3xxb"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -37,3 +38,6 @@ theme_override_font_sizes/font_size = 30
 placeholder_text = "Ask your question..."
 wrap_mode = 1
 scroll_fit_content_height = true
+
+[node name="Chat" parent="." instance=ExtResource("3_n3xxb")]
+layout_mode = 1

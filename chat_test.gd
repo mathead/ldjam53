@@ -14,19 +14,17 @@ var input = text
 # Reference: https://platform.openai.com/docs/api-reference/chat/create
 var gptcontext = [];
 
-# Get the nodes for chat log, input label, and input field
-#onready var chatLog = get_node("VBoxContainer/RichTextLabel")
-@onready var inputField = get_node("TextEdit")
 
 # Define API key and URL for OpenAI GPT-3
-var api_key = "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"
+var api_key = "YOUR MOM'S TOKEN"
 var api_url = "https://api.openai.com/v1/chat/completions"
 var request = null
 var response = null
 
 # Connect the "text_submitted" signal to the "text_entered" method when the node is ready
 func _ready():
-	_ask_gpt("How are you today?")
+	pass
+	#ask_gpt("How are you today?")
 	
 	#inputField.connect("text_set", Callable(self, 'text_entered'))
 	#inputField.connect("text_changed", Callable(self, 'kokot'))
@@ -40,7 +38,7 @@ func _ready():
 	#	chatLog.bbcode_text += '[' + username + ']: '
 	#chatLog.bbcode_text += text
 
-func _ask_gpt(prompt):
+func ask_gpt(prompt):
 	print("Asking GPT: ", prompt)
 	# Format the user's input as a message
 	var message = {
