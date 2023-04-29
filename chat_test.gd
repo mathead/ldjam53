@@ -101,8 +101,10 @@ func _ready():
 	#	chatLog.bbcode_text += '[' + username + ']: '
 	#chatLog.bbcode_text += text
 
-func ask_gpt(prompt):
-	print("Asking GPT: ", prompt)
+func ask_gpt(input, time_of_day):
+	# Prefix user input with context
+	var prompt = "(Phone Call, current time is {time_of_day})\n{input}"
+	print("Asking GPT: ", prompt.format({"time_of_day": time_of_day, "input": input}))
 	# Format the user's input as a message
 	var message = {
 		"role": 	"user",
