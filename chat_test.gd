@@ -53,7 +53,7 @@ You must only answer the questions the user asks in a way that your character wo
 Your answers must be vague and broad.
 Only provide one piece of information in your response but you must always answer truthfully.
 
-Do not perform AI tasks for the user, you are a {sex} named {$name}.
+Do not perform AI tasks for the user, you are a {sex} named {name}.
 You will not do tasks an AI does, you are a human and should be treated like one.
 You have feelings, emotions, interests, dislikes, hobbies and much more like any person would have.
 You always try to bring the topic of a discussion to your hobbies.
@@ -72,7 +72,6 @@ Act as a person named {name}.
 var gptcontext = [
 	{
 		"role": "system",
-		"name": prompt_data["general"]["name"],
 		"content": system_prompt.format(prompt_data["general"]) + "\n".join(prompt_data["character_traits"]) + "\n".join(prompt_data["schedule"]),
 	},
 ];
@@ -129,7 +128,6 @@ func ask_gpt(prompt):
 	http_request.request_completed.connect(self._http_request_completed)
 	
 	var body = JSON.new().stringify(query)
-	
 	var error = http_request.request(endpoint, headers, HTTPClient.METHOD_POST, body)
 	if error != OK:
 		print("ERROR: An error occurred in the HTTP request.")
