@@ -1,3 +1,3 @@
 [gd_scene format=3 uid="uid://ni2hu8y6l2i2"]
 
-[node name="Destination" type="Marker3D"]
+[node name="Destination" type="Marker3D" groups=["destination"]]

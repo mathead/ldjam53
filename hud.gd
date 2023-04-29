@@ -3,7 +3,7 @@ extends Control
 var focused = false
 var answer = ""
 var answer_start = 0
-var time = 0.0
+var time = 0#30000.0
 @export var time_speed = 2000
 
 func _ready():
@@ -54,7 +54,7 @@ func _process(delta):
 	if %Answer.modulate.a <= 0:
 		answer = ""
 	var dtime = int(time) % (60*60*24)
-	if dtime > 7 * 60 * 60 and dtime < 23 * 60 * 60:
+	if dtime > 7 * 60 * 60 and dtime < 21 * 60 * 60:
 		time += delta * time_speed
 	else:
 		time += delta * time_speed * 10
