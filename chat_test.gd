@@ -6,24 +6,30 @@ var user_name = 'Player'
 var GPT3 = 'GPT-3'
 
 # Define text and input variables
-var text = "Who is the biggest prick in the Slovakia?"
+var text = "Who is the biggest prick in Slovakia?"
 var input = text
+
+# Context of a GPT session formatted as a list of messages. e.g.:
+# [{role: "user", name: "user_name", content:"Who are you?" }, {..} ]
+# Reference: https://platform.openai.com/docs/api-reference/chat/create
+var gptcontext = [];
 
 # Get the nodes for chat log, input label, and input field
 #onready var chatLog = get_node("VBoxContainer/RichTextLabel")
 @onready var inputField = get_node("TextEdit")
 
 # Define API key and URL for OpenAI GPT-3
-var api_key = "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"
-var api_url = "https://api.openai.com/v1/engines/davinci-codex/completions"
+var api_key = "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"
+var api_url = "https://api.openai.com/v1/chat/completions"
 var request = null
 var response = null
 
 # Connect the "text_submitted" signal to the "text_entered" method when the node is ready
 func _ready():
-	print("bacov kokot")
+	_ask_gpt("How are you today?")
+	
 	#inputField.connect("text_set", Callable(self, 'text_entered'))
-	inputField.connect("text_changed", Callable(self, 'kokot'))
+	#inputField.connect("text_changed", Callable(self, 'kokot'))
 
 
 # Add a message to the chat log
@@ -34,42 +40,45 @@ func _ready():
 	#	chatLog.bbcode_text += '[' + username + ']: '
 	#chatLog.bbcode_text += text
 
-func kokot():
-	print("im here")
-
-# Method to make a POST request to the OpenAI API
-func _make_post_request(url, data_to_send, use_ssl):
-	var endpoint = "https://api.openai.com/v1/engines/davinci-codex/completions?input=" + input + "&api_key=" + api_key
-	var query = JSON.stringify(input)
-	var headers = ["Content-Type: application/json"]
-	$HTTPRequest.request(endpoint, headers, true, HTTPClient.METHOD_POST, query)
-
-# Method called when text is submitted in the input field
-func text_entered(text):
-	print(text)
-	var endpoint = "https://api.openai.com/v1/engines/davinci-codex/completions?input=" + input + "&api_key=" + api_key
-	var request = HTTPRequest.new()
-	var data_to_send = {
-		"api_key": api_key,
-		"input": input,
-	}
+func _ask_gpt(prompt):
+	print("Asking GPT: ", prompt)
+	# Format the user's input as a message
+	var message = {
+		"role": 	"user",
+		"name": 	user_name,
+		"content":	prompt
+		}
+	# Append the new message to the current gpt context
+	gptcontext.append(message)
+	print("Context: ", gptcontext)
 	
-	if text != '':
-		_make_post_request(endpoint, data_to_send, true)
-		#add_message(user_name, text)
-		print(input)
-		request = HTTPRequest.new()
-		var headers = ["Content-Type: application/json"]
-		request.request(endpoint, headers, HTTPClient.METHOD_POST, JSON.stringify(data_to_send))
-		request.connect("request_completed", Callable(self, "_on_request_completed"))
-		print(request)
-		inputField.clear()
+	var endpoint = "https://api.openai.com/v1/chat/completions"
+	var headers = [
+		"Content-Type: application/json",
+		"Authorization: Bearer " + api_key,
+		]
+	var query = {
+		"model": 	"gpt-3.5-turbo",
+		"messages":	gptcontext
+		}
+	
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(self._http_request_completed)
+	
+	var body = JSON.new().stringify(query)
+	
+	var error = http_request.request(endpoint, headers, HTTPClient.METHOD_POST, body)
+	if error != OK:
+		push_error("An error occurred in the HTTP request.")
 
-# Method called when the HTTP request is completed
-func _on_request_completed(result, response_code, headers, body):
-	if result == HTTPRequest.RESULT_SUCCESS:
-		print("Request successful! Response code: ", response_code)
-		response = JSON.parse_string(body)
-		print("Response: ", response)
-	else:
-		print("Request failed: ", response_code)
+# Called when HTTP request completes.	
+func _http_request_completed(result, response_code, headers, body):
+	var json = JSON.new()
+	json.parse(body.get_string_from_utf8())
+	# Fish out the returned message
+	var response = json.get_data()["message"]
+	
+	# Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
+	print(response)
+
