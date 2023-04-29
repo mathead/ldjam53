@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj46g0w7e84us"]
+[gd_scene load_steps=9 format=3 uid="uid://c5f0fyjyohm0n"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3exsh"]
 [ext_resource type="Texture2D" uid="uid://dwgr0rlyi7nst" path="res://images/survivor1_gun.png" id="2_m2ljl"]
-[ext_resource type="PackedScene" uid="uid://dx0jfxifar8wq" path="res://flashlight.tscn" id="3_vn20y"]
 [ext_resource type="AudioStream" uid="uid://cohtwwpley0w3" path="res://Audio/SFX/GWJ52 SFX - playerDeath.wav" id="4_lh11j"]
 [ext_resource type="AudioStream" uid="uid://dhaljlw5ylqpg" path="res://Audio/SFX/Footsteps/GWJ52 SFX - Footstep 1.wav" id="5_3jte6"]
 
@@ -37,8 +36,6 @@ shape = SubResource("CircleShape2D_aoj1j")
 [node name="MainCamera" type="Camera2D" parent="." groups=["Camera"]]
 unique_name_in_owner = true
 ignore_rotation = false
-current = true
-zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
@@ -57,10 +54,6 @@ visibility_layer = 17
 z_index = 1
 scale = Vector2(1.5, 2)
 texture = ExtResource("2_m2ljl")
-
-[node name="Flashlight" parent="Node2D" instance=ExtResource("3_vn20y")]
-unique_name_in_owner = true
-position = Vector2(23, 19)
 
 [node name="SmallBlock" type="LightOccluder2D" parent="Node2D"]
 visible = false

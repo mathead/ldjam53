@@ -272,6 +272,7 @@ size_flags_vertical = 8
 
 [node name="Battery" type="ProgressBar" parent="HUD/HBoxContainer"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(1, 1, 1, 0.372549)
 custom_minimum_size = Vector2(30, 200)
 layout_mode = 2
@@ -287,12 +288,14 @@ fill_mode = 3
 show_percentage = false
 
 [node name="VSeparator" type="VSeparator" parent="HUD/HBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 5
 theme_override_styles/separator = SubResource("StyleBoxEmpty_sw8da")
 
 [node name="Flares" type="ProgressBar" parent="HUD/HBoxContainer"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(1, 1, 1, 0.372549)
 custom_minimum_size = Vector2(30, 200)
 layout_mode = 2

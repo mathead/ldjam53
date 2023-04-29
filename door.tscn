@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dohyiukih1svw"]
+[gd_scene load_steps=9 format=3 uid="uid://bg12jtgnt8cf8"]
 
 [ext_resource type="Texture2D" uid="uid://gpdtbyjf5s0a" path="res://1px.png" id="1_nejn5"]
 [ext_resource type="AudioStream" uid="uid://bcl64dnw0s1bj" path="res://Audio/SFX/GWJ52 SFX - door.wav" id="2_hpch8"]
