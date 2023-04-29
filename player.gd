@@ -7,6 +7,9 @@ var target_velocity = Vector3.ZERO
 func _physics_process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
 	direction = Vector3(direction.x, 0, direction.y)
+	if get_node("/root/Main/HUD").focused:
+		direction = Vector3.ZERO
+	
 	if direction != Vector3.ZERO:
 		# TODO make smooth
 		$Pivot.look_at(position + direction, Vector3.UP)
