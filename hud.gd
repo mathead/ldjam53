@@ -4,7 +4,7 @@ var focused = false
 var answer = ""
 var answer_start = 0
 var time = 0.0
-var time_speed = 500
+@export var time_speed = 2000
 
 func _ready():
 	%TextPanel.scale.y = 0

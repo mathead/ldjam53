@@ -82,6 +82,6 @@ shadow_enabled = true
 unique_name_in_owner = true
 transform = Transform3D(0.0548824, 0.932881, -0.355978, -0.182578, 0.359881, 0.91496, 0.981658, 0.0147786, 0.190075, -0.065, 10000, 0)
 light_color = Color(0.560784, 0.815686, 1, 1)
-light_energy = 0.059
+light_energy = 0.01
 light_angular_distance = 0.5
 shadow_enabled = true
