@@ -18,7 +18,7 @@ var gptcontext = [];
 
 
 # Define API key and URL for OpenAI GPT-3
-var api_key = "APIKEY"
+var api_key = Secret.API_KEY
 var api_url = "https://api.openai.com/v1/chat/completions"
 var request = null
 var response = null
@@ -77,6 +77,7 @@ func _http_request_completed(result, response_code, headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	# Fish out the returned message
+	# TODO: check response code
 	var response_message = json.get_data()["choices"][0]["message"]
 	gptcontext.append(response_message)
 	print("Context: ", gptcontext)
