@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5f0fyjyohm0n"]
+[gd_scene load_steps=9 format=3 uid="uid://c5f0fyjyohm0n"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3exsh"]
-[ext_resource type="AudioStream" uid="uid://cohtwwpley0w3" path="res://Audio/SFX/GWJ52 SFX - playerDeath.wav" id="4_lh11j"]
 [ext_resource type="Texture2D" uid="uid://co4feop703qke" path="res://images/survivor1_stand.png" id="4_topib"]
 [ext_resource type="AudioStream" uid="uid://dhaljlw5ylqpg" path="res://Audio/SFX/Footsteps/GWJ52 SFX - Footstep 1.wav" id="5_3jte6"]
 
@@ -21,12 +20,8 @@ albedo_texture = ExtResource("4_topib")
 material = SubResource("StandardMaterial3D_tego4")
 
 [node name="Player" type="CharacterBody3D"]
-collision_layer = 2
-collision_mask = 21
+collision_layer = 3
 script = ExtResource("1_3exsh")
-
-[node name="SFXDeath" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_lh11j")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
@@ -46,7 +41,7 @@ shape = SubResource("CapsuleShape3D_xw0eb")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00645, 0)
+transform = Transform3D(1.65, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 1.00645, 0)
 mesh = SubResource("CapsuleMesh_oo3le")
 skeleton = NodePath("../..")
 

@@ -1,17 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckxehb6c5xtaw"]
+[gd_scene load_steps=9 format=3 uid="uid://ckxehb6c5xtaw"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_47jqd"]
 [ext_resource type="AudioStream" uid="uid://dhaljlw5ylqpg" path="res://Audio/SFX/Footsteps/GWJ52 SFX - Footstep 1.wav" id="1_smaxf"]
 [ext_resource type="Texture2D" uid="uid://cuk6sitcgmunm" path="res://images/Man Brown/manBrown_stand.png" id="2_lap6l"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_oohxb"]
-radius = 30.0
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xw0eb"]
 
-[node name="NPC" type="RigidBody2D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b8mk"]
+albedo_color = Color(0, 0.266667, 0.305882, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oo3le"]
+material = SubResource("StandardMaterial3D_1b8mk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cf43"]
+transparency = 1
+albedo_texture = ExtResource("2_lap6l")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gitab"]
+material = SubResource("StandardMaterial3D_7cf43")
+
+[node name="NPC" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 21
+mass = 3.22
+lock_rotation = true
 script = ExtResource("1_47jqd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_oohxb")
 
 [node name="SFXFootsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_smaxf")
@@ -19,11 +32,25 @@ volume_db = -5.53
 pitch_scale = 0.66
 mix_target = 2
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 2)
-texture = ExtResource("2_lap6l")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01529, 0)
+shape = SubResource("CapsuleShape3D_xw0eb")
 
-[node name="Agent" type="NavigationAgent2D" parent="."]
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1.60776, 0, 0, 0, 1, 0, 0, 0, 0.87601, 0, 1.00645, 0)
+mesh = SubResource("CapsuleMesh_oo3le")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(-4.37114e-08, -1.52115, -4.37114e-08, 0, -6.64916e-08, 1, -1, 6.64916e-08, 1.91069e-15, 0, 2.15105, 0)
+mesh = SubResource("QuadMesh_gitab")
+
+[node name="Agent" type="NavigationAgent3D" parent="."]
 unique_name_in_owner = true
 avoidance_enabled = true
 radius = 50.0
+debug_enabled = true
+
+[connection signal="velocity_computed" from="Agent" to="." method="velocity_computed"]
