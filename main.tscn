@@ -1,3 +1,96 @@
-[gd_scene format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=13 format=3 uid="uid://ct5wwent2uu4w"]
+
+[ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujodc"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d832g"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ow0er"]
+dof_blur_near_enabled = true
+dof_blur_near_distance = 10.08
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_c1083"]
+
+[sub_resource type="Sky" id="Sky_c3fx2"]
+sky_material = SubResource("PhysicalSkyMaterial_c1083")
+
+[sub_resource type="Environment" id="Environment_fl8e3"]
+background_mode = 2
+sky = SubResource("Sky_c3fx2")
+ambient_light_source = 3
+reflected_light_source = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35ovq"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p8r10"]
+material = SubResource("StandardMaterial3D_35ovq")
+size = Vector3(20, 20, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lemwl"]
+size = Vector3(20, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyyg1"]
+albedo_color = Color(1, 0, 0, 1)
+metallic = 1.0
+roughness = 0.19
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 15.07
+
+[sub_resource type="BoxMesh" id="BoxMesh_ds2wn"]
+material = SubResource("StandardMaterial3D_eyyg1")
+size = Vector3(20, 20, 10)
 
 [node name="Main" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_ujodc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_d832g")
+skeleton = NodePath("../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.132648, 0.912949, -0.385913, -0.182985, 0.360104, 0.91479, 0.974126, 0.191961, 0.119289, -0.0649757, 51.3656, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_q6py4")]
+
+[node name="Camera" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 30, 0)
+attributes = SubResource("CameraAttributesPractical_ow0er")
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fl8e3")
+
+[node name="Building" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0099, 0, -1.06979)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Building"]
+mesh = SubResource("BoxMesh_p8r10")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.01337, 0)
+shape = SubResource("BoxShape3D_lemwl")
+
+[node name="Building2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.89126, 0, -0.453493, 0, 1, 0, 0.453493, 0, 0.89126, -18.8336, 0, 19.0626)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Building2"]
+mesh = SubResource("BoxMesh_ds2wn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.01337, 0)
+shape = SubResource("BoxShape3D_lemwl")

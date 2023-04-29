@@ -18,7 +18,6 @@ stream = ExtResource("1_smaxf")
 volume_db = -5.53
 pitch_scale = 0.66
 mix_target = 2
-bus = &"SFX"
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 2)
