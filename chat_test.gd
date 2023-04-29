@@ -30,14 +30,90 @@ var prompt_data = {
 		"You really like cheeseburgers.",
 	],
 	"schedule": [
-		"You wake up at 7am and go for a run to the lake.",
-		"You always go for breakfast at 9am.",
-		"You go to a corporate job at 10am and work 8 hours.",
-		"You go for lunch at 1pm.",
-		"You go to the gym at 3pm.",
-		"You go for dinner at 6:30pm.",
-		"You bought tickets to a soccer game at 7:30pm.",
-		"You go home at 10pm."
+	{
+		"activity": "Morning workout",
+		"time": "6:00am - 7:00am",
+		"duration": "1 hour",
+		"place": "local gym"
+	},
+	{
+		"activity": "Shower and get dressed",
+		"time": "7:00am - 7:30am",
+		"duration": "30 minutes",
+		"place": "home"
+	},
+	{
+		"activity": "Breakfast",
+		"time": "7:30am - 8:00am",
+		"duration": "30 minutes",
+		"place": "home"
+	},
+	{
+		"activity": "Commute to work",
+		"time": "8:00am - 8:30am",
+		"duration": "30 minutes",
+		"place": "car or public transport"
+	},
+	{
+		"activity": "Work",
+		"time": "8:30am - 12:30pm",
+		"duration": "4 hours",
+		"place": "office"
+	},
+	{
+		"activity": "Lunch break",
+		"time": "12:30pm - 1:30pm",
+		"duration": "1 hour",
+		"place": "office cafeteria or nearby restaurant"
+	},
+	{
+		"activity": "Work",
+		"time": "1:30pm - 5:30pm",
+		"duration": "4 hours",
+		"place": "office"
+	},
+	{
+		"activity": "Commute home",
+		"time": "5:30pm - 6:00pm",
+		"duration": "30 minutes",
+		"place": "car or public transport"
+	},
+	{
+		"activity": "Relax and unwind",
+		"time": "6:00pm - 6:30pm",
+		"duration": "30 minutes",
+		"place": "home"
+	},
+	{
+		"activity": "Dinner",
+		"time": "6:30pm - 7:30pm",
+		"duration": "1 hour",
+		"place": "home or a nearby restaurant"
+	},
+	{
+		"activity": "Evening walk or leisure activity",
+		"time": "7:30pm - 8:30pm",
+		"duration": "1 hour",
+		"place": "nearby park or recreational area"
+	},
+	{
+		"activity": "Socialize with friends/family",
+		"time": "8:30pm - 9:30pm",
+		"duration": "1 hour",
+		"place": "home or a nearby cafe"
+	},
+	{
+		"activity": "Wind down and prepare for bed",
+		"time": "9:30pm - 10:30pm",
+		"duration": "1 hour",
+		"place": "home"
+	},
+	{
+		"activity": "Sleep",
+		"time": "10:30pm - 6:00am",
+		"duration": "7.5 hours",
+		"place": "home"
+	}
 	]
 }
 
