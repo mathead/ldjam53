@@ -1,6 +1,8 @@
 # Extend the Node2D class
 extends Control
 
+signal gpt_answer(response)
+
 # Define variables for user name and AI name
 var user_name = 'Player'
 var GPT3 = 'GPT-3'
@@ -16,7 +18,7 @@ var gptcontext = [];
 
 
 # Define API key and URL for OpenAI GPT-3
-var api_key = "YOUR MOM'S TOKEN"
+var api_key = "KOKOT"
 var api_url = "https://api.openai.com/v1/chat/completions"
 var request = null
 var response = null
@@ -38,7 +40,7 @@ func _ready():
 	#	chatLog.bbcode_text += '[' + username + ']: '
 	#chatLog.bbcode_text += text
 
-func ask_gpt(prompt):
+func ask_gpt(prompt, callback):
 	print("Asking GPT: ", prompt)
 	# Format the user's input as a message
 	var message = {
@@ -68,15 +70,15 @@ func ask_gpt(prompt):
 	
 	var error = http_request.request(endpoint, headers, HTTPClient.METHOD_POST, body)
 	if error != OK:
-		push_error("An error occurred in the HTTP request.")
-
+		print("ERROR: An error occurred in the HTTP request.")
+		
 # Called when HTTP request completes.	
 func _http_request_completed(result, response_code, headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	# Fish out the returned message
-	var response = json.get_data()["message"]
+	var response = json.get_data()["choices"][0]["message"]["content"]
 	
 	# Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
-	print(response)
+	emit_signal("gpt_answer", response)
 
