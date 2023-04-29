@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjf4retlkr7ho"]
+[gd_scene load_steps=7 format=3 uid="uid://daid6ny0rl1wm"]
 
 [ext_resource type="FontFile" uid="uid://pekwxkn6c024" path="res://fff-forward.regular.ttf" id="1_eh54r"]
 [ext_resource type="Script" path="res://hud.gd" id="1_n4awq"]
-[ext_resource type="PackedScene" uid="uid://dfcpbb23iig0u" path="res://chat_test.tscn" id="3_n3xxb"]
+[ext_resource type="PackedScene" uid="uid://cjhrbgytk4qtx" path="res://chat_test.tscn" id="3_ifaut"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mag2l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_34hdh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bug7p"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -26,18 +32,84 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="TextEdit" type="TextEdit" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mag2l")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TextPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
+
+[node name="Text" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TextPanel/MarginContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.384314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = -4
+theme_override_fonts/normal_font = ExtResource("1_eh54r")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "asdasdf"
+fit_content = true
+
+[node name="AnswerPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_34hdh")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/AnswerPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
+
+[node name="Answer" type="RichTextLabel" parent="MarginContainer/VBoxContainer/AnswerPanel/MarginContainer2"]
+unique_name_in_owner = true
+modulate = Color(0, 0.858824, 1, 1)
+clip_contents = false
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.384314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = -4
+theme_override_fonts/normal_font = ExtResource("1_eh54r")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "asdasd"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/AnswerPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bug7p")
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 9
 theme_override_fonts/font = ExtResource("1_eh54r")
 theme_override_font_sizes/font_size = 30
-placeholder_text = "Ask your question..."
+placeholder_text = "Press [enter] to call the client"
 wrap_mode = 1
 scroll_fit_content_height = true
 
-[node name="Chat" parent="." instance=ExtResource("3_n3xxb")]
+[node name="Chat" parent="." instance=ExtResource("3_ifaut")]
 layout_mode = 1
+
+[connection signal="gpt_answer" from="Chat" to="." method="_on_chat_gpt_answer"]
