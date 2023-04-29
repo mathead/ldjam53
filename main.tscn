@@ -348,7 +348,6 @@ layout_mode = 2
 [node name="Text" type="RichTextLabel" parent="HUD/StartScreen/VBoxContainer"]
 clip_contents = false
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.372549)
@@ -359,11 +358,12 @@ theme_override_constants/shadow_outline_size = -4
 theme_override_fonts/normal_font = ExtResource("6_cg0vq")
 theme_override_font_sizes/normal_font_size = 91
 bbcode_enabled = true
-text = "[center]UMBRAL DREAD[/center]"
+text = "[center]pAInapple express[/center]"
+fit_content = true
 
 [node name="HSeparator" type="HSeparator" parent="HUD/StartScreen/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 140
+theme_override_constants/separation = 48
 theme_override_styles/separator = SubResource("StyleBoxEmpty_iabub")
 
 [node name="StartButton" type="Button" parent="HUD/StartScreen/VBoxContainer"]
@@ -386,6 +386,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_iabub")
 
 [node name="Text2" type="RichTextLabel" parent="HUD/StartScreen/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
@@ -404,6 +405,7 @@ text = "[center]Game by MatHead, Audio by dreyest
 Tilemap from Kenney
 Global illumination inspired by sam.bigos
 Made for the Godot Wild Jam, theme: Ghosts, Flashlight[/center]"
+fit_content = true
 
 [node name="GIViewport" type="SubViewport" parent="."]
 unique_name_in_owner = true
