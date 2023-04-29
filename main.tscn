@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=12 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
@@ -75,5 +75,13 @@ unique_name_in_owner = true
 [node name="Sun" type="DirectionalLight3D" parent="SunPivot"]
 unique_name_in_owner = true
 transform = Transform3D(-0.963794, -0.249452, -0.0942058, -0.182578, 0.359881, 0.91496, -0.194336, 0.899033, -0.392395, -0.065, 10000, 0)
+light_angular_distance = 0.5
+shadow_enabled = true
+
+[node name="Moon" type="DirectionalLight3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.0548824, 0.932881, -0.355978, -0.182578, 0.359881, 0.91496, 0.981658, 0.0147786, 0.190075, -0.065, 10000, 0)
+light_color = Color(0.560784, 0.815686, 1, 1)
+light_energy = 0.059
 light_angular_distance = 0.5
 shadow_enabled = true

@@ -37,7 +37,7 @@ func send_query(query):
 #	cool_hide(%TextEdit)
 	%TextEdit.visible = false
 	%Text.text = query
-	$Chat.ask_gpt(query)
+	$Chat.ask_gpt(query, format_time())
 	set_answer("...")
 	
 func _on_chat_gpt_answer(response):
@@ -54,7 +54,11 @@ func _process(delta):
 		answer = ""
 	time += delta * 2000#500
 	var dtime = int(time) % (60*60*24)
-	%Time.text = "[right]%02d:%02d[/right]" % [floori(dtime/60.0/60.0), floori((dtime % (60*60))/60.0)]
+	%Time.text = "[right]%s[/right]" % format_time()
+
+func format_time():
+	var dtime = int(time) % (60*60*24)
+	return "%02d:%02d" % [floori(dtime/60.0/60.0), floori((dtime % (60*60))/60.0)]
 
 func set_answer(t):
 	%AnswerPanel.visible = true
