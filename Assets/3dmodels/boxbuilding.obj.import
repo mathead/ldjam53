@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://djmk540cx6dgf"
+path="res://.godot/imported/boxbuilding.obj-1a7c89c3e09cba8d13132c2e3243222a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/boxbuilding.obj-1a7c89c3e09cba8d13132c2e3243222a.mesh"]
+
+source_file="res://Assets/3dmodels/boxbuilding.obj"
+dest_files=["res://.godot/imported/boxbuilding.obj-1a7c89c3e09cba8d13132c2e3243222a.mesh", "res://.godot/imported/boxbuilding.obj-1a7c89c3e09cba8d13132c2e3243222a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

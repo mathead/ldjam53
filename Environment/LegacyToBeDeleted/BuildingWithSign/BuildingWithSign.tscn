@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx23hid54apob"]
+
+[ext_resource type="Script" path="res://Environment/Buildings/BuildingWithSign/BuildingWithSign.gd" id="1_1u7gq"]
+
+[node name="BuildingWithSign" type="StaticBody3D"]
+script = ExtResource("1_1u7gq")
