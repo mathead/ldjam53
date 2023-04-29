@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckxehb6c5xtaw"]
+
+[ext_resource type="Script" path="res://npc.gd" id="1_47jqd"]
+[ext_resource type="AudioStream" uid="uid://dhaljlw5ylqpg" path="res://Audio/SFX/Footsteps/GWJ52 SFX - Footstep 1.wav" id="1_smaxf"]
+[ext_resource type="Texture2D" uid="uid://cuk6sitcgmunm" path="res://images/Man Brown/manBrown_stand.png" id="2_lap6l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oohxb"]
+radius = 30.0
+
+[node name="NPC" type="RigidBody2D"]
+script = ExtResource("1_47jqd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oohxb")
+
+[node name="SFXFootsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_smaxf")
+volume_db = -5.53
+pitch_scale = 0.66
+mix_target = 2
+bus = &"SFX"
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 2)
+texture = ExtResource("2_lap6l")
+
+[node name="Agent" type="NavigationAgent2D" parent="."]
+unique_name_in_owner = true
+avoidance_enabled = true
+radius = 50.0
