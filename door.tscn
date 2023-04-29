@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://dohyiukih1svw"]
+
+[ext_resource type="Texture2D" uid="uid://gpdtbyjf5s0a" path="res://1px.png" id="1_nejn5"]
+[ext_resource type="AudioStream" uid="uid://bcl64dnw0s1bj" path="res://Audio/SFX/GWJ52 SFX - door.wav" id="2_hpch8"]
+[ext_resource type="AudioStream" uid="uid://bwoyl6gqsyeuj" path="res://Audio/SFX/GWJ52 SFX - door 2.wav" id="3_o5puk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w7exf"]
+radius = 13.9994
+height = 112.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bjlu8"]
+polygon = PackedVector2Array(-16, 9, -16, -8, 119, -8, 119, 7, 127, 27, 109, 28, 104, 9, 2, 9, 2, 26, -16, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r714h"]
+size = Vector2(6.83568, 16.485)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbfu0"]
+radius = 13.0384
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g8huy"]
+streams_count = 2
+playback_mode = 1
+random_pitch = 2.19
+stream_0/stream = ExtResource("2_hpch8")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_o5puk")
+stream_1/weight = 1.0
+
+[node name="Door" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["doors"]]
+collision_layer = 16
+collision_mask = 95
+mass = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(66, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_w7exf")
+
+[node name="Icon" type="Sprite2D" parent="RigidBody2D"]
+modulate = Color(0.360784, 0.196078, 0.0862745, 1)
+position = Vector2(56, 0)
+scale = Vector2(128, 16.387)
+texture = ExtResource("1_nejn5")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="RigidBody2D"]
+occluder = SubResource("OccluderPolygon2D_bjlu8")
+occluder_light_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(118.318, -10.0675)
+rotation = 0.555522
+shape = SubResource("RectangleShape2D_r714h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(121, 10)
+rotation = 2.29118
+shape = SubResource("RectangleShape2D_r714h")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-6, 7)
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../StaticBody2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 11)
+shape = SubResource("CircleShape2D_rbfu0")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(113, 26)
+shape = SubResource("CircleShape2D_rbfu0")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-58, -71)
+shape = SubResource("CircleShape2D_rbfu0")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_g8huy")
