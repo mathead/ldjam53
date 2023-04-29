@@ -4,6 +4,7 @@ var focused = false
 var answer = ""
 var answer_start = 0
 var time = 0.0
+var time_speed = 500
 
 func _ready():
 	%TextPanel.scale.y = 0
@@ -52,7 +53,7 @@ func _process(delta):
 	%Answer.modulate.a = min(0.75, len(answer)/12.0 - answer_start + 1)
 	if %Answer.modulate.a <= 0:
 		answer = ""
-	time += delta * 2000#500
+	time += delta * time_speed
 	var dtime = int(time) % (60*60*24)
 	%Time.text = "[right]%s[/right]" % format_time()
 
