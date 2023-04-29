@@ -3,6 +3,7 @@ extends Control
 var focused = false
 var answer = ""
 var answer_start = 0
+var time = 0.0
 
 func _ready():
 	%TextPanel.scale.y = 0
@@ -51,6 +52,9 @@ func _process(delta):
 	%Answer.modulate.a = min(0.75, len(answer)/12.0 - answer_start + 1)
 	if %Answer.modulate.a <= 0:
 		answer = ""
+	time += delta * 2000#500
+	var dtime = int(time) % (60*60*24)
+	%Time.text = "[right]%02d:%02d[/right]" % [floori(dtime/60.0/60.0), floori((dtime % (60*60))/60.0)]
 
 func set_answer(t):
 	%AnswerPanel.visible = true
