@@ -53,8 +53,11 @@ func _process(delta):
 	%Answer.modulate.a = min(0.75, len(answer)/12.0 - answer_start + 1)
 	if %Answer.modulate.a <= 0:
 		answer = ""
-	time += delta * time_speed
 	var dtime = int(time) % (60*60*24)
+	if dtime > 7 * 60 * 60 and dtime < 23 * 60 * 60:
+		time += delta * time_speed
+	else:
+		time += delta * time_speed * 10
 	%Time.text = "[right]%s[/right]" % format_time()
 
 func format_time():

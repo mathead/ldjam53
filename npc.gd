@@ -10,6 +10,6 @@ func _process(delta):
 
 func velocity_computed(vel):
 	vel.y = 0
-	if vel != Vector3.ZERO:
+	if vel.length() > 0.01:
 		apply_central_impulse(vel)
 		$Pivot.look_at(global_position + vel)
