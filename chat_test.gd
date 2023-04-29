@@ -18,7 +18,7 @@ var gptcontext = [];
 
 
 # Define API key and URL for OpenAI GPT-3
-var api_key = "KOKOT"
+var api_key = "APIKEY"
 var api_url = "https://api.openai.com/v1/chat/completions"
 var request = null
 var response = null
@@ -40,7 +40,7 @@ func _ready():
 	#	chatLog.bbcode_text += '[' + username + ']: '
 	#chatLog.bbcode_text += text
 
-func ask_gpt(prompt, callback):
+func ask_gpt(prompt):
 	print("Asking GPT: ", prompt)
 	# Format the user's input as a message
 	var message = {
@@ -77,8 +77,9 @@ func _http_request_completed(result, response_code, headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	# Fish out the returned message
-	var response = json.get_data()["choices"][0]["message"]["content"]
-	
+	var response_message = json.get_data()["choices"][0]["message"]
+	gptcontext.append(response_message)
+	print("Context: ", gptcontext)
 	# Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
-	emit_signal("gpt_answer", response)
+	emit_signal("gpt_answer", response_message["content"])
 
