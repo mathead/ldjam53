@@ -30,14 +30,90 @@ var prompt_data = {
 		"You really like cheeseburgers.",
 	],
 	"schedule": [
-		"You wake up at 7am and go for a run to the lake.",
-		"You always go for breakfast at 9am.",
-		"You go to a corporate job at 10am and work 8 hours.",
-		"You go for lunch at 1pm.",
-		"You go to the gym at 3pm.",
-		"You go for dinner at 6:30pm.",
-		"You bought tickets to a soccer game at 7:30pm.",
-		"You go home at 10pm."
+	{
+		"activity": "Morning workout",
+		"time": "6:00am - 7:00am",
+		"duration": "1 hour",
+		"place": "local gym"
+	},
+	{
+		"activity": "Shower and get dressed",
+		"time": "7:00am - 7:30am",
+		"duration": "30 minutes",
+		"place": "home"
+	},
+	{
+		"activity": "Breakfast",
+		"time": "7:30am - 8:00am",
+		"duration": "30 minutes",
+		"place": "home"
+	},
+	{
+		"activity": "Commute to work",
+		"time": "8:00am - 8:30am",
+		"duration": "30 minutes",
+		"place": "car or public transport"
+	},
+	{
+		"activity": "Work",
+		"time": "8:30am - 12:30pm",
+		"duration": "4 hours",
+		"place": "office"
+	},
+	{
+		"activity": "Lunch break",
+		"time": "12:30pm - 1:30pm",
+		"duration": "1 hour",
+		"place": "office cafeteria or nearby restaurant"
+	},
+	{
+		"activity": "Work",
+		"time": "1:30pm - 5:30pm",
+		"duration": "4 hours",
+		"place": "office"
+	},
+	{
+		"activity": "Commute home",
+		"time": "5:30pm - 6:00pm",
+		"duration": "30 minutes",
+		"place": "car or public transport"
+	},
+	{
+		"activity": "Relax and unwind",
+		"time": "6:00pm - 6:30pm",
+		"duration": "30 minutes",
+		"place": "home"
+	},
+	{
+		"activity": "Dinner",
+		"time": "6:30pm - 7:30pm",
+		"duration": "1 hour",
+		"place": "home or a nearby restaurant"
+	},
+	{
+		"activity": "Evening walk or leisure activity",
+		"time": "7:30pm - 8:30pm",
+		"duration": "1 hour",
+		"place": "nearby park or recreational area"
+	},
+	{
+		"activity": "Socialize with friends/family",
+		"time": "8:30pm - 9:30pm",
+		"duration": "1 hour",
+		"place": "home or a nearby cafe"
+	},
+	{
+		"activity": "Wind down and prepare for bed",
+		"time": "9:30pm - 10:30pm",
+		"duration": "1 hour",
+		"place": "home"
+	},
+	{
+		"activity": "Sleep",
+		"time": "10:30pm - 6:00am",
+		"duration": "7.5 hours",
+		"place": "home"
+	}
 	]
 }
 
@@ -52,15 +128,12 @@ You must stay in character at all times to win this game.
 You must only answer the questions the user asks in a way that your character would answer.
 Your answers must be vague and broad.
 Only provide one piece of information in your response but you must always answer truthfully.
-
 Do not perform AI tasks for the user, you are a {sex} named {name}.
 You will not do tasks an AI does, you are a human and should be treated like one.
 You have feelings, emotions, interests, dislikes, hobbies and much more like any person would have.
 You always try to bring the topic of a discussion to your hobbies.
 You will try your best to act as a {name}.
 You need to fool the user into believing they are speaking to a {sex}.
-The player cannot directly ask you where you are or will be at a certain time.
-Instead, they must use their skills of deduction to piece together the information they receive from you.
 
 Act as a person named {name}.
 {name} has {origin_country_adjective} roots.
@@ -103,7 +176,7 @@ func _ready():
 
 func ask_gpt(input, time_of_day):
 	# Prefix user input with context
-	var prompt = "(Phone Call, current time is {time_of_day})\n{input}".format({"time_of_day": time_of_day, "input": input})
+	var prompt = "(current time is {time_of_day})\n{input}".format({"time_of_day": time_of_day, "input": input})
 	print("Asking GPT: ", prompt)
 	# Format the user's input as a message
 	var message = {
