@@ -1,11 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckxehb6c5xtaw"]
+[gd_scene load_steps=9 format=3 uid="uid://ckxehb6c5xtaw"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_47jqd"]
 [ext_resource type="AudioStream" uid="uid://dhaljlw5ylqpg" path="res://Audio/SFX/Footsteps/GWJ52 SFX - Footstep 1.wav" id="1_smaxf"]
 [ext_resource type="Texture2D" uid="uid://cuk6sitcgmunm" path="res://images/Man Brown/manBrown_stand.png" id="2_lap6l"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gn045"]
-friction = 0.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xw0eb"]
 
@@ -24,12 +21,9 @@ material = SubResource("StandardMaterial3D_7cf43")
 
 [node name="NPC" type="RigidBody3D"]
 collision_layer = 2
-collision_mask = 23
-axis_lock_linear_y = true
-mass = 12.63
-physics_material_override = SubResource("PhysicsMaterial_gn045")
+collision_mask = 21
+mass = 3.22
 lock_rotation = true
-linear_damp = 5.05
 script = ExtResource("1_47jqd")
 
 [node name="SFXFootsteps" type="AudioStreamPlayer" parent="."]
@@ -55,16 +49,8 @@ mesh = SubResource("QuadMesh_gitab")
 
 [node name="Agent" type="NavigationAgent3D" parent="."]
 unique_name_in_owner = true
-path_desired_distance = 2.0
-target_desired_distance = 10.0
-agent_height_offset = 2.0
 avoidance_enabled = true
-radius = 1.0
+radius = 50.0
 debug_enabled = true
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
-
 [connection signal="velocity_computed" from="Agent" to="." method="velocity_computed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

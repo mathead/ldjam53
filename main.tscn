@@ -104,6 +104,7 @@ linear_damp = 8.021
 
 [node name="HUD" parent="." instance=ExtResource("4_dlwsg")]
 unique_name_in_owner = true
+time_speed = 2000
 
 [node name="SunPivot" type="Marker3D" parent="."]
 unique_name_in_owner = true
