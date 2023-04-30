@@ -20,7 +20,7 @@ const COLORS = {
 	"none": Color.TRANSPARENT
 }
 
-const CHARACTERS = [
+var CHARACTERS = [
 	{
 		"general":
 		{

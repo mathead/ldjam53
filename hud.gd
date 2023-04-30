@@ -9,6 +9,8 @@ var answer_start = 0
 var delivery_text = ""
 var delivery_start = 0
 var time = 30000.0
+var battery = 100
+var lives = 3
 @export var time_speed = 200
 @onready var BuildingShader = preload("res://Environment/BuildingMaterial.tres")
 
@@ -41,7 +43,6 @@ func _input(ev):
 	else:
 		unfocus()
 
-
 func focus():
 	%TextEdit.grab_focus()
 	%TextEdit.placeholder_text = "Type your question and press [enter] to submit..."
@@ -65,6 +66,7 @@ func send_query(query):
 	Gpt.ask_gpt(query, format_time())
 	await get_tree().process_frame
 	%ScrollContainer.scroll_vertical = %ScrollContainer.get_v_scroll_bar().max_value
+	battery -= 5
 #	%Text.text = query
 	
 func _on_chat_gpt_answer(response):
@@ -95,6 +97,8 @@ func _process(delta):
 	delivery_start += delta
 	%DeliveryText.text = "[center][fade start=" + str(int(round(delivery_start*30))) + " length=10]" + delivery_text + "[/fade][/center]"
 	%DeliveryText.modulate.a = min(0.75, len(delivery_text)/12.0 - delivery_start + 1)
+	battery -= delta / 10
+	%Battery.value = battery
 
 func format_time():
 	var dtime = int(time) % (60*60*24)
@@ -108,12 +112,10 @@ func cool_show(o):
 	o.modulate.a = 0
 	await get_tree().create_timer(5).timeout
 	create_tween().tween_property(o, "modulate", Color.WHITE, 1)
-	
+
 func set_delivery_text(t):
 	delivery_start = 0
 	delivery_text = t
-
-
 
 func _on_text_edit_focus_entered():
 	focus()

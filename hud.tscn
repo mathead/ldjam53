@@ -171,7 +171,8 @@ theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
 [node name="Battery" type="TextureProgressBar" parent="MarginContainer/Phone/VBoxContainer/TopBar/MarginContainer/HBoxContainer/PanelContainer/MarginContainer"]
-custom_minimum_size = Vector2(80, 0)
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 value = 70.0
 nine_patch_stretch = true
