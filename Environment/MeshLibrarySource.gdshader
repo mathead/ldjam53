@@ -7,8 +7,8 @@ float rand(vec2 co){
 }
 
 void vertex() {
-  VERTEX.y *= 1.5;
-  VERTEX.y -= floor(max(abs(NODE_POSITION_WORLD.x),abs(NODE_POSITION_WORLD.z))/25.0)*1.5;
+  VERTEX.y *= 2.0;
+  VERTEX.y -= floor(max(abs(NODE_POSITION_WORLD.x),abs(NODE_POSITION_WORLD.z))/20.0)*2.0;
   //have to be creative and use another channel, there is a bug and NODE_POSITION_WORLD is always 0 in fragment shader
   BINORMAL = NODE_POSITION_WORLD;
 }
