@@ -24,6 +24,7 @@ albedo_color = Color(1, 0.819608, 0.627451, 1)
 material = SubResource("StandardMaterial3D_legsy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85dug"]
+transparency = 1
 albedo_color = Color(0, 0, 0.698039, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_ta0i0"]

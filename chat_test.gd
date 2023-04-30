@@ -70,6 +70,16 @@ func rc(l):
 	return l[randi()%len(l)]
 
 func generate_character():
+	var character = rc(Constants.CHARACTERS)
+	var res = character.duplicate()
+	res["schedule"] = []
+	for s in character["schedule"]:
+		s = s.duplicate()
+		s["start_time"] += randi_range(-20 * 60, +20 * 60)		
+		res["schedule"].append(s)
+	return res
+
+func generate_random_character():
 	var character = {
 		"general": {
 			"name": "John Doe",

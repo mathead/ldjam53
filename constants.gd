@@ -9,7 +9,12 @@ const COLORS = {
 	"red": Color.DARK_RED,
 	"blue": Color.CADET_BLUE,
 	"black": Color.BLACK,
-	"white": Color.WHITE
+	"white": Color.WHITE,
+	"yellow": Color.YELLOW,
+	"pink": Color.HOT_PINK,
+	"grey": Color.GRAY,
+	"purple": Color.PURPLE,
+	"none": Color.TRANSPARENT
 }
 
 
