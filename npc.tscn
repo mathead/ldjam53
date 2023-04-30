@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ckxehb6c5xtaw"]
+[gd_scene load_steps=23 format=3 uid="uid://ckxehb6c5xtaw"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_47jqd"]
 [ext_resource type="AudioStream" uid="uid://dhaljlw5ylqpg" path="res://Audio/SFX/Footsteps/GWJ52 SFX - Footstep 1.wav" id="1_smaxf"]
@@ -22,6 +22,14 @@ albedo_color = Color(1, 0.819608, 0.627451, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_1pxja"]
 material = SubResource("StandardMaterial3D_legsy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_605t1"]
+albedo_color = Color(1, 0.819608, 0.627451, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_u8m31"]
+material = SubResource("StandardMaterial3D_605t1")
+radius = 0.3
+height = 0.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85dug"]
 transparency = 1
@@ -95,6 +103,18 @@ surface_material_override/0 = SubResource("StandardMaterial3D_skwdu")
 [node name="Head" type="MeshInstance3D" parent="Pivot"]
 transform = Transform3D(-2.71011e-08, -0.62, -2.71011e-08, 0, -2.71011e-08, 0.62, -0.62, 2.71011e-08, 1.18463e-15, 0, 2.15105, 0)
 mesh = SubResource("SphereMesh_1pxja")
+
+[node name="Boobs" type="MeshInstance3D" parent="Pivot"]
+unique_name_in_owner = true
+transform = Transform3D(-2.71011e-08, -0.62, -2.71011e-08, 0, -2.71011e-08, 0.62, -0.62, 2.71011e-08, 1.18463e-15, -0.248484, 1.60358, -0.25646)
+visible = false
+mesh = SubResource("SphereMesh_u8m31")
+
+[node name="Boobs2" type="MeshInstance3D" parent="Pivot"]
+unique_name_in_owner = true
+transform = Transform3D(-2.71011e-08, -0.62, -2.71011e-08, 0, -2.71011e-08, 0.62, -0.62, 2.71011e-08, 1.18463e-15, 0.235983, 1.60358, -0.25646)
+visible = false
+mesh = SubResource("SphereMesh_u8m31")
 
 [node name="Hat" type="MeshInstance3D" parent="Pivot"]
 unique_name_in_owner = true

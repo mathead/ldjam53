@@ -14,10 +14,15 @@ func _ready():
 	var shirt_mat = %Shirt.get_active_material(0).duplicate()
 	shirt_mat.albedo_color = Constants.COLORS[character["general"]["shirt_color"]]  # Color.from_hsv(randf(), 0.8, 1)
 	%Shirt.set_surface_override_material(0, shirt_mat)
+	%Boobs.set_surface_override_material(0, shirt_mat)
+	%Boobs2.set_surface_override_material(0, shirt_mat)
 	var pants_mat = %Pants1.get_active_material(0).duplicate()
 	pants_mat.albedo_color = Constants.COLORS[character["general"]["pants_color"]]  # Color.from_hsv(randf(), 0.8, 1)
 	%Pants1.set_surface_override_material(0, pants_mat)
 	%Pants2.set_surface_override_material(0, pants_mat)
+	if character["general"]["sex"] == "female":
+		%Boobs.visible = true
+		%Boobs2.visible = true
 
 func _process(delta):
 	go_to_next_place()
@@ -29,7 +34,9 @@ func velocity_computed(vel):
 	vel.y = 0
 	if vel.length() > 0.01:
 		apply_central_impulse(vel)
-		$Pivot.look_at(global_position + vel)
+		var orig = $Pivot.rotation.y
+		$Pivot.look_at(global_position + vel, Vector3.UP)
+		$Pivot.rotation.y = lerp_angle(orig, $Pivot.rotation.y, 0.3)
 
 func distance_to_dest():
 	return %Agent.distance_to_target()
@@ -55,7 +62,4 @@ func go_to_random_place():
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		if active:
-			hud.set_delivery_text("Yes, that's me, you won!")
-		else:
-			hud.set_delivery_text("This package is not for me")
+		hud.deliver(active)

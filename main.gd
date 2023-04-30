@@ -15,6 +15,7 @@ func _ready():
 	npc.position = Vector3(randf() * 100, 0, randf() * 100)
 	add_child(npc)
 	Gpt.set_active_character(npc)
+	%HUD.new_delivery(npc)
 
 func _process(delta):
 	%SunPivot.rotation.z = (%HUD.time / (60*60*24) + 0.4) * 2 * PI

@@ -17,6 +17,8 @@ const COLORS = {
 	"gray": Color.GRAY,
 	"purple": Color.PURPLE,
 	"brown": Color.SADDLE_BROWN,
+	"khaki": Color.DARK_KHAKI,
+	"orange": Color.ORANGE_RED,
 	"none": Color.TRANSPARENT
 }
 
