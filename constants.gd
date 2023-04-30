@@ -19,7 +19,7 @@ const COLORS = {
 }
 
 
-const CHARACTERS = [
+var CHARACTERS = [
 {
 	"general": {
 		"name": "Sarah Lee",

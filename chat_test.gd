@@ -71,6 +71,9 @@ func rc(l):
 
 func generate_character():
 	var character = rc(Constants.CHARACTERS)
+	return jitter_schedule(character)
+	
+func jitter_schedule(character):
 	var res = character.duplicate()
 	res["schedule"] = []
 	for s in character["schedule"]:

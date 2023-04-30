@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://u0lto8makq57"]
+
+[ext_resource type="FontFile" uid="uid://pekwxkn6c024" path="res://fff-forward.regular.ttf" id="1_w850r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44vb6"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+
+[node name="Question" type="HBoxContainer"]
+alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_44vb6")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 4
+
+[node name="Text" type="RichTextLabel" parent="PanelContainer/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_w850r")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "asdasdf asdasd asd asda asd asd
+asdasd
+asda"
+fit_content = true

@@ -1,5 +1,8 @@
 extends Control
 
+var question_scene = preload("res://question.tscn")
+var answer_scene = preload("res://answer.tscn")
+
 var focused = false
 var answer = ""
 var answer_start = 0
@@ -28,35 +31,60 @@ func _input(ev):
 			await get_tree().process_frame
 			%TextEdit.text = ""
 	elif Input.is_action_just_pressed("ui_cancel"):
+		%TextEdit.text = ""
 		focused = false
+	elif Input.is_action_just_pressed("click"):
+		focused = %Phone.get_global_rect().has_point(get_global_mouse_position())
 
 	if focused:
-		%TextEdit.placeholder_text = "Type your question and press [enter] to submit..."
+		focus()
 	else:
-		%TextEdit.release_focus()
-		%TextEdit.placeholder_text = "Press [enter] to call the client"
-			
+		unfocus()
+
+
+func focus():
+	%TextEdit.grab_focus()
+	%TextEdit.placeholder_text = "Type your question and press [enter] to submit..."
+	%Phone.modulate.a = 0.7
+	
+func unfocus():
+	%TextEdit.release_focus()
+	%TextEdit.placeholder_text = "Press [enter] to call the client"
+	%Phone.modulate.a = 0.5
+
 func send_query(query):
 	### INSERT MAGIC CODE HERE ###
-	%TextPanel.visible = true
+#	%TextPanel.visible = true
 #	cool_hide(%TextEdit)
-	%TextEdit.visible = false
-	%Text.text = query
+#	%TextEdit.visible = false
+	%Loading.visible = true
+	var question = question_scene.instantiate()
+	question.get_node("PanelContainer/MarginContainer/Text").text = query
+	%Chats.add_child(question)
+	%Chats.move_child(%Loading, -1)
 	Gpt.ask_gpt(query, format_time())
-	set_answer("...")
+	await get_tree().process_frame
+	%ScrollContainer.scroll_vertical = %ScrollContainer.get_v_scroll_bar().max_value
+#	%Text.text = query
 	
 func _on_chat_gpt_answer(response):
-	%TextPanel.visible = false
-	set_answer(response)
-	cool_show(%TextEdit)
+#	%TextPanel.visible = false
+	%Loading.visible = false
+
+	var answer = answer_scene.instantiate()
+	answer.get_node("PanelContainer/MarginContainer/Text").text = "[right]" + response + "[/right]"
+	%Chats.add_child(answer)
+	await get_tree().process_frame
+	%ScrollContainer.scroll_vertical = %ScrollContainer.get_v_scroll_bar().max_value
+#	cool_show(%TextEdit)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	answer_start += delta
-	%Answer.text = "[right][fade start=" + str(int(round(answer_start*30))) + " length=10]" + answer + "[/fade][/right]"
-	%Answer.modulate.a = min(0.75, len(answer)/12.0 - answer_start + 1)
-	if %Answer.modulate.a <= 0:
-		answer = ""
+#	answer_start += delta
+#	%Answer.text = "[right][fade start=" + str(int(round(answer_start*30))) + " length=10]" + answer + "[/fade][/right]"
+#	%Answer.modulate.a = min(0.75, len(answer)/12.0 - answer_start + 1)
+#	if %Answer.modulate.a <= 0:
+#		answer = ""
 	var dtime = int(time) % (60*60*24)
 	BuildingShader.set_shader_parameter("dtime", dtime)
 	if dtime > 7 * 60 * 60 and dtime < 21 * 60 * 60:
@@ -71,11 +99,6 @@ func _process(delta):
 func format_time():
 	var dtime = int(time) % (60*60*24)
 	return "%02d:%02d" % [floori(dtime/60.0/60.0), floori((dtime % (60*60))/60.0)]
-
-func set_answer(t):
-	%AnswerPanel.visible = true
-	answer = t
-	answer_start = -1
 	
 func cool_hide(o):
 	create_tween().tween_property(o, "scale", Vector2(1, 0), 1)
@@ -89,3 +112,11 @@ func cool_show(o):
 func set_delivery_text(t):
 	delivery_start = 0
 	delivery_text = t
+
+
+
+func _on_text_edit_focus_entered():
+	focus()
+
+func _on_text_edit_focus_exited():
+	unfocus()

@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-@onready var character = Gpt.generate_character()
+var character = Gpt.generate_character()
 @onready var hud = get_node("/root/Main/HUD")
 var last_place = ""
 var active = false
@@ -51,7 +51,6 @@ func go_to_random_place():
 
 
 func _on_body_entered(body):
-	print(body)
 	if body.is_in_group("player"):
 		if active:
 			hud.set_delivery_text("Yes, that's me, you won!")
