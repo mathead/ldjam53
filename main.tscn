@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=57 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
@@ -6,9 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://ni2hu8y6l2i2" path="res://destination.tscn" id="2_hr2fl"]
 [ext_resource type="PackedScene" uid="uid://daid6ny0rl1wm" path="res://hud.tscn" id="4_dlwsg"]
 [ext_resource type="PackedScene" uid="uid://cy6adf2mn1prw" path="res://Environment/Props/Sign.tscn" id="7_2xvg0"]
+[ext_resource type="Texture2D" uid="uid://cwh377vakmvkc" path="res://Environment/Textures/bank.png" id="7_05bcn"]
+[ext_resource type="Texture2D" uid="uid://7db1mbmj22g" path="res://Environment/Textures/travel.png" id="8_3wu4s"]
 [ext_resource type="Texture2D" uid="uid://gg5ml64fjriw" path="res://Environment/Textures/pho.png" id="8_588xq"]
+[ext_resource type="Texture2D" uid="uid://b8bu0xdahbf1r" path="res://Environment/Textures/sushi.png.png" id="8_hp4dm"]
 [ext_resource type="Texture2D" uid="uid://dni4pqgf7ieh2" path="res://Environment/Textures/pizza-sign.png" id="8_iqp5p"]
 [ext_resource type="Texture2D" uid="uid://c15h64p60rrba" path="res://Environment/Textures/tex-mex.png" id="9_5fqxs"]
+[ext_resource type="Texture2D" uid="uid://bosqvi2x4k0ch" path="res://Environment/Textures/ramen.png" id="9_mxdrb"]
+[ext_resource type="Texture2D" uid="uid://ca71fiacw871q" path="res://Environment/Textures/market.png" id="10_dsegk"]
+[ext_resource type="Texture2D" uid="uid://cjc5dxodoo3uw" path="res://Environment/Textures/bbq.png" id="10_hjqp8"]
+[ext_resource type="Texture2D" uid="uid://dyiv2bs6ry3ux" path="res://Environment/Textures/burger.png" id="11_4jao8"]
+[ext_resource type="Texture2D" uid="uid://bov443tr377sr" path="res://Environment/Textures/coffee.png" id="12_h8ajf"]
+[ext_resource type="Texture2D" uid="uid://ccdp5hawvm4i3" path="res://Environment/Textures/gym.png" id="17_f6c2h"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ow0er"]
 dof_blur_far_enabled = true
@@ -51,21 +60,54 @@ agent_radius = 1.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksoaf"]
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("7_05bcn")
 
 [sub_resource type="QuadMesh" id="QuadMesh_istlp"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ksoaf")
 size = Vector2(0.5, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1hn1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4x1lk"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wstwt"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_4x1lk")
+size = Vector2(0.5, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vurle"]
+load_path = "res://.godot/imported/law.png-af89fb823070757e1b8d783eb6f7cddb.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdfap"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_vurle")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kf8tq"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_qdfap")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eragb"]
 cull_mode = 2
 shading_mode = 0
 albedo_color = Color(1, 0, 0, 1)
 
-[sub_resource type="QuadMesh" id="QuadMesh_1w8ch"]
+[sub_resource type="QuadMesh" id="QuadMesh_y34fv"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_t1hn1")
+material = SubResource("StandardMaterial3D_eragb")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rd376"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("8_3wu4s")
+
+[sub_resource type="QuadMesh" id="QuadMesh_exk10"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_rd376")
 size = Vector2(0.5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j20ys"]
@@ -88,6 +130,66 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_wh3tf")
 size = Vector2(0.5, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig2g6"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("10_dsegk")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gk8lo"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ig2g6")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mnhq"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("10_hjqp8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_1ruhh"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_5mnhq")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pj21"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("11_4jao8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_6coe2"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_8pj21")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pt0sw"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("12_h8ajf")
+
+[sub_resource type="QuadMesh" id="QuadMesh_302pa"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_pt0sw")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qhpxb"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("8_hp4dm")
+
+[sub_resource type="QuadMesh" id="QuadMesh_fmrkg"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_qhpxb")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg432"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("9_mxdrb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_uic6i"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_mg432")
+size = Vector2(0.5, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mqtk"]
 cull_mode = 2
 shading_mode = 0
@@ -106,6 +208,16 @@ albedo_texture = ExtResource("9_5fqxs")
 [sub_resource type="QuadMesh" id="QuadMesh_bwxsr"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_l7c1v")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fon0u"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("17_f6c2h")
+
+[sub_resource type="QuadMesh" id="QuadMesh_cperj"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_fon0u")
 size = Vector2(0.5, 1)
 
 [node name="Main" type="Node3D"]
@@ -161,14 +273,14 @@ shadow_enabled = true
 shadow_opacity = 0.62
 shadow_blur = 4.333
 
-[node name="GreenOffice" parent="." instance=ExtResource("7_2xvg0")]
+[node name="Bank" parent="." instance=ExtResource("7_2xvg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, -20.5014)
 
-[node name="Mesh" parent="GreenOffice" index="0"]
+[node name="Mesh" parent="Bank" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
 mesh = SubResource("QuadMesh_istlp")
 
-[node name="Destination" parent="GreenOffice" groups=["green office"] instance=ExtResource("2_hr2fl")]
+[node name="Destination" parent="Bank" groups=["bank"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
 [node name="GreenApartment" parent="." instance=ExtResource("7_2xvg0")]
@@ -176,19 +288,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8644, 4.98166, -180.387)
 
 [node name="Mesh" parent="GreenApartment" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
-mesh = SubResource("QuadMesh_istlp")
+mesh = SubResource("QuadMesh_wstwt")
 
 [node name="Destination" parent="GreenApartment" groups=["green apartment"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="RedOffice" parent="." instance=ExtResource("7_2xvg0")]
+[node name="LawOffice" parent="." instance=ExtResource("7_2xvg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5628, 4.98166, -42.7617)
 
-[node name="Mesh" parent="RedOffice" index="0"]
+[node name="Mesh" parent="LawOffice" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
-mesh = SubResource("QuadMesh_1w8ch")
+mesh = SubResource("QuadMesh_kf8tq")
 
-[node name="Destination" parent="RedOffice" groups=["red office"] instance=ExtResource("2_hr2fl")]
+[node name="Destination" parent="LawOffice" groups=["law office"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
 [node name="RedApartment" parent="." instance=ExtResource("7_2xvg0")]
@@ -196,19 +308,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5002, 4.98166, -113.059)
 
 [node name="Mesh" parent="RedApartment" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
-mesh = SubResource("QuadMesh_1w8ch")
+mesh = SubResource("QuadMesh_y34fv")
 
 [node name="Destination" parent="RedApartment" groups=["red apartment"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="BlueOffice" parent="." instance=ExtResource("7_2xvg0")]
+[node name="TravelOffice" parent="." instance=ExtResource("7_2xvg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2037, 4.98166, -69.4739)
 
-[node name="Mesh" parent="BlueOffice" index="0"]
+[node name="Mesh" parent="TravelOffice" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
-mesh = SubResource("QuadMesh_y2psc")
+mesh = SubResource("QuadMesh_exk10")
 
-[node name="Destination" parent="BlueOffice" groups=["blue office"] instance=ExtResource("2_hr2fl")]
+[node name="Destination" parent="TravelOffice" groups=["travel agency"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
 [node name="BlueApartment" parent="." instance=ExtResource("7_2xvg0")]
@@ -231,6 +343,66 @@ mesh = SubResource("QuadMesh_xiwrd")
 [node name="Destination" parent="Pizza" groups=["pizza"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
+[node name="Market" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3931, 4.98166, 30.9918)
+
+[node name="Mesh" parent="Market" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_gk8lo")
+
+[node name="Destination" parent="Market" groups=["market"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+
+[node name="bbq" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.2258, 4.98166, 8.80397)
+
+[node name="Mesh" parent="bbq" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_1ruhh")
+
+[node name="Destination" parent="bbq" groups=["bbq"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+
+[node name="Burger" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7443, 4.98166, -11.2438)
+
+[node name="Mesh" parent="Burger" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_6coe2")
+
+[node name="Destination" parent="Burger" groups=["burger"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+
+[node name="Coffee" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5714, 4.98166, 8.80397)
+
+[node name="Mesh" parent="Coffee" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_302pa")
+
+[node name="Destination" parent="Coffee" groups=["coffee"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+
+[node name="Sushi" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5237, 4.98166, 41.9156)
+
+[node name="Mesh" parent="Sushi" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.829685, 0, 0)
+mesh = SubResource("QuadMesh_fmrkg")
+
+[node name="Destination" parent="Sushi" groups=["sushi"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+
+[node name="Ramen" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58713, 4.98166, 48.8348)
+
+[node name="Mesh" parent="Ramen" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.829685, 0, 0)
+mesh = SubResource("QuadMesh_uic6i")
+
+[node name="Destination" parent="Ramen" groups=["ramen"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+
 [node name="Pho" parent="." instance=ExtResource("7_2xvg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02936, 4.98166, 8.80397)
 
@@ -251,15 +423,32 @@ mesh = SubResource("QuadMesh_bwxsr")
 [node name="Destination" parent="TexMex" groups=["texmex"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
+[node name="Gym" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.292, 4.98166, 88.6182)
+
+[node name="Mesh" parent="Gym" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.34969, 0, 0)
+mesh = SubResource("QuadMesh_cperj")
+
+[node name="Destination" parent="Gym" groups=["gym"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+
 [node name="Destination2" parent="." groups=["city center"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.6212, 0.588409, 37.0291)
 
-[editable path="GreenOffice"]
+[editable path="Bank"]
 [editable path="GreenApartment"]
-[editable path="RedOffice"]
+[editable path="LawOffice"]
 [editable path="RedApartment"]
-[editable path="BlueOffice"]
+[editable path="TravelOffice"]
 [editable path="BlueApartment"]
 [editable path="Pizza"]
+[editable path="Market"]
+[editable path="bbq"]
+[editable path="Burger"]
+[editable path="Coffee"]
+[editable path="Sushi"]
+[editable path="Ramen"]
 [editable path="Pho"]
 [editable path="TexMex"]
+[editable path="Gym"]

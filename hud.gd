@@ -141,7 +141,16 @@ func deliver(active):
 		lives -= 1
 		create_tween().tween_property(%Lives, "scale", Vector2(1, 1), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	else:
-		delivery_text = "Yes, that's me, you won!"
+		delivery_text = "Yes, that's for me, thanks!"
+		var orig_speed = time_speed
+		lives = 3
+		battery = 100
+		get_node("/root/Main").next_level()
+		create_tween().tween_property(self, "time_speed", orig_speed*200, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+		await get_tree().create_timer(5).timeout
+		create_tween().tween_property(self, "time_speed", orig_speed, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+		delivery_text = "Your next delivery awaits!"
+		delivery_start = 0
 
 func _on_text_edit_focus_entered():
 	focus()

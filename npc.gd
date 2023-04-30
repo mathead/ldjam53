@@ -23,6 +23,7 @@ func _ready():
 	if character["general"]["sex"] == "female":
 		%Boobs.visible = true
 		%Boobs2.visible = true
+	$Timer.wait_time += randf() * 3
 
 func _process(delta):
 	go_to_next_place()
@@ -61,5 +62,8 @@ func go_to_random_place():
 
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and body.velocity.length() > 0.1:
 		hud.deliver(active)
+
+func _on_timer_timeout():
+	%Agent.target_position = get_tree().get_nodes_in_group(last_place)[0].global_position + Vector3(randf() - 0.5, 0, randf() - 0.5) * 15
