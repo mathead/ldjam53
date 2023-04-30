@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5f0fyjyohm0n"]
+[gd_scene load_steps=15 format=3 uid="uid://c5f0fyjyohm0n"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3exsh"]
 [ext_resource type="Texture2D" uid="uid://co4feop703qke" path="res://images/survivor1_stand.png" id="4_topib"]
@@ -11,6 +11,16 @@ albedo_color = Color(0, 0.266667, 0.305882, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oo3le"]
 material = SubResource("StandardMaterial3D_suksk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulelo"]
+albedo_color = Color(0.596078, 0.321569, 0, 1)
+heightmap_scale = 2.89
+subsurf_scatter_strength = 1.0
+subsurf_scatter_skin_mode = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_h84h0"]
+material = SubResource("StandardMaterial3D_ulelo")
+size = Vector3(0.7, 0.7, 0.7)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7n255"]
 albedo_color = Color(0.341176, 0.196078, 0, 1)
@@ -55,6 +65,11 @@ shape = SubResource("CapsuleShape3D_xw0eb")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
 transform = Transform3D(1.37663, 0, 0, 0, 0.558, 0, 0, 0, 0.8, 0, 1.38098, 0)
 mesh = SubResource("CapsuleMesh_oo3le")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43901, -0.66146)
+mesh = SubResource("BoxMesh_h84h0")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Pivot"]

@@ -146,8 +146,10 @@ light_angular_distance = 0.5
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_reverse_cull_face = true
-shadow_blur = 4.131
-directional_shadow_split_1 = 0.5
+shadow_blur = 2.111
+directional_shadow_mode = 0
+directional_shadow_split_2 = 0.19
+directional_shadow_pancake_size = 442.0
 
 [node name="Moon" type="DirectionalLight3D" parent="."]
 unique_name_in_owner = true

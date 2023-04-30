@@ -3,11 +3,14 @@ extends Node3D
 var npc_scene = preload("res://npc.tscn")
 
 func _ready():
+	Constants.CHARACTERS.shuffle()
 	for i in range(5):
 		var npc = npc_scene.instantiate()
 		npc.position = Vector3(randf() * 100, 0, randf() * 100)
+		npc.character = Gpt.jitter_schedule(Constants.CHARACTERS[i])
 		add_child(npc)
 	var npc = npc_scene.instantiate()
+	npc.character = Gpt.jitter_schedule(Constants.CHARACTERS[5])
 	npc.active = true
 	npc.position = Vector3(randf() * 100, 0, randf() * 100)
 	add_child(npc)

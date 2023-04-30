@@ -476,7 +476,7 @@ const CHARACTERS = [
 		 }
 	  ]
    },
-{
+	{
 		"general": {
 			"name": "Mia Chen",
 			"relationship_status": "single",
