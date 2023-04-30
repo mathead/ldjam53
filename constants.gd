@@ -1,6 +1,7 @@
 extends Node
 
 const FOOD_DRINK_SPOTS = ["pizza", "texmex", "pho", "sushi", "burger", "bbq", "ramen", "coffee"]
+const FOOD_SPOTS = ["pizza", "texmex", "pho"]
 const WORK_SPOTS = ["bank", "law office", "travel agency"]
 const HOME_SPOTS = ["green apartment", "red apartment", "blue apartment"]
 const MISC_SPOTS = ["gym", "market"]

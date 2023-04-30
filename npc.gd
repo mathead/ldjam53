@@ -43,6 +43,9 @@ func go_to_next_place():
 		last = s["location"]
 	if last != last_place:
 		last_place = last
+		if len(get_tree().get_nodes_in_group(last)) == 0:
+			print("can't find " + last)
+			return
 		%Agent.target_position = get_tree().get_nodes_in_group(last)[0].global_position
 
 func go_to_random_place():
