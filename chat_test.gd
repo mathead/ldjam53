@@ -84,7 +84,6 @@ func generate_character():
 			"You have a very short attention span.",
 			"You are a football fan with a difficult to understand Irish accent who can only speak in football analogies.",
 			"You drive a red sports car.",
-			"You live in an apartment in the city center.",
 			"You like Starbucks coffee and ham & eggs.",
 			"You like pepperoni pizza.",
 			"You really like cheeseburgers."

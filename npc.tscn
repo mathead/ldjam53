@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ckxehb6c5xtaw"]
+[gd_scene load_steps=21 format=3 uid="uid://ckxehb6c5xtaw"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_47jqd"]
 [ext_resource type="AudioStream" uid="uid://dhaljlw5ylqpg" path="res://Audio/SFX/Footsteps/GWJ52 SFX - Footstep 1.wav" id="1_smaxf"]
@@ -22,6 +22,12 @@ albedo_color = Color(1, 0.819608, 0.627451, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_1pxja"]
 material = SubResource("StandardMaterial3D_legsy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85dug"]
+albedo_color = Color(0, 0, 0.698039, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ta0i0"]
+material = SubResource("StandardMaterial3D_85dug")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cf43"]
 transparency = 1
@@ -86,6 +92,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_skwdu")
 [node name="Head" type="MeshInstance3D" parent="Pivot"]
 transform = Transform3D(-2.71011e-08, -0.62, -2.71011e-08, 0, -2.71011e-08, 0.62, -0.62, 2.71011e-08, 1.18463e-15, 0, 2.15105, 0)
 mesh = SubResource("SphereMesh_1pxja")
+
+[node name="Hat" type="MeshInstance3D" parent="Pivot"]
+unique_name_in_owner = true
+transform = Transform3D(-2.14623e-08, -0.491, -2.14623e-08, 0, -2.14623e-08, 0.491, -0.491, 2.14623e-08, 9.38147e-16, 0, 2.30099, 0)
+mesh = SubResource("SphereMesh_ta0i0")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Pivot"]
 transform = Transform3D(-4.37114e-08, -1.52115, -4.37114e-08, 0, -6.64916e-08, 1, -1, 6.64916e-08, 1.91069e-15, 0, 2.15105, 0)
