@@ -1,8 +1,8 @@
 extends Node
 
-const FOOD_SPOTS = ["pizza", "texmex", "pho"]
-const WORK_SPOTS = ["green office", "red office", "blue office"]
-const HOME_SPOTS = ["green apartment", "red apartment", "blue apartment"]
+const FOOD_DRINK_SPOTS = ["pizza", "texmex", "pho", "sushi", "burger", "bbq", "ramen", "coffee"]
+const WORK_SPOTS = ["green office", "red office", "blue office", "co-working", "library", "tech startup", "law firm", "consulting agency", "marketing company", "advertising firm"]
+const HOME_SPOTS = ["green apartment", "red apartment", "blue apartment", "townhouse", "condo", "cottage", "villa", "penthouse", "mobile home", "tiny house"]
 const MISC_SPOTS = ["city center"]
 const COLORS = {
 	"green": Color.GREEN_YELLOW,

@@ -159,13 +159,19 @@ func set_active_character(npc):
 func ask_gpt(input, time_of_day):
 	# Prefix user input with context
 	var prompt = "(current time is {time_of_day}, you are {action} the {location})\n{input}".format(
-		{"time_of_day": time_of_day, "input": input, "location": active_npc.last_place, "action": "at" if active_npc.distance_to_dest() < 10 else "going to"})
-	print("Asking GPT: ", prompt)
+		{"time_of_day": time_of_day, "location": active_npc.last_place, "action": "at" if active_npc.distance_to_dest() < 10 else "going to"})
+	print("Asking GPT - Context: ", prompt, "Prompt: ", input)
+	var context_message = {
+		"role": 	"system",
+		"content":	prompt
+		}
+	# Append the new message to the current gpt context
+	gptcontext.append(context_message)
 	# Format the user's input as a message
 	var message = {
 		"role": 	"user",
 		"name": 	user_name,
-		"content":	prompt
+		"content":	input
 		}
 	# Append the new message to the current gpt context
 	gptcontext.append(message)
@@ -177,8 +183,9 @@ func ask_gpt(input, time_of_day):
 		"Authorization: Bearer " + api_key,
 		]
 	var query = {
-		"model": 	"gpt-3.5-turbo",
-		"messages":	gptcontext
+		"model": 		"gpt-3.5-turbo",
+		"messages":		gptcontext,
+		"top_p":		0.5
 		}
 	
 	var http_request = HTTPRequest.new()
