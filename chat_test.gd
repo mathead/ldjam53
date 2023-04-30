@@ -75,7 +75,7 @@ func generate_character():
 	res["schedule"] = []
 	for s in character["schedule"]:
 		s = s.duplicate()
-		s["start_time"] += randi_range(-20 * 60, +20 * 60)		
+		s["start_time"] += randi_range(-20 * 60, +20 * 60)
 		res["schedule"].append(s)
 	return res
 

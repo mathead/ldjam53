@@ -59,6 +59,8 @@ collision_mask = 23
 axis_lock_linear_y = true
 mass = 12.63
 physics_material_override = SubResource("PhysicsMaterial_gn045")
+max_contacts_reported = 1
+contact_monitor = true
 lock_rotation = true
 linear_damp = 5.05
 script = ExtResource("1_47jqd")
@@ -121,4 +123,5 @@ mesh = SubResource("CapsuleMesh_8trk3")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_5nx68")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="velocity_computed" from="Agent" to="." method="velocity_computed"]

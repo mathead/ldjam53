@@ -31,7 +31,7 @@ albedo_color = Color(1, 0.819608, 0.627451, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_leubc"]
 material = SubResource("StandardMaterial3D_ku82c")
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_3exsh")
 

@@ -8,6 +8,7 @@ func _ready():
 		npc.position = Vector3(randf() * 100, 0, randf() * 100)
 		add_child(npc)
 	var npc = npc_scene.instantiate()
+	npc.active = true
 	npc.position = Vector3(randf() * 100, 0, randf() * 100)
 	add_child(npc)
 	Gpt.set_active_character(npc)

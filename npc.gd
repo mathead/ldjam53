@@ -3,6 +3,7 @@ extends RigidBody3D
 @onready var character = Gpt.generate_character()
 @onready var hud = get_node("/root/Main/HUD")
 var last_place = ""
+var active = false
 
 func _ready():
 	#%Agent.target_position = get_tree().get_nodes_in_group("starbucks")[0].global_position
@@ -47,3 +48,12 @@ func go_to_next_place():
 func go_to_random_place():
 	var places = get_tree().get_nodes_in_group("destination")
 	%Agent.target_position = places[randi()%len(places)].global_position
+
+
+func _on_body_entered(body):
+	print(body)
+	if body.is_in_group("player"):
+		if active:
+			hud.set_delivery_text("Yes, that's me, you won!")
+		else:
+			hud.set_delivery_text("This package is not for me")

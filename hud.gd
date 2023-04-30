@@ -3,6 +3,8 @@ extends Control
 var focused = false
 var answer = ""
 var answer_start = 0
+var delivery_text = ""
+var delivery_start = 0
 var time = 30000.0
 @export var time_speed = 200
 @onready var BuildingShader = preload("res://Environment/BuildingMaterial.tres")
@@ -62,6 +64,9 @@ func _process(delta):
 	else:
 		time += delta * time_speed * 10
 	%Time.text = "[right]%s[/right]" % format_time()
+	delivery_start += delta
+	%DeliveryText.text = "[center][fade start=" + str(int(round(delivery_start*30))) + " length=10]" + delivery_text + "[/fade][/center]"
+	%DeliveryText.modulate.a = min(0.75, len(delivery_text)/12.0 - delivery_start + 1)
 
 func format_time():
 	var dtime = int(time) % (60*60*24)
@@ -80,3 +85,7 @@ func cool_show(o):
 	o.modulate.a = 0
 	await get_tree().create_timer(5).timeout
 	create_tween().tween_property(o, "modulate", Color.WHITE, 1)
+	
+func set_delivery_text(t):
+	delivery_start = 0
+	delivery_text = t
