@@ -1,7 +1,8 @@
 extends RigidBody3D
 
 func _ready():
-	%Agent.target_position = get_tree().get_nodes_in_group("starbucks")[0].global_position
+	#%Agent.target_position = get_tree().get_nodes_in_group("starbucks")[0].global_position
+	_on_timer_timeout()
 
 func _process(delta):
 	var speed = 300

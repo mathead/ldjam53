@@ -3,7 +3,7 @@ extends Node3D
 var npc_scene = preload("res://npc.tscn")
 
 func _ready():
-	for i in range(100):
+	for i in range(20):
 		var npc = npc_scene.instantiate()
 		npc.position = Vector3(randf() * 100, 0, randf() * 100)
 		add_child(npc)

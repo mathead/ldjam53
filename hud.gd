@@ -3,7 +3,7 @@ extends Control
 var focused = false
 var answer = ""
 var answer_start = 0
-var time = 0#30000.0
+var time = 30000.0
 @export var time_speed = 2000
 
 func _ready():
