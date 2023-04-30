@@ -55,12 +55,8 @@ func _process(delta):
 	if %Answer.modulate.a <= 0:
 		answer = ""
 	var dtime = int(time) % (60*60*24)
-<<<<<<< Updated upstream
-	if dtime > 7 * 60 * 60 and dtime < 21 * 60 * 60:
-=======
 	BuildingShader.set_shader_parameter("dtime", dtime)
-	if dtime > 7 * 60 * 60 and dtime < 23 * 60 * 60:
->>>>>>> Stashed changes
+	if dtime > 7 * 60 * 60 and dtime < 21 * 60 * 60:
 		time += delta * time_speed
 	else:
 		time += delta * time_speed * 10

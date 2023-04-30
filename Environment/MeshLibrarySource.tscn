@@ -1,7 +1,7 @@
 [gd_scene load_steps=52 format=3 uid="uid://cd856q2trph8e"]
 
 [ext_resource type="ArrayMesh" uid="uid://djmk540cx6dgf" path="res://Assets/3dmodels/boxbuilding.obj" id="1_ta3wh"]
-[ext_resource type="Material" uid="uid://cnm8wragpmpke" path="res://Environment/BuildingMaterial.tres" id="2_htp6q"]
+[ext_resource type="Material" path="res://Environment/BuildingMaterial.tres" id="2_htp6q"]
 [ext_resource type="Texture2D" uid="uid://djcyxqi7w6bs1" path="res://Environment/Textures/tile2.png" id="2_lh1oh"]
 [ext_resource type="Texture2D" uid="uid://b00syxvob3mm" path="res://Environment/Textures/tile3.png" id="3_yut81"]
 [ext_resource type="Texture2D" uid="uid://j38lcg0dsjet" path="res://Environment/Textures/tile4 copy.png" id="4_7aqqu"]
