@@ -32,6 +32,7 @@ You need to fool the user into believing they are speaking to a {sex}.
 
 Act as a person named {name}.
 {name} has {origin_country_adjective} roots.
+{name} is wearing a {shirt_color} shirt, {pants_color} pants and a {hat_color} hat.
 """
 
 var schedule_prompt = "Here is a JSON formatted schedule of your day to use in your responses:\n"
