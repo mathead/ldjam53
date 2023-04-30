@@ -1,0 +1,109 @@
+[gd_scene load_steps=36 format=3 uid="uid://mra4l5itttsf"]
+
+[ext_resource type="PackedScene" uid="uid://c3u4ffia42nho" path="res://Environment/Roads/construction_light.tscn" id="1_8jaho"]
+[ext_resource type="PackedScene" uid="uid://dfrnw8eqoxkcb" path="res://Environment/Roads/road_straight.tscn" id="1_cl6g5"]
+[ext_resource type="PackedScene" uid="uid://c4vrplxhjb60v" path="res://Environment/Roads/construction_pylon.tscn" id="2_prm31"]
+[ext_resource type="PackedScene" uid="uid://c3jfie0vy58kh" path="res://Environment/Roads/light_curved.tscn" id="3_66ork"]
+[ext_resource type="PackedScene" uid="uid://b75l5bxhkmg6y" path="res://Environment/Roads/road_curve_90.tscn" id="4_7fqwn"]
+[ext_resource type="PackedScene" uid="uid://bl7yhaw1ulm4q" path="res://Environment/Roads/road_bend.tscn" id="4_nojln"]
+[ext_resource type="PackedScene" uid="uid://bnnex8ih7m6cu" path="res://Environment/Roads/road_curve_270.tscn" id="5_m3ecy"]
+[ext_resource type="PackedScene" uid="uid://c5isl8enbqbpd" path="res://Environment/Roads/road_bend_sidewalk.tscn" id="5_ojoni"]
+[ext_resource type="PackedScene" uid="uid://b6uh62q326ykh" path="res://Environment/Roads/road_bend_square.tscn" id="6_8i30l"]
+[ext_resource type="PackedScene" uid="uid://8swnwxg8gjf8" path="res://Environment/Roads/road_curve_180.tscn" id="6_t3i3d"]
+[ext_resource type="PackedScene" uid="uid://cjdbfe12xdi6i" path="res://Environment/Roads/road_curve_intersection_180.tscn" id="7_3m5wj"]
+[ext_resource type="PackedScene" uid="uid://dj36unen5bmxb" path="res://Environment/Roads/road_curve.tscn" id="7_q7cla"]
+[ext_resource type="PackedScene" uid="uid://bdgebwptlunsf" path="res://Environment/Roads/road_curve_intersection.tscn" id="8_38svn"]
+[ext_resource type="PackedScene" uid="uid://clnlvjdg6u528" path="res://Environment/Roads/road_curve_intersection_90.tscn" id="8_o1sbr"]
+[ext_resource type="PackedScene" uid="uid://dwsllkgark76c" path="res://Environment/Roads/road_curve_pavement.tscn" id="9_4b276"]
+[ext_resource type="PackedScene" uid="uid://cn5lb48g6r1y2" path="res://Environment/Roads/road_bend_270.tscn" id="9_rdswo"]
+[ext_resource type="PackedScene" uid="uid://b78hvdkmhbyxd" path="res://Environment/Roads/road_bend_180.tscn" id="10_e0i1s"]
+[ext_resource type="PackedScene" uid="uid://c0liub1eh3gxv" path="res://Environment/Roads/road_end.tscn" id="10_sfjyt"]
+[ext_resource type="PackedScene" uid="uid://cvvmpq1jtuk6l" path="res://Environment/Roads/road_intersection.tscn" id="11_0yuwe"]
+[ext_resource type="PackedScene" uid="uid://mpko62pqyl7" path="res://Environment/Roads/road_bend_90.tscn" id="11_q8ina"]
+[ext_resource type="PackedScene" uid="uid://c2wosjfqufdpg" path="res://Environment/Roads/road_bend_square_270.tscn" id="12_671ye"]
+[ext_resource type="PackedScene" uid="uid://chi8mbwer851w" path="res://Environment/Roads/road_intersection_line.tscn" id="12_bhben"]
+[ext_resource type="PackedScene" uid="uid://d0yucinglslf6" path="res://Environment/Roads/road_bend_square_180.tscn" id="13_7ghe4"]
+[ext_resource type="PackedScene" uid="uid://bd2hnwqa7m71d" path="res://Environment/Roads/road_intersection_path.tscn" id="13_o78m2"]
+[ext_resource type="PackedScene" uid="uid://bhj3bhau7063i" path="res://Environment/Roads/road_bend_square_90.tscn" id="14_3alyo"]
+[ext_resource type="PackedScene" uid="uid://dj1x315u5sjo7" path="res://Environment/Roads/road_roundabout.tscn" id="14_oyyod"]
+[ext_resource type="PackedScene" uid="uid://cxexjkesro6tf" path="res://Environment/Roads/road_side.tscn" id="15_gtcuu"]
+[ext_resource type="PackedScene" uid="uid://vyn67f8nqvl1" path="res://Environment/Roads/road_intersection_270.tscn" id="15_hjtx2"]
+[ext_resource type="PackedScene" uid="uid://dauo8fo6untdx" path="res://Environment/Roads/road_intersection_180.tscn" id="16_ufjfg"]
+[ext_resource type="PackedScene" uid="uid://dbs51m8koricc" path="res://Environment/Roads/road_side_entry.tscn" id="16_w52ua"]
+[ext_resource type="PackedScene" uid="uid://ks7unj0ixr1i" path="res://Environment/Roads/road_intersection_90.tscn" id="17_dubal"]
+[ext_resource type="PackedScene" uid="uid://cdv5s67r327dc" path="res://Environment/Roads/road_intersection_path_270.tscn" id="18_65ukj"]
+[ext_resource type="PackedScene" uid="uid://m1w5al2vps68" path="res://Environment/Roads/road_intersection_path_180.tscn" id="19_gq546"]
+[ext_resource type="PackedScene" uid="uid://qt8471itcne2" path="res://Environment/Roads/road_intersection_path_90.tscn" id="20_rndwf"]
+[ext_resource type="PackedScene" uid="uid://rw2bnqn3wf27" path="res://Environment/Roads/road_straight_upwards.tscn" id="21_a8soq"]
+
+[node name="MeshLibrarySource2" type="Node3D"]
+
+[node name="construction_light2" parent="." instance=ExtResource("1_8jaho")]
+
+[node name="construction_pylon2" parent="." instance=ExtResource("2_prm31")]
+
+[node name="light_curved2" parent="." instance=ExtResource("3_66ork")]
+
+[node name="road_curve2" parent="." instance=ExtResource("4_7fqwn")]
+
+[node name="road_curve3" parent="." instance=ExtResource("5_m3ecy")]
+
+[node name="road_curve4" parent="." instance=ExtResource("6_t3i3d")]
+
+[node name="road_curveIntersection2" parent="." instance=ExtResource("7_3m5wj")]
+
+[node name="road_curveIntersection3" parent="." instance=ExtResource("8_o1sbr")]
+
+[node name="road_bend2" parent="." instance=ExtResource("9_rdswo")]
+
+[node name="road_bend3" parent="." instance=ExtResource("10_e0i1s")]
+
+[node name="road_bend4" parent="." instance=ExtResource("11_q8ina")]
+
+[node name="road_bendSquare2" parent="." instance=ExtResource("12_671ye")]
+
+[node name="road_bendSquare3" parent="." instance=ExtResource("13_7ghe4")]
+
+[node name="road_bendSquare4" parent="." instance=ExtResource("14_3alyo")]
+
+[node name="road_intersection2" parent="." instance=ExtResource("15_hjtx2")]
+
+[node name="road_intersection3" parent="." instance=ExtResource("16_ufjfg")]
+
+[node name="road_intersection4" parent="." instance=ExtResource("17_dubal")]
+
+[node name="road_intersectionPath2" parent="." instance=ExtResource("18_65ukj")]
+
+[node name="road_intersectionPath3" parent="." instance=ExtResource("19_gq546")]
+
+[node name="road_intersectionPath4" parent="." instance=ExtResource("20_rndwf")]
+
+[node name="road_straight2" parent="." instance=ExtResource("21_a8soq")]
+
+[node name="road_bend5" parent="." instance=ExtResource("4_nojln")]
+
+[node name="road_bendSidewalk2" parent="." instance=ExtResource("5_ojoni")]
+
+[node name="road_bendSquare5" parent="." instance=ExtResource("6_8i30l")]
+
+[node name="road_curve5" parent="." instance=ExtResource("7_q7cla")]
+
+[node name="road_curveIntersection4" parent="." instance=ExtResource("8_38svn")]
+
+[node name="road_curvePavement2" parent="." instance=ExtResource("9_4b276")]
+
+[node name="road_end2" parent="." instance=ExtResource("10_sfjyt")]
+
+[node name="road_intersection5" parent="." instance=ExtResource("11_0yuwe")]
+
+[node name="road_intersectionLine2" parent="." instance=ExtResource("12_bhben")]
+
+[node name="road_intersectionPath5" parent="." instance=ExtResource("13_o78m2")]
+
+[node name="road_roundabout2" parent="." instance=ExtResource("14_oyyod")]
+
+[node name="road_side2" parent="." instance=ExtResource("15_gtcuu")]
+
+[node name="road_sideEntry2" parent="." instance=ExtResource("16_w52ua")]
+
+[node name="road_straight3" parent="." instance=ExtResource("1_cl6g5")]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clnlvjdg6u528"]
+
+[ext_resource type="PackedScene" uid="uid://bdgebwptlunsf" path="res://Environment/Roads/road_curve_intersection.tscn" id="1_1dryb"]
+
+[node name="road_curveIntersection2" instance=ExtResource("1_1dryb")]
+transform = Transform3D(-2.18557e-07, 1.74393e-15, 5, 1.74393e-15, 5, -1.74393e-15, -5, 1.74393e-15, -2.18557e-07, 2.08165e-12, 2.08165e-12, 2.08165e-12)
