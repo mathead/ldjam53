@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=22 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
@@ -56,16 +56,6 @@ albedo_texture = ExtResource("8_iqp5p")
 [sub_resource type="QuadMesh" id="QuadMesh_2rsnd"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ri2it")
-size = Vector2(0.5, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwmv2"]
-cull_mode = 2
-shading_mode = 0
-albedo_texture = ExtResource("8_588xq")
-
-[sub_resource type="QuadMesh" id="QuadMesh_66mcy"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_pwmv2")
 size = Vector2(0.5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rtvx"]
@@ -150,13 +140,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5095, 4.98166, 22.576)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.660488, 0, -20.5938)
 mesh = SubResource("QuadMesh_2rsnd")
 
-[node name="Sign8" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.0824, 4.98166, 0.152394)
-
-[node name="Mesh" parent="Sign8" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.660488, 0, -20.5938)
-mesh = SubResource("QuadMesh_66mcy")
-
 [node name="Sign6" parent="." instance=ExtResource("7_2xvg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, 53.0499)
 
@@ -227,7 +210,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6332, 273.939, 106.336)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3225, 273.933, 106.315)
 
 [editable path="Sign"]
-[editable path="Sign8"]
 [editable path="Sign6"]
 [editable path="Sign2"]
 [editable path="Sign3"]
