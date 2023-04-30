@@ -34,6 +34,8 @@ Act as a person named {name}.
 {name} has {origin_country_adjective} roots.
 """
 
+var schedule_prompt = "Here is a JSON formatted schedule of your day to use in your responses:\n"
+
 # Context of a GPT session formatted as a list of messages. e.g.:
 # [{role: "user", name: "user_name", content:"Who are you?" }, {..} ]
 # Reference: https://platform.openai.com/docs/api-reference/chat/create
