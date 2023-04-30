@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=24 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
@@ -12,7 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://c15h64p60rrba" path="res://Environment/Textures/tex-mex.png" id="9_5fqxs"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ow0er"]
-dof_blur_far_transition = -1.0
+dof_blur_far_distance = 0.03
+dof_blur_far_transition = 0.1
 dof_blur_near_enabled = true
 dof_blur_near_distance = 20.0
 dof_blur_near_transition = 20.0
@@ -34,6 +35,8 @@ ssao_radius = 7.39
 ssao_intensity = 7.91
 ssao_detail = 4.46
 ssao_light_affect = 0.89
+ssil_enabled = true
+ssil_intensity = 2.01
 fog_light_color = Color(0.72549, 0.498039, 0.145098, 1)
 fog_light_energy = 0.83
 fog_sun_scatter = 1.0
@@ -53,6 +56,16 @@ albedo_texture = ExtResource("8_iqp5p")
 [sub_resource type="QuadMesh" id="QuadMesh_2rsnd"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ri2it")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwmv2"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("8_588xq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_66mcy"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_pwmv2")
 size = Vector2(0.5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rtvx"]
@@ -82,7 +95,7 @@ script = ExtResource("1_5i3m8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.8801, 0, 54.9356)
 
 [node name="Camera" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+transform = Transform3D(1, 0, 0, 0, 0.566406, 0.824126, 0, -0.824126, 0.566406, 0, 20.023, 11.145)
 attributes = SubResource("CameraAttributesPractical_ow0er")
 current = true
 
@@ -118,6 +131,7 @@ light_angular_distance = 0.5
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_reverse_cull_face = true
+shadow_blur = 4.131
 
 [node name="Moon" type="DirectionalLight3D" parent="."]
 unique_name_in_owner = true
@@ -126,6 +140,8 @@ light_color = Color(0.560784, 0.815686, 1, 1)
 light_energy = 0.03
 light_angular_distance = 0.5
 shadow_enabled = true
+shadow_opacity = 0.62
+shadow_blur = 4.333
 
 [node name="Sign" parent="." instance=ExtResource("7_2xvg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5095, 4.98166, 22.576)
@@ -133,6 +149,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5095, 4.98166, 22.576)
 [node name="Mesh" parent="Sign" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.660488, 0, -20.5938)
 mesh = SubResource("QuadMesh_2rsnd")
+
+[node name="Sign8" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.0824, 4.98166, 0.152394)
+
+[node name="Mesh" parent="Sign8" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.660488, 0, -20.5938)
+mesh = SubResource("QuadMesh_66mcy")
 
 [node name="Sign6" parent="." instance=ExtResource("7_2xvg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, 53.0499)
@@ -204,6 +227,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6332, 273.939, 106.336)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3225, 273.933, 106.315)
 
 [editable path="Sign"]
+[editable path="Sign8"]
 [editable path="Sign6"]
 [editable path="Sign2"]
 [editable path="Sign3"]
