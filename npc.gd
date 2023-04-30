@@ -7,6 +7,9 @@ var last_place = ""
 func _ready():
 	#%Agent.target_position = get_tree().get_nodes_in_group("starbucks")[0].global_position
 	go_to_next_place()
+	var hat_mat = %Hat.get_active_material(0).duplicate()
+	hat_mat.albedo_color = Constants.COLORS[character["general"]["hat_color"]]  # Color.from_hsv(randf(), 0.8, 1)
+	%Hat.set_surface_override_material(0, hat_mat)
 	var shirt_mat = %Shirt.get_active_material(0).duplicate()
 	shirt_mat.albedo_color = Constants.COLORS[character["general"]["shirt_color"]]  # Color.from_hsv(randf(), 0.8, 1)
 	%Shirt.set_surface_override_material(0, shirt_mat)
@@ -26,6 +29,9 @@ func velocity_computed(vel):
 	if vel.length() > 0.01:
 		apply_central_impulse(vel)
 		$Pivot.look_at(global_position + vel)
+
+func distance_to_dest():
+	return %Agent.distance_to_target()
 
 func go_to_next_place():
 	var dtime = int(hud.time) % (60*60*24)

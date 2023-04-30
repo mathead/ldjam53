@@ -41,6 +41,7 @@ var schedule_prompt = "Here is a JSON formatted schedule of your day to use in y
 # [{role: "user", name: "user_name", content:"Who are you?" }, {..} ]
 # Reference: https://platform.openai.com/docs/api-reference/chat/create
 var gptcontext
+var active_npc
 
 # Define API key and URL for OpenAI GPT-3
 var api_key = Secret.API_KEY
@@ -84,7 +85,6 @@ func generate_character():
 			"You have a very short attention span.",
 			"You are a football fan with a difficult to understand Irish accent who can only speak in football analogies.",
 			"You drive a red sports car.",
-			"You live in an apartment in the city center.",
 			"You like Starbucks coffee and ham & eggs.",
 			"You like pepperoni pizza.",
 			"You really like cheeseburgers."
@@ -115,12 +115,12 @@ func generate_character():
 		},
 		{
 			"activity": "Dinner",
-			"start_time": (5 + randf() * 3) * 60 * 60,
+			"start_time": (17 + randf() * 3) * 60 * 60,
 			"location": rc(Constants.FOOD_SPOTS)
 		},
 		{
 			"activity": "Go home to sleep",
-			"start_time": (8 + randf() * 3) * 60 * 60,
+			"start_time": (20 + randf() * 3) * 60 * 60,
 			"location": rc(Constants.HOME_SPOTS)
 		},
 	]
@@ -128,7 +128,9 @@ func generate_character():
 	
 	return character
 	
-func set_active_character(character):
+func set_active_character(npc):
+	var character = npc.character
+	active_npc = npc
 	var prompt_data = character.duplicate()
 	prompt_data["schedule"] = []
 	for s in character["schedule"]:
@@ -146,8 +148,8 @@ func set_active_character(character):
 	
 func ask_gpt(input, time_of_day):
 	# Prefix user input with context
-	# TODO: add current state (on the way)
-	var prompt = "(current time is {time_of_day})\n{input}".format({"time_of_day": time_of_day, "input": input})
+	var prompt = "(current time is {time_of_day}, you are {action} the {location})\n{input}".format(
+		{"time_of_day": time_of_day, "input": input, "location": active_npc.last_place, "action": "at" if active_npc.distance_to_dest() < 10 else "going to"})
 	print("Asking GPT: ", prompt)
 	# Format the user's input as a message
 	var message = {

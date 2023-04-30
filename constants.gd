@@ -43,7 +43,7 @@ const CHARACTERS = [
 		},
 		{
 			"activity": "Have breakfast",
-			"start_time": 7 * 60 * 60,
+			"start_time": 8 * 60 * 60,
 			"location": "texmex"
 		},
 		{
@@ -99,7 +99,7 @@ const CHARACTERS = [
 		"You speak with a British accent and enjoy tea.",
 		"You wear blue on Mondays.",
 		"You drive a black SUV.",
-		"You live in a green apartment in the city center.",
+		"You live in a green apartment.",
 		"You like fish and chips and shepherd's pie.",
 		"You like Earl Grey tea.",
 		"You really like dark chocolate."
@@ -112,7 +112,7 @@ const CHARACTERS = [
 		},
 		{
 			"activity": "Have breakfast",
-			"start_time": 6 * 60 * 60,
+			"start_time": 7 * 60 * 60,
 			"location": "texmex"
 		},
 		{
@@ -181,7 +181,7 @@ const CHARACTERS = [
 		},
 		{
 			"activity": "Have breakfast",
-			"start_time": 6 * 60 * 60,
+			"start_time": 7 * 60 * 60,
 			"location": "texmex"
 		},
 		{
@@ -250,7 +250,7 @@ const CHARACTERS = [
 		},
 		{
 			"activity": "Have breakfast",
-			"start_time": 7 * 60 * 60,
+			"start_time": 8 * 60 * 60,
 			"location": "texmex"
 		},
 		{
