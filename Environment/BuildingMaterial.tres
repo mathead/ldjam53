@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cnm8wragpmpke"]
+
+[ext_resource type="Shader" path="res://Environment/MeshLibrarySource.gdshader" id="1_oalt7"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_oalt7")
+shader_parameter/dtime = 86400.0
