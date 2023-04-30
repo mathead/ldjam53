@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckxehb6c5xtaw"]
+[gd_scene load_steps=19 format=3 uid="uid://ckxehb6c5xtaw"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_47jqd"]
 [ext_resource type="AudioStream" uid="uid://dhaljlw5ylqpg" path="res://Audio/SFX/Footsteps/GWJ52 SFX - Footstep 1.wav" id="1_smaxf"]
@@ -9,11 +9,19 @@ friction = 0.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xw0eb"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b8mk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tcbg"]
 albedo_color = Color(0, 0.266667, 0.305882, 1)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_oo3le"]
-material = SubResource("StandardMaterial3D_1b8mk")
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7amvq"]
+material = SubResource("StandardMaterial3D_2tcbg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skwdu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_legsy"]
+albedo_color = Color(1, 0.819608, 0.627451, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1pxja"]
+material = SubResource("StandardMaterial3D_legsy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cf43"]
 transparency = 1
@@ -21,6 +29,22 @@ albedo_texture = ExtResource("2_lap6l")
 
 [sub_resource type="QuadMesh" id="QuadMesh_gitab"]
 material = SubResource("StandardMaterial3D_7cf43")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y85st"]
+albedo_color = Color(0.341176, 0.196078, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h50pg"]
+material = SubResource("StandardMaterial3D_y85st")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34k5q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yl5n"]
+albedo_color = Color(0.341176, 0.196078, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8trk3"]
+material = SubResource("StandardMaterial3D_4yl5n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5nx68"]
 
 [node name="NPC" type="RigidBody3D"]
 collision_layer = 2
@@ -42,17 +66,6 @@ mix_target = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01529, 0)
 shape = SubResource("CapsuleShape3D_xw0eb")
 
-[node name="Pivot" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
-transform = Transform3D(1.60776, 0, 0, 0, 1, 0, 0, 0, 0.87601, 0, 1.00645, 0)
-mesh = SubResource("CapsuleMesh_oo3le")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot"]
-transform = Transform3D(-4.37114e-08, -1.52115, -4.37114e-08, 0, -6.64916e-08, 1, -1, 6.64916e-08, 1.91069e-15, 0, 2.15105, 0)
-mesh = SubResource("QuadMesh_gitab")
-
 [node name="Agent" type="NavigationAgent3D" parent="."]
 unique_name_in_owner = true
 path_desired_distance = 2.0
@@ -60,11 +73,45 @@ target_desired_distance = 10.0
 agent_height_offset = 2.0
 avoidance_enabled = true
 radius = 1.0
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Shirt" type="MeshInstance3D" parent="Pivot"]
+unique_name_in_owner = true
+transform = Transform3D(1.37663, 0, 0, 0, 0.558, 0, 0, 0, 0.8, 0, 1.38098, 0)
+mesh = SubResource("CapsuleMesh_7amvq")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_skwdu")
+
+[node name="Head" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(-2.71011e-08, -0.62, -2.71011e-08, 0, -2.71011e-08, 0.62, -0.62, 2.71011e-08, 1.18463e-15, 0, 2.15105, 0)
+mesh = SubResource("SphereMesh_1pxja")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(-4.37114e-08, -1.52115, -4.37114e-08, 0, -6.64916e-08, 1, -1, 6.64916e-08, 1.91069e-15, 0, 2.15105, 0)
+visible = false
+mesh = SubResource("QuadMesh_gitab")
+skeleton = NodePath("")
+
+[node name="Pants" type="Node3D" parent="Pivot"]
+
+[node name="Pants1" type="MeshInstance3D" parent="Pivot/Pants"]
+unique_name_in_owner = true
+transform = Transform3D(0.64582, 0, 0, 0, 0.725531, 0, 0, 0, 0.674277, 0.27, 0.724, 0)
+mesh = SubResource("CapsuleMesh_h50pg")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_34k5q")
+
+[node name="Pants2" type="MeshInstance3D" parent="Pivot/Pants"]
+unique_name_in_owner = true
+transform = Transform3D(0.64582, 0, 0, 0, 0.725531, 0, 0, 0, 0.674277, -0.27, 0.724, 0)
+mesh = SubResource("CapsuleMesh_8trk3")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5nx68")
 
 [connection signal="velocity_computed" from="Agent" to="." method="velocity_computed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

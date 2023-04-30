@@ -1,10 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=27 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
 [ext_resource type="PackedScene" uid="uid://clp74uwlt2jo4" path="res://Environment/GridMap.tscn" id="2_a5ctk"]
 [ext_resource type="PackedScene" uid="uid://ni2hu8y6l2i2" path="res://destination.tscn" id="2_hr2fl"]
-[ext_resource type="PackedScene" uid="uid://ckxehb6c5xtaw" path="res://npc.tscn" id="3_c70eo"]
 [ext_resource type="PackedScene" uid="uid://daid6ny0rl1wm" path="res://hud.tscn" id="4_dlwsg"]
 [ext_resource type="PackedScene" uid="uid://cy6adf2mn1prw" path="res://Environment/Props/Sign.tscn" id="7_2xvg0"]
 [ext_resource type="Texture2D" uid="uid://gg5ml64fjriw" path="res://Environment/Textures/pho.png" id="8_588xq"]
@@ -12,9 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://c15h64p60rrba" path="res://Environment/Textures/tex-mex.png" id="9_5fqxs"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ow0er"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 26.22
 dof_blur_far_transition = -1.0
 dof_blur_near_enabled = true
-dof_blur_near_distance = 20.0
+dof_blur_near_distance = 23.36
 dof_blur_near_transition = 20.0
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_c1083"]
@@ -34,6 +35,8 @@ ssao_radius = 7.39
 ssao_intensity = 7.91
 ssao_detail = 4.46
 ssao_light_affect = 0.89
+ssil_enabled = true
+ssil_intensity = 2.01
 fog_light_color = Color(0.72549, 0.498039, 0.145098, 1)
 fog_light_energy = 0.83
 fog_sun_scatter = 1.0
@@ -45,34 +48,64 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 cell_size = 0.1
 agent_radius = 1.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ri2it"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksoaf"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_istlp"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ksoaf")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1hn1"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_1w8ch"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_t1hn1")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j20ys"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_y2psc"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_j20ys")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wh3tf"]
 cull_mode = 2
 shading_mode = 0
 albedo_texture = ExtResource("8_iqp5p")
 
-[sub_resource type="QuadMesh" id="QuadMesh_2rsnd"]
+[sub_resource type="QuadMesh" id="QuadMesh_xiwrd"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_ri2it")
+material = SubResource("StandardMaterial3D_wh3tf")
 size = Vector2(0.5, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rtvx"]
-cull_mode = 2
-shading_mode = 0
-albedo_texture = ExtResource("9_5fqxs")
-
-[sub_resource type="QuadMesh" id="QuadMesh_uxvgh"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_1rtvx")
-size = Vector2(0.5, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xpu3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mqtk"]
 cull_mode = 2
 shading_mode = 0
 albedo_texture = ExtResource("8_588xq")
 
-[sub_resource type="QuadMesh" id="QuadMesh_o4qvi"]
+[sub_resource type="QuadMesh" id="QuadMesh_dwmta"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_1xpu3")
+material = SubResource("StandardMaterial3D_1mqtk")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7c1v"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("9_5fqxs")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bwxsr"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_l7c1v")
 size = Vector2(0.5, 1)
 
 [node name="Main" type="Node3D"]
@@ -82,7 +115,7 @@ script = ExtResource("1_5i3m8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.8801, 0, 54.9356)
 
 [node name="Camera" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+transform = Transform3D(1, 0, 0, 0, 0.610145, 0.79229, 0, -0.79229, 0.610145, 0, 19.374, 11.927)
 attributes = SubResource("CameraAttributesPractical_ow0er")
 current = true
 
@@ -97,10 +130,6 @@ navigation_mesh = SubResource("NavigationMesh_ittjc")
 
 [node name="Destination" parent="." groups=["starbucks"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12799, 0.131404, 18.4126)
-
-[node name="NPC" parent="." instance=ExtResource("3_c70eo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9577, -0.868592, -27.1948)
-linear_damp = 8.021
 
 [node name="HUD" parent="." instance=ExtResource("4_dlwsg")]
 unique_name_in_owner = true
@@ -118,6 +147,8 @@ light_angular_distance = 0.5
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_reverse_cull_face = true
+shadow_blur = 4.131
+directional_shadow_split_1 = 0.5
 
 [node name="Moon" type="DirectionalLight3D" parent="."]
 unique_name_in_owner = true
@@ -126,87 +157,105 @@ light_color = Color(0.560784, 0.815686, 1, 1)
 light_energy = 0.03
 light_angular_distance = 0.5
 shadow_enabled = true
+shadow_opacity = 0.62
+shadow_blur = 4.333
 
-[node name="Sign" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5095, 4.98166, 22.576)
+[node name="GreenOffice" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, -20.5014)
 
-[node name="Mesh" parent="Sign" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.660488, 0, -20.5938)
-mesh = SubResource("QuadMesh_2rsnd")
+[node name="Mesh" parent="GreenOffice" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_istlp")
 
-[node name="Sign6" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, 53.0499)
+[node name="Destination" parent="GreenOffice" groups=["green office"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="Mesh" parent="Sign6" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.660488, 0, -20.5938)
-mesh = SubResource("QuadMesh_2rsnd")
+[node name="GreenApartment" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8644, 4.98166, -180.387)
 
-[node name="Sign2" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3677, 4.98166, 5.71371)
+[node name="Mesh" parent="GreenApartment" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_istlp")
 
-[node name="Mesh" parent="Sign2" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -42.6636, 0, 67.1479)
-mesh = SubResource("QuadMesh_2rsnd")
+[node name="Destination" parent="GreenApartment" groups=["green apartment"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="Sign3" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3677, 4.98166, 5.71371)
+[node name="RedOffice" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5628, 4.98166, -42.7617)
 
-[node name="Mesh" parent="Sign3" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.606674, 0, 43.846)
-mesh = SubResource("QuadMesh_uxvgh")
+[node name="Mesh" parent="RedOffice" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_1w8ch")
 
-[node name="Sign7" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1337, 4.98166, -37.3222)
+[node name="Destination" parent="RedOffice" groups=["red office"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="Mesh" parent="Sign7" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.606674, 0, 43.846)
-mesh = SubResource("QuadMesh_uxvgh")
+[node name="RedApartment" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5002, 4.98166, -113.059)
 
-[node name="Sign4" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7384, 4.98166, 5.71371)
+[node name="Mesh" parent="RedApartment" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_1w8ch")
 
-[node name="Mesh" parent="Sign4" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -26.9628, 0, 34.6996)
-mesh = SubResource("QuadMesh_o4qvi")
+[node name="Destination" parent="RedApartment" groups=["red office"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="Sign5" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9998, 4.98166, -30.9662)
+[node name="BlueOffice" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2037, 4.98166, -69.4739)
 
-[node name="Mesh" parent="Sign5" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -26.9628, 0, 34.6996)
-mesh = SubResource("QuadMesh_o4qvi")
+[node name="Mesh" parent="BlueOffice" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_y2psc")
 
-[node name="Destination2" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4495, 121.938, 70.927)
+[node name="Destination" parent="BlueOffice" groups=["blue office"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="Destination3" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.2689, 121.983, 70.5062)
+[node name="BlueApartment" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5905, 4.98166, -150.652)
 
-[node name="Destination4" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4838, 122.108, 70.1852)
+[node name="Mesh" parent="BlueApartment" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_y2psc")
 
-[node name="Destination5" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.6081, 122.371, 69.3764)
+[node name="Destination" parent="BlueApartment" groups=["blue apartment"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="Destination6" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4448, 122.477, 69.2828)
+[node name="Pizza" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, 8.80397)
 
-[node name="Destination7" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9628, 274.933, 103.102)
+[node name="Mesh" parent="Pizza" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_xiwrd")
 
-[node name="Destination8" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3925, 275.407, 102.616)
+[node name="Destination" parent="Pizza" groups=["pizza"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="Destination9" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6332, 273.939, 106.336)
+[node name="Pho" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02936, 4.98166, 8.80397)
 
-[node name="Destination10" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3225, 273.933, 106.315)
+[node name="Mesh" parent="Pho" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_dwmta")
 
-[editable path="Sign"]
-[editable path="Sign6"]
-[editable path="Sign2"]
-[editable path="Sign3"]
-[editable path="Sign7"]
-[editable path="Sign4"]
-[editable path="Sign5"]
+[node name="Destination" parent="Pho" groups=["pho"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+
+[node name="TexMex" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7273, 4.98166, 79.3269)
+
+[node name="Mesh" parent="TexMex" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_bwxsr")
+
+[node name="Destination" parent="TexMex" groups=["texmex"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+
+[editable path="GreenOffice"]
+[editable path="GreenApartment"]
+[editable path="RedOffice"]
+[editable path="RedApartment"]
+[editable path="BlueOffice"]
+[editable path="BlueApartment"]
+[editable path="Pizza"]
+[editable path="Pho"]
+[editable path="TexMex"]

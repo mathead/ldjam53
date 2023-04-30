@@ -10,4 +10,6 @@ void fragment() {
   float em = 1.0-round(fract(normalized_time+0.18));
   EMISSION = vec3(em*2.0*color,em*2.0*color,em/2.0*color);
   ALBEDO = vec3(color,color,color)*normalized_time;
+  METALLIC = (1.0-em)*color;
+  ROUGHNESS = 1.0-((1.0-em)*color)+0.1;
 }
