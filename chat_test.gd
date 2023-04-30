@@ -17,7 +17,10 @@ var prompt_data = {
 		"relationship_status": "single",
 		"age": "30",
 		"sex": "male",
-		"origin_country_adjective": "American"
+		"origin_country_adjective": "American",
+		"shirt_color": "green",
+		"pants_color": "brown",
+		"hat_color": "blue"
 	},
 	"character_traits": [
 		"You have a very short attention span.",
@@ -32,9 +35,11 @@ var prompt_data = {
 	"schedule": [
 	{
 		"activity": "Quick morning workout",
-		"time": "6:00am - 6:30am",
+		"start_time": 6 * 60 * 60,
+#		"time": "6:00am - 6:30am",
 		"duration": "30 minutes",
-		"place": "local gym"
+		"location": Constants.FOOD_SPOTS[randi() % len(Constants.FOOD_SPOTS)]
+#		"place": "local gym"
 	},
 	{
 		"activity": "Shower and wear a green t-shirt and white pants",
