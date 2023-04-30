@@ -4,12 +4,13 @@ var focused = false
 var answer = ""
 var answer_start = 0
 var time = 30000.0
-@export var time_speed = 2000
+@export var time_speed = 200
 @onready var BuildingShader = preload("res://Environment/BuildingMaterial.tres")
 
 func _ready():
 	%TextPanel.scale.y = 0
 	%AnswerPanel.scale.y = 0
+	Gpt.connect("gpt_answer", _on_chat_gpt_answer)
 
 func _input(ev):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -39,7 +40,7 @@ func send_query(query):
 #	cool_hide(%TextEdit)
 	%TextEdit.visible = false
 	%Text.text = query
-	$Chat.ask_gpt(query, format_time())
+	Gpt.ask_gpt(query, format_time())
 	set_answer("...")
 	
 func _on_chat_gpt_answer(response):

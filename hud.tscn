@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://daid6ny0rl1wm"]
+[gd_scene load_steps=5 format=3 uid="uid://daid6ny0rl1wm"]
 
 [ext_resource type="FontFile" uid="uid://pekwxkn6c024" path="res://fff-forward.regular.ttf" id="1_eh54r"]
 [ext_resource type="Script" path="res://hud.gd" id="1_n4awq"]
-[ext_resource type="PackedScene" uid="uid://cjhrbgytk4qtx" path="res://chat_test.tscn" id="3_ifaut"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mag2l"]
 
@@ -16,7 +15,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n4awq")
-time_speed = null
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(100, 0)
@@ -118,8 +116,3 @@ theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[right]13:37[/right]"
 fit_content = true
-
-[node name="Chat" parent="." instance=ExtResource("3_ifaut")]
-layout_mode = 1
-
-[connection signal="gpt_answer" from="Chat" to="." method="_on_chat_gpt_answer"]

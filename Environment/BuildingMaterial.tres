@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cnm8wragpmpke"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c1w7k5fbmcqbi"]
 
 [ext_resource type="Shader" path="res://Environment/MeshLibrarySource.gdshader" id="1_oalt7"]
 

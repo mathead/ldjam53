@@ -74,10 +74,6 @@ agent_height_offset = 2.0
 avoidance_enabled = true
 radius = 1.0
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
-
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="Shirt" type="MeshInstance3D" parent="Pivot"]
@@ -114,4 +110,3 @@ skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_5nx68")
 
 [connection signal="velocity_computed" from="Agent" to="." method="velocity_computed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

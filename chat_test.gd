@@ -11,116 +11,12 @@ var GPT3 = 'GPT-3'
 var text = "Who is the biggest prick in Slovakia?"
 var input = text
 
-var prompt_data = {
-	"general": {
-		"name": "John Doe",
-		"relationship_status": "single",
-		"age": "30",
-		"sex": "male",
-		"origin_country_adjective": "American",
-		"shirt_color": "green",
-		"pants_color": "brown",
-		"hat_color": "blue"
-	},
-	"character_traits": [
-		"You have a very short attention span.",
-		"You are a football fan with a difficult to understand Irish accent who can only speak in football analogies.",
-		"You wear a green t-shirt and white pants.",
-		"You drive a red sports car.",
-		"You live in an apartment in the city center.",
-		"You like Starbucks coffee and ham & eggs.",
-		"You like pepperoni pizza.",
-		"You really like cheeseburgers."
-	],
-	"schedule": [
-	{
-		"activity": "Quick morning workout",
-		"start_time": 6 * 60 * 60,
-#		"time": "6:00am - 6:30am",
-		"duration": "30 minutes",
-		"location": Constants.FOOD_SPOTS[randi() % len(Constants.FOOD_SPOTS)]
-#		"place": "local gym"
-	},
-	{
-		"activity": "Shower and wear a green t-shirt and white pants",
-		"time": "6:30am - 7:00am",
-		"duration": "30 minutes",
-		"place": "home"
-	},
-	{
-		"activity": "Breakfast at Starbucks",
-		"time": "7:00am - 7:30am",
-		"duration": "30 minutes",
-		"place": "Starbucks"
-	},
-	{
-		"activity": "Commute to work in a red sports car",
-		"time": "7:30am - 8:00am",
-		"duration": "30 minutes",
-		"place": "car"
-	},
-	{
-		"activity": "Work with short breaks for attention span",
-		"time": "8:00am - 12:30pm",
-		"duration": "4 hours",
-		"place": "office"
-	},
-	{
-		"activity": "Lunch break at a burger restaurant",
-		"time": "12:30pm - 1:30pm",
-		"duration": "1 hour",
-		"place": "burger restaurant"
-	},
-	{
-		"activity": "Work with short breaks for attention span",
-		"time": "1:30pm - 5:30pm",
-		"duration": "4 hours",
-		"place": "office"
-	},
-	{
-		"activity": "Commute home in a red sports car",
-		"time": "5:30pm - 6:00pm",
-		"duration": "30 minutes",
-		"place": "car"
-	},
-	{
-		"activity": "Watch football game",
-		"time": "6:00pm - 8:30pm",
-		"duration": "2.5 hours",
-		"place": "home"
-	},
-	{
-		"activity": "Dinner at a pizza place",
-		"time": "8:30pm - 9:30pm",
-		"duration": "1 hour",
-		"place": "pizza place"
-	},
-	{
-		"activity": "Socialize with friends at a pub",
-		"time": "9:30pm - 11:00pm",
-		"duration": "1.5 hours",
-		"place": "pub"
-	},
-	{
-		"activity": "Wind down and prepare for bed",
-		"time": "11:00pm - 11:30pm",
-		"duration": "30 minutes",
-		"place": "home"
-	},
-	{
-		"activity": "Sleep",
-		"time": "11:30pm - 6:00am",
-		"duration": "6.5 hours",
-		"place": "home"
-	}
-	]
-}
-
 var system_prompt = """
 You are playing a game with the user where you act as a character.
 From this point onwards, you will play the role of a {sex} character. 
 The character you will be playing for this round is {name}.
 and you are a {relationship_status} {age} years old {sex}.
+You are expecting a package delivery.
 Never refer to yourself as an assistant.
 You will ask and answer questions about yourself as this character.
 You must stay in character at all times to win this game.
@@ -141,13 +37,7 @@ Act as a person named {name}.
 # Context of a GPT session formatted as a list of messages. e.g.:
 # [{role: "user", name: "user_name", content:"Who are you?" }, {..} ]
 # Reference: https://platform.openai.com/docs/api-reference/chat/create
-var gptcontext = [
-	{
-		"role": "system",
-		"content": system_prompt.format(prompt_data["general"]) + "\n".join(prompt_data["character_traits"]) + "\n".join(prompt_data["schedule"]),
-	},
-];
-
+var gptcontext
 
 # Define API key and URL for OpenAI GPT-3
 var api_key = Secret.API_KEY
@@ -172,9 +62,88 @@ func _ready():
 	#if username != '':
 	#	chatLog.bbcode_text += '[' + username + ']: '
 	#chatLog.bbcode_text += text
+func rc(l):
+	return l[randi()%len(l)]
 
+func generate_character():
+	var character = {
+		"general": {
+			"name": "John Doe",
+			"relationship_status": rc(["single", "married", "divorced"]),
+			"age": 15 + randi() % 50,
+			"sex": rc(["male", "female"]),
+			"origin_country_adjective": "American",
+			"shirt_color": rc(Constants.COLORS.keys()),
+			"pants_color": rc(Constants.COLORS.keys()),
+			"hat_color": rc(Constants.COLORS.keys())
+		},
+		"character_traits": [
+			"You have a very short attention span.",
+			"You are a football fan with a difficult to understand Irish accent who can only speak in football analogies.",
+			"You drive a red sports car.",
+			"You live in an apartment in the city center.",
+			"You like Starbucks coffee and ham & eggs.",
+			"You like pepperoni pizza.",
+			"You really like cheeseburgers."
+		],
+	}
+	
+	var work = rc(Constants.WORK_SPOTS)
+	var schedule = [
+		{
+			"activity": "Breakfast",
+			"start_time": (6 + randf() * 3) * 60 * 60,
+			"location": rc(Constants.FOOD_SPOTS)
+		},
+		{
+			"activity": "Work",
+			"start_time": (9 + randf()) * 60 * 60,
+			"location": work
+		},
+		{
+			"activity": "Lunch",
+			"start_time": (11 + randf() * 2) * 60 * 60,
+			"location": rc(Constants.FOOD_SPOTS)
+		},
+		{
+			"activity": "Work",
+			"start_time": (13 + randf()) * 60 * 60,
+			"location": work
+		},
+		{
+			"activity": "Dinner",
+			"start_time": (5 + randf() * 3) * 60 * 60,
+			"location": rc(Constants.FOOD_SPOTS)
+		},
+		{
+			"activity": "Go home to sleep",
+			"start_time": (8 + randf() * 3) * 60 * 60,
+			"location": rc(Constants.HOME_SPOTS)
+		},
+	]
+	character["schedule"] = schedule
+	
+	return character
+	
+func set_active_character(character):
+	var prompt_data = character.duplicate()
+	prompt_data["schedule"] = []
+	for s in character["schedule"]:
+		s = s.duplicate()
+		var t = s["start_time"]
+		s["start_time"] = "%02d:%02d" % [floori(t/60.0/60.0), floori((int(t) % (60*60))/60.0)]
+		prompt_data["schedule"].append(s)
+	
+	gptcontext = [
+		{
+			"role": "system",
+			"content": system_prompt.format(prompt_data["general"]) + "\n".join(prompt_data["character_traits"]) + "\n".join(prompt_data["schedule"]),
+		},
+	]
+	
 func ask_gpt(input, time_of_day):
 	# Prefix user input with context
+	# TODO: add current state (on the way)
 	var prompt = "(current time is {time_of_day})\n{input}".format({"time_of_day": time_of_day, "input": input})
 	print("Asking GPT: ", prompt)
 	# Format the user's input as a message
