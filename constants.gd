@@ -91,7 +91,7 @@ const CHARACTERS = [
 			"origin_country_adjective": "British",
 			"shirt_color": "red",
 			"pants_color": "blue",
-			"hat_color": null
+			"hat_color": "none"
 		},
 		"character_traits":
 		[
@@ -126,7 +126,7 @@ const CHARACTERS = [
 				"location": "bank"
 			},
 			{"activity": "Grocery shopping", "start_time": 17 * 60 * 60, "location": "market"},
-			{"activity": "Cooking dinner", "start_time": 18 * 60 * 60, "location": null},
+			{"activity": "Cooking dinner", "start_time": 18 * 60 * 60, "location": "red apartment"},
 			{
 				"activity": "Dinner with friends at sushi restaurant",
 				"start_time": 20 * 60 * 60,
@@ -154,7 +154,7 @@ const CHARACTERS = [
 			"origin_country_adjective": "Korean",
 			"shirt_color": "yellow",
 			"pants_color": "black",
-			"hat_color": null
+			"hat_color": "blue"
 		},
 		"character_traits":
 		[
@@ -171,7 +171,7 @@ const CHARACTERS = [
 				"start_time": 8 * 60 * 60,
 				"location": "blue apartment"
 			},
-			{"activity": "Morning stretch", "start_time": 9 * 60 * 60, "location": null},
+			{"activity": "Morning stretch", "start_time": 9 * 60 * 60, "location": "gym"},
 			{"activity": "Breakfast at cafe", "start_time": 10 * 60 * 60, "location": "coffee"},
 			{
 				"activity": "Go to work at travel agency",
@@ -351,7 +351,7 @@ const CHARACTERS = [
 			"origin_country_adjective": "Swedish",
 			"shirt_color": "blue",
 			"pants_color": "gray",
-			"hat_color": null
+			"hat_color": "red"
 		},
 		"character_traits":
 		[
@@ -427,7 +427,7 @@ const CHARACTERS = [
 			"origin_country_adjective": "Taiwanese",
 			"shirt_color": "yellow",
 			"pants_color": "black",
-			"hat_color": null
+			"hat_color": "black"
 		},
 		"character_traits":
 		[
@@ -565,7 +565,7 @@ const CHARACTERS = [
 			"origin_country_adjective": "Japanese",
 			"shirt_color": "pink",
 			"pants_color": "white",
-			"hat_color": null
+			"hat_color": "none"
 		},
 		"character_traits":
 		[
@@ -761,7 +761,7 @@ const CHARACTERS = [
 			"origin_country_adjective": "German",
 			"shirt_color": "white",
 			"pants_color": "black",
-			"hat_color": null
+			"hat_color": "black"
 		},
 		"character_traits":
 		[
@@ -777,7 +777,7 @@ const CHARACTERS = [
 			{
 				"activity": "Wake up in the morning",
 				"start_time": 7 * 60 * 60,
-				"location": "white apartment"
+				"location": "green apartment"
 			},
 			{
 				"activity": "Experiment in the lab",
@@ -801,16 +801,6 @@ const CHARACTERS = [
 				"location": "green apartment"
 			},
 			{
-				"activity": "Play violin at the symphony",
-				"start_time": 16 * 60 * 60,
-				"location": null
-			},
-			{
-				"activity": "Experiment in the lab",
-				"start_time": 18 * 60 * 60,
-				"location": "green apartment"
-			},
-			{
 				"activity": "Have dinner at Ramen House",
 				"start_time": 20 * 60 * 60,
 				"location": "ramen"
@@ -818,10 +808,10 @@ const CHARACTERS = [
 			{
 				"activity": "Watch a movie at home",
 				"start_time": 21 * 60 * 60,
-				"location": "black apartment"
+				"location": "green apartment"
 			},
-			{"activity": "Read Frankenstein", "start_time": 22 * 60 * 60, "location": null},
-			{"activity": "Go to bed", "start_time": 23 * 60 * 60, "location": null}
+			{"activity": "Read Frankenstein", "start_time": 22 * 60 * 60, "location": "green apartment"},
+			{"activity": "Go to bed", "start_time": 23 * 60 * 60, "location": "green apartment"}
 		]
 	},
 	{
