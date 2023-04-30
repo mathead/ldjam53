@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=18 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ckxehb6c5xtaw" path="res://npc.tscn" id="3_c70eo"]
 [ext_resource type="PackedScene" uid="uid://daid6ny0rl1wm" path="res://hud.tscn" id="4_dlwsg"]
 [ext_resource type="PackedScene" uid="uid://cy6adf2mn1prw" path="res://Environment/Props/Sign.tscn" id="7_2xvg0"]
-[ext_resource type="Texture2D" uid="uid://gg5ml64fjriw" path="res://Environment/Textures/pho.png" id="8_588xq"]
 [ext_resource type="Texture2D" uid="uid://dni4pqgf7ieh2" path="res://Environment/Textures/pizza-sign.png" id="8_iqp5p"]
-[ext_resource type="Texture2D" uid="uid://c15h64p60rrba" path="res://Environment/Textures/tex-mex.png" id="9_5fqxs"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ow0er"]
 dof_blur_far_distance = 0.03
@@ -48,34 +46,24 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 cell_size = 0.1
 agent_radius = 1.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ri2it"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksoaf"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_istlp"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ksoaf")
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wh3tf"]
 cull_mode = 2
 shading_mode = 0
 albedo_texture = ExtResource("8_iqp5p")
 
-[sub_resource type="QuadMesh" id="QuadMesh_2rsnd"]
+[sub_resource type="QuadMesh" id="QuadMesh_xiwrd"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_ri2it")
-size = Vector2(0.5, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rtvx"]
-cull_mode = 2
-shading_mode = 0
-albedo_texture = ExtResource("9_5fqxs")
-
-[sub_resource type="QuadMesh" id="QuadMesh_uxvgh"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_1rtvx")
-size = Vector2(0.5, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xpu3"]
-cull_mode = 2
-shading_mode = 0
-albedo_texture = ExtResource("8_588xq")
-
-[sub_resource type="QuadMesh" id="QuadMesh_o4qvi"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_1xpu3")
+material = SubResource("StandardMaterial3D_wh3tf")
 size = Vector2(0.5, 1)
 
 [node name="Main" type="Node3D"]
@@ -85,7 +73,7 @@ script = ExtResource("1_5i3m8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.8801, 0, 54.9356)
 
 [node name="Camera" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.566406, 0.824126, 0, -0.824126, 0.566406, 0, 20.023, 11.145)
+transform = Transform3D(1, 0, 0, 0, 0.610145, 0.79229, 0, -0.79229, 0.610145, 0, 25.26, 13.953)
 attributes = SubResource("CameraAttributesPractical_ow0er")
 current = true
 
@@ -133,86 +121,25 @@ shadow_enabled = true
 shadow_opacity = 0.62
 shadow_blur = 4.333
 
-[node name="Sign" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5095, 4.98166, 22.576)
+[node name="GreenOffice" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, -20.5014)
 
-[node name="Mesh" parent="Sign" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.660488, 0, -20.5938)
-mesh = SubResource("QuadMesh_2rsnd")
+[node name="Mesh" parent="GreenOffice" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_istlp")
 
-[node name="Sign6" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, 53.0499)
+[node name="Destination" parent="GreenOffice" groups=["green office"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="Mesh" parent="Sign6" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.660488, 0, -20.5938)
-mesh = SubResource("QuadMesh_2rsnd")
+[node name="Pizza" parent="." instance=ExtResource("7_2xvg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, 8.80397)
 
-[node name="Sign2" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3677, 4.98166, 5.71371)
+[node name="Mesh" parent="Pizza" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
+mesh = SubResource("QuadMesh_xiwrd")
 
-[node name="Mesh" parent="Sign2" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -42.6636, 0, 67.1479)
-mesh = SubResource("QuadMesh_2rsnd")
+[node name="Destination" parent="Pizza" groups=["pizza"] instance=ExtResource("2_hr2fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
-[node name="Sign3" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3677, 4.98166, 5.71371)
-
-[node name="Mesh" parent="Sign3" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.606674, 0, 43.846)
-mesh = SubResource("QuadMesh_uxvgh")
-
-[node name="Sign7" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1337, 4.98166, -37.3222)
-
-[node name="Mesh" parent="Sign7" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.606674, 0, 43.846)
-mesh = SubResource("QuadMesh_uxvgh")
-
-[node name="Sign4" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7384, 4.98166, 5.71371)
-
-[node name="Mesh" parent="Sign4" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -26.9628, 0, 34.6996)
-mesh = SubResource("QuadMesh_o4qvi")
-
-[node name="Sign5" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9998, 4.98166, -30.9662)
-
-[node name="Mesh" parent="Sign5" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -26.9628, 0, 34.6996)
-mesh = SubResource("QuadMesh_o4qvi")
-
-[node name="Destination2" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4495, 121.938, 70.927)
-
-[node name="Destination3" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.2689, 121.983, 70.5062)
-
-[node name="Destination4" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4838, 122.108, 70.1852)
-
-[node name="Destination5" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.6081, 122.371, 69.3764)
-
-[node name="Destination6" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4448, 122.477, 69.2828)
-
-[node name="Destination7" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9628, 274.933, 103.102)
-
-[node name="Destination8" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3925, 275.407, 102.616)
-
-[node name="Destination9" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6332, 273.939, 106.336)
-
-[node name="Destination10" parent="." instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3225, 273.933, 106.315)
-
-[editable path="Sign"]
-[editable path="Sign6"]
-[editable path="Sign2"]
-[editable path="Sign3"]
-[editable path="Sign7"]
-[editable path="Sign4"]
-[editable path="Sign5"]
+[editable path="GreenOffice"]
+[editable path="Pizza"]
