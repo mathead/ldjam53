@@ -30,6 +30,9 @@ func velocity_computed(vel):
 		apply_central_impulse(vel)
 		$Pivot.look_at(global_position + vel)
 
+func distance_to_dest():
+	return %Agent.distance_to_target()
+
 func go_to_next_place():
 	var dtime = int(hud.time) % (60*60*24)
 	var last = character["schedule"][-1]["location"]
