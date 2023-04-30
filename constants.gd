@@ -717,7 +717,7 @@ var CHARACTERS = [
 			{
 				"activity": "Wake up in the morning",
 				"start_time": 6 * 60 * 60,
-				"location": "yellow apartment"
+				"location": "red apartment"
 			},
 			{
 				"activity": "Have breakfast at Sushi Bar",
@@ -744,15 +744,15 @@ var CHARACTERS = [
 			{
 				"activity": "Knit a sweater at home",
 				"start_time": 20 * 60 * 60,
-				"location": "purple apartment"
+				"location": "red apartment"
 			},
 			{"activity": "Have dinner at BBQ Joint", "start_time": 21 * 60 * 60, "location": "bbq"},
 			{
 				"activity": "Read The Quibbler",
 				"start_time": 22 * 60 * 60,
-				"location": "yellow apartment"
+				"location": "red apartment"
 			},
-			{"activity": "Go to bed", "start_time": 23 * 60 * 60, "location": "yellow apartment"}
+			{"activity": "Go to bed", "start_time": 23 * 60 * 60, "location": "red apartment"}
 		]
 	},
 	{
