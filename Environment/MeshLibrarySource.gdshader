@@ -21,7 +21,7 @@ void fragment() {
   float y = round(uv_y); 
   float color = x*y;
   //float em = 1.0-round(fract(normalized_time+0.16));
-  float em = round(rand(vec2(BINORMAL.x*3.0+BINORMAL.y*7.0+BINORMAL.z*13.0+round(UV.x*10.5)*7919.0+round(UV.y*6.5)*211.0,0.0)));
+  float em = round(rand(vec2(BINORMAL.x*3.0+BINORMAL.y*7.0+BINORMAL.z*13.0+round(UV.x*10.5)*7919.0+round(UV.y*6.5)*211.0,0.0)))*(1.0-round(fract(normalized_time+0.20)-0.08));
   EMISSION = vec3(em*color,em*color,em/4.0*color);
   ALBEDO = vec3(color,color,color)*normalized_time;
   METALLIC = (1.0-em)*color;

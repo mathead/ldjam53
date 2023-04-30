@@ -140,17 +140,29 @@ func deliver(active):
 		await create_tween().tween_property(%Lives, "scale", Vector2(3, 3), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT).finished
 		lives -= 1
 		create_tween().tween_property(%Lives, "scale", Vector2(1, 1), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+		if lives <= 0:
+			delivery_text = "You took too many delivery attempts! Let's start over."
+			delivery_start = 0
+			get_tree().call_group("npc", "queue_free")
+			var orig_speed = time_speed
+			create_tween().tween_property(self, "time_speed", orig_speed*200, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+			await get_tree().create_timer(5).timeout
+			create_tween().tween_property(self, "time_speed", orig_speed, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+			delivery_text = "Your next delivery awaits!"
+			delivery_start = 0
+			get_node("/root/Main").reset_level()
 	else:
 		delivery_text = "Yes, that's for me, thanks!"
 		var orig_speed = time_speed
 		lives = 3
 		battery = 100
-		get_node("/root/Main").next_level()
+		get_tree().call_group("npc", "queue_free")
 		create_tween().tween_property(self, "time_speed", orig_speed*200, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
 		await get_tree().create_timer(5).timeout
 		create_tween().tween_property(self, "time_speed", orig_speed, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 		delivery_text = "Your next delivery awaits!"
 		delivery_start = 0
+		get_node("/root/Main").next_level()
 
 func _on_text_edit_focus_entered():
 	focus()

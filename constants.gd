@@ -27,18 +27,18 @@ var LEVELS = [
 		"character": "Alice Smith",
 		"num_people": 5,
 	},
-	{
-		"character": "Jackie Chan",
-		"num_people": 7,
-	},
-	{
-		"character": "Dr. Frankenstein",
-		"num_people": 10,
-	},
-	{
-		"character": "Yuki Nakamura",
-		"num_people": 20,
-	}
+#	{
+#		"character": "Jackie Chan",
+#		"num_people": 7,
+#	},
+#	{
+#		"character": "Dr. Frankenstein",
+#		"num_people": 10,
+#	},
+#	{
+#		"character": "Yuki Nakamura",
+#		"num_people": 20,
+#	}
 ]
 
 var CHARACTERS = [
