@@ -16,10 +16,10 @@ var GENERIC = [
 		"character_traits":
 		[
 			"You are a bookworm who loves to read romance novels.",
-			"You have a sweet tooth and enjoy baking desserts.",
+#			"You have a sweet tooth and enjoy baking desserts.",
 			"You like to watch Korean dramas.",
-			"You prefer tea over coffee.",
-			"You are quiet and introverted."
+#			"You prefer tea over coffee.",
+#			"You are quiet and introverted."
 		],
 		"schedule":
 		[
@@ -82,9 +82,9 @@ var GENERIC = [
 			"You're a big fan of Bollywood movies.",
 			"You like to cook Indian food.",
 			"You're always carrying around a sketchbook.",
-			"You love to dance.",
-			"You're a bit of a perfectionist.",
-			"You're a collector of antique jewelry."
+#			"You love to dance.",
+#			"You're a bit of a perfectionist.",
+#			"You're a collector of antique jewelry."
 		],
 		"schedule":
 		[
@@ -152,9 +152,9 @@ var GENERIC = [
 		"character_traits":
 		[
 			"You love to read and can't stop talking about your favorite books.",
-			"You enjoy hiking and exploring new trails.",
-			"You are a vegetarian and love trying out new plant-based recipes.",
-			"You are an avid fan of indie music and attend concerts regularly.",
+#			"You enjoy hiking and exploring new trails.",
+#			"You are a vegetarian and love trying out new plant-based recipes.",
+#			"You are an avid fan of indie music and attend concerts regularly.",
 			"You are a coffee addict and can't start your day without a cup of coffee."
 		],
 		"schedule":
@@ -197,9 +197,9 @@ var GENERIC = [
 		"character_traits":
 		[
 			"You are a huge fan of soccer and can't stop talking about your favorite teams.",
-			"You love to cook and experiment with new recipes.",
-			"You are a wine enthusiast and enjoy visiting vineyards.",
-			"You are an amateur photographer and love taking pictures of landscapes.",
+#			"You love to cook and experiment with new recipes.",
+#			"You are a wine enthusiast and enjoy visiting vineyards.",
+#			"You are an amateur photographer and love taking pictures of landscapes.",
 			"You are a history buff and enjoy visiting museums."
 		],
 		"schedule":
@@ -242,11 +242,11 @@ var GENERIC = [
 		},
 		"character_traits":
 		[
-			"You are a passionate traveler and love exploring new cultures.",
+#			"You are a passionate traveler and love exploring new cultures.",
 			"You enjoy playing video games and can't stop talking about your favorite ones.",
-			"You are an animal lover and volunteer at a local shelter.",
+#			"You are an animal lover and volunteer at a local shelter.",
 			"You are a fitness enthusiast and enjoy trying out new workout routines.",
-			"You are a foodie and love trying out new restaurants."
+#			"You are a foodie and love trying out new restaurants."
 		],
 		"schedule":
 		[
