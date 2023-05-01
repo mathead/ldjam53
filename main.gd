@@ -28,7 +28,7 @@ func reset_level():
 	var cur_level
 	if level >= len(Constants.LEVELS):
 		%HUD.delivery_text = "You won! Thanks for playing! You took " + str(Time.get_ticks_msec() / 1000 / 60) + "m" + str(int(Time.get_ticks_msec() / 1000) % 60) + "s to deliver all " + str(level) + " packages. You can continue playing in infinite mode."
-		%HUD.delivery_start = 0
+		%HUD.delivery_start = 0	
 		cur_level = {
 			"character": Characters.ALL,
 			"num_people": len(Characters.ALL),
