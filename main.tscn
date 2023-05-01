@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=86 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
@@ -45,6 +45,7 @@
 [ext_resource type="AudioStream" uid="uid://3pr1la8gw2yh" path="res://Audio/SFX/ld53_sfx_carhorn_01.wav" id="43_55lxq"]
 [ext_resource type="AudioStream" uid="uid://d1cwlum7rdovo" path="res://Audio/SFX/ld53_sfx_police_01.wav" id="44_wsbll"]
 [ext_resource type="AudioStream" uid="uid://bkjh7dhub1axl" path="res://Audio/SFX/ld53_sfx_police_02.wav" id="45_7fd1e"]
+[ext_resource type="PackedScene" uid="uid://ckvxmdhaxuc00" path="res://start_screen.tscn" id="46_apb2w"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ow0er"]
 dof_blur_far_enabled = true
@@ -291,6 +292,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12799, 0.131404, 18.4126)
 
 [node name="HUD" parent="." instance=ExtResource("4_dlwsg")]
 unique_name_in_owner = true
+visible = false
 
 [node name="SunPivot" type="Marker3D" parent="."]
 unique_name_in_owner = true
@@ -693,7 +695,10 @@ unique_name_in_owner = true
 wait_time = 5.0
 autostart = true
 
+[node name="StartScreen" parent="." instance=ExtResource("46_apb2w")]
+
 [connection signal="timeout" from="FX/FXTimer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="StartScreen/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 
 [editable path="Bank"]
 [editable path="GreenApartment"]
@@ -711,3 +716,4 @@ autostart = true
 [editable path="Pho"]
 [editable path="TexMex"]
 [editable path="Gym"]
+[editable path="StartScreen"]

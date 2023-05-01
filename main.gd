@@ -60,4 +60,8 @@ func reset_level():
 func _on_timer_timeout():
 	$FX.play()
 	%FXTimer.wait_time = 10 + randf() * 5
-	
+
+func _on_start_button_pressed():
+	reset_level()
+	%HUD.visible = true
+	$StartScreen.visible = false
