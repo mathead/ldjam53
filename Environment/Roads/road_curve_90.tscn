@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b75l5bxhkmg6y"]
+
+[ext_resource type="PackedScene" uid="uid://8swnwxg8gjf8" path="res://Environment/Roads/road_curve_180.tscn" id="1_gshau"]
+
+[node name="road_curve2" instance=ExtResource("1_gshau")]
+transform = Transform3D(-2.18557e-07, 1.74393e-15, 5, 1.74393e-15, 5, -1.74393e-15, -5, 1.74393e-15, -2.18557e-07, 2.08165e-12, 2.08165e-12, 2.08165e-12)

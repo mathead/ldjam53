@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqb3pjgbdx5du"]
+
+[ext_resource type="PackedScene" uid="uid://ccl6dxi583m36" path="res://Assets/3dmodels/city_corporate/sign_hospital.glb" id="1_60pii"]
+
+[node name="sign_hospital" instance=ExtResource("1_60pii")]

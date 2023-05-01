@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b78hvdkmhbyxd"]
+
+[ext_resource type="PackedScene" uid="uid://mpko62pqyl7" path="res://Environment/Roads/road_bend_90.tscn" id="1_ox66c"]
+
+[node name="road_bend2" instance=ExtResource("1_ox66c")]
+transform = Transform3D(-5, 1.74393e-15, -4.37114e-07, 1.74393e-15, 5, -1.74393e-15, 4.37114e-07, -1.74393e-15, -5, 2.08165e-12, 2.08165e-12, 2.08165e-12)
