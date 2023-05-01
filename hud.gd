@@ -39,6 +39,8 @@ func _input(ev):
 		focused = false
 	elif Input.is_action_just_pressed("click"):
 		focused = %Phone.get_global_rect().has_point(get_global_mouse_position())
+	else:
+		return
 
 	if focused:
 		focus()
@@ -52,7 +54,7 @@ func focus():
 	%TextEdit.placeholder_text = "Type your question and press [enter] to submit..."
 	%Phone.modulate.a = 0.7
 	time_speed = time_speed_focus
-	
+
 func unfocus():
 	if not visible:
 		return
@@ -66,6 +68,7 @@ func send_query(query):
 #	%TextPanel.visible = true
 #	cool_hide(%TextEdit)
 #	%TextEdit.visible = false
+	$AudioStreamPlayer.play()
 	%Loading.visible = true
 	var question = question_scene.instantiate()
 	question.get_node("PanelContainer/MarginContainer/Text").text = query
@@ -79,6 +82,7 @@ func send_query(query):
 	
 func _on_chat_gpt_answer(response):
 #	%TextPanel.visible = false
+	$AudioStreamPlayer.play()
 	%Loading.visible = false
 
 	var answer = answer_scene.instantiate()
@@ -145,6 +149,7 @@ func deliver(active):
 	delivery_start = 0
 	if not active:
 		delivery_text = "This package is not for me"
+		$IncorrectAudioStreamPlayer.play()
 		%Lives.pivot_offset = %Lives.get_rect().get_center()
 		await create_tween().tween_property(%Lives, "scale", Vector2(3, 3), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT).finished
 		lives -= 1
@@ -163,6 +168,7 @@ func deliver(active):
 			get_node("/root/Main").reset_level()
 	else:
 		delivery_text = "Yes, that's for me, thanks! :)"
+		$CorrectAudioStreamPlayer.play()
 		lives = 3
 		battery = 100
 		get_tree().call_group("npc", "queue_free")

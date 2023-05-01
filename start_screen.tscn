@@ -38,7 +38,9 @@ theme_override_constants/separation = 27
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 clip_contents = false
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = 14
+theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("1_tqqfv")
 theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
@@ -54,6 +56,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_72wsi")
 [node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 clip_contents = false
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("1_tqqfv")
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
@@ -79,6 +83,8 @@ text = "START"
 [node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 clip_contents = false
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("1_tqqfv")
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true

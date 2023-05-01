@@ -1,8 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://daid6ny0rl1wm"]
+[gd_scene load_steps=16 format=3 uid="uid://daid6ny0rl1wm"]
 
 [ext_resource type="FontFile" uid="uid://pekwxkn6c024" path="res://fff-forward.regular.ttf" id="1_eh54r"]
 [ext_resource type="Script" path="res://hud.gd" id="1_n4awq"]
 [ext_resource type="PackedScene" uid="uid://cln68kspbdxqj" path="res://answer.tscn" id="3_3fnch"]
+[ext_resource type="AudioStream" uid="uid://bto2thopvikee" path="res://Audio/SFX/ld53_sfx_phone-message.wav" id="4_xld0b"]
+[ext_resource type="AudioStream" uid="uid://cwp41dygtcyvf" path="res://Audio/SFX/ld53_sfx_correct_delivery.wav" id="5_ytom3"]
+[ext_resource type="AudioStream" uid="uid://deq4ldy6e885n" path="res://Audio/SFX/ld53_sfx_incorrect_delivery.wav" id="6_4y4ck"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4q1ag"]
 bg_color = Color(1, 1, 1, 1)
@@ -249,6 +252,16 @@ theme_override_styles/read_only = SubResource("StyleBoxEmpty_uw1af")
 placeholder_text = "Press [enter] to text the client"
 wrap_mode = 1
 scroll_fit_content_height = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xld0b")
+volume_db = -4.701
+
+[node name="CorrectAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ytom3")
+
+[node name="IncorrectAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4y4ck")
 
 [connection signal="focus_entered" from="MarginContainer/Phone/VBoxContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/TextEdit" to="." method="_on_text_edit_focus_entered"]
 [connection signal="focus_exited" from="MarginContainer/Phone/VBoxContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/TextEdit" to="." method="_on_text_edit_focus_exited"]
