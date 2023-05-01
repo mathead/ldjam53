@@ -31,19 +31,26 @@ var LEVELS = [
 #			"Don't reveal what you're wearing.",
 #			"Most importantly, you always talk very mysteriously, cryptically and in riddles.", # Doesn't work very well
 			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works
+			"You are very cautious of strangers"
 		]
 	},
 	{
 		"character": "Jackie Chan",
 		"num_people": 7,
+		"traits": [
+		]
 	},
 	{
 		"character": "Dr. Frankenstein",
 		"num_people": 10,
+		"traits": [
+		]
 	},
 	{
 		"character": "Yuki Nakamura",
 		"num_people": 20,
+		"traits": [
+		]
 	}
 ]
 
