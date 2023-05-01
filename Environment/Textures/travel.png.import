@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7db1mbmj22g"
-path.s3tc="res://.godot/imported/travel.png-f40906a9966120cbb5e18c11188c5df6.s3tc.ctex"
+path.etc2="res://.godot/imported/travel.png-f40906a9966120cbb5e18c11188c5df6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Environment/Textures/travel.png"
-dest_files=["res://.godot/imported/travel.png-f40906a9966120cbb5e18c11188c5df6.s3tc.ctex"]
+dest_files=["res://.godot/imported/travel.png-f40906a9966120cbb5e18c11188c5df6.etc2.ctex"]
 
 [params]
 

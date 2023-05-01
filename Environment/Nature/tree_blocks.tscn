@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfw6rawotowo1"]
+
+[ext_resource type="PackedScene" uid="uid://clmemobplpuwq" path="res://Assets/3dmodels/nature/tree_blocks.glb" id="1_x8e4q"]
+
+[node name="tree_blocks" instance=ExtResource("1_x8e4q")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

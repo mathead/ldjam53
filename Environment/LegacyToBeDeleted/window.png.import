@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bg4nvyk5mgfu1"
-path.s3tc="res://.godot/imported/window.png-821c36022c82e31eea66f76bc94cd8ce.s3tc.ctex"
+path.etc2="res://.godot/imported/window.png-821c36022c82e31eea66f76bc94cd8ce.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Environment/LegacyToBeDeleted/window.png"
-dest_files=["res://.godot/imported/window.png-821c36022c82e31eea66f76bc94cd8ce.s3tc.ctex"]
+dest_files=["res://.godot/imported/window.png-821c36022c82e31eea66f76bc94cd8ce.etc2.ctex"]
 
 [params]
 
