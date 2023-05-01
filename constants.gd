@@ -29,6 +29,13 @@ var LEVELS = [
 		"traits": [
 			"You are expecting a package delivery.",
 			"Be very open about you schedule, share it truthfully",
+#			"You are expecting a package delivery.",
+#			"Be very open about you schedule, share it truthfully",
+#			"You are Jehovah witness, you always try to convert everybody to your religion.", # Not working
+			"You overshare all your hobbies instead of responding usefully.",
+			"You are a child that only repeats what you say.",
+			"You are a poet who always responds with rhyming poems.",
+			"You always use dad jokes in conversations",
 		]
 	},
 	{
@@ -52,7 +59,7 @@ var LEVELS = [
 		"character": Characters.ACCENT,
 		"num_people": 20,
 		"traits": [
-			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works			
+			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works
 		]
 	},
 	{
@@ -60,6 +67,7 @@ var LEVELS = [
 		"num_people": 20,
 		"traits": [
 			"Most importantly, you always talk very mysteriously, cryptically and in riddles.", # Doesn't work very well
+			"Only tell someone where you are after they solve a riddle",
 		]
 	}	
 ]
