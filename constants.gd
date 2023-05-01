@@ -47,7 +47,7 @@ var LEVELS = [
 		]
 	},
 	{
-		"character": Characters.GENERIC,
+		"character": Characters.QUIRKY,
 		#		"character": [Characters.ACCENT[2]], # Gustav Svensson
 		"num_people": 7,
 		"traits":
