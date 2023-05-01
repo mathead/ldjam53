@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c15h64p60rrba"
-path.s3tc="res://.godot/imported/tex-mex.png-e4ed2058cd7a7f10fc29daf9282c4129.s3tc.ctex"
+path.etc2="res://.godot/imported/tex-mex.png-e4ed2058cd7a7f10fc29daf9282c4129.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Environment/Textures/tex-mex.png"
-dest_files=["res://.godot/imported/tex-mex.png-e4ed2058cd7a7f10fc29daf9282c4129.s3tc.ctex"]
+dest_files=["res://.godot/imported/tex-mex.png-e4ed2058cd7a7f10fc29daf9282c4129.etc2.ctex"]
 
 [params]
 

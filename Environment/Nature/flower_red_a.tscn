@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceu30fjkctqo"]
+
+[ext_resource type="PackedScene" uid="uid://dckdhxpw012ic" path="res://Assets/3dmodels/nature/flower_redA.glb" id="1_yv6wd"]
+
+[node name="flower_redA" instance=ExtResource("1_yv6wd")]

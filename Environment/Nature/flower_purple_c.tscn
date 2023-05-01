@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dre4sja3i8ver"]
+
+[ext_resource type="PackedScene" uid="uid://6bdro37mbcjr" path="res://Assets/3dmodels/nature/flower_purpleC.glb" id="1_etx4p"]
+
+[node name="flower_purpleC" instance=ExtResource("1_etx4p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

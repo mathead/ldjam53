@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhcnkcnlo7n4q"]
+
+[ext_resource type="PackedScene" uid="uid://o6pg8gqa1ydk" path="res://Assets/3dmodels/nature/stone_largeF.glb" id="1_j004l"]
+
+[node name="stone_largeF" instance=ExtResource("1_j004l")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

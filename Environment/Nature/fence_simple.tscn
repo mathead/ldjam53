@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvqiof73ica48"]
+
+[ext_resource type="PackedScene" uid="uid://bawyei06i0ctt" path="res://Assets/3dmodels/nature/fence_simple.glb" id="1_35rll"]
+
+[node name="fence_simple" instance=ExtResource("1_35rll")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
