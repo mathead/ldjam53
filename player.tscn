@@ -5,6 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://dhaljlw5ylqpg" path="res://Audio/SFX/Footsteps/GWJ52 SFX - Footstep 1.wav" id="5_3jte6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xw0eb"]
+custom_solver_bias = 0.74
+radius = 0.58
+height = 2.15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_suksk"]
 albedo_color = Color(0.92549, 0.756863, 0, 1)

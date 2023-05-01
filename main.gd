@@ -28,29 +28,29 @@ func reset_level():
 		%HUD.delivery_text = "You won! Thanks for playing! You took " + str(Time.get_ticks_msec() / 1000 / 60) + "m" + str(int(Time.get_ticks_msec() / 1000) % 60) + "s to deliver all " + str(level) + " packages. You can continue playing in infinite mode."
 		%HUD.delivery_start = 0
 		cur_level = {
-			"character": Constants.CHARACTERS[randi()%len(Constants.CHARACTERS)]["general"]["name"],
-			"num_people": len(Constants.CHARACTERS)
+			"character": Constants.CHARACTERS.ALL[randi()%len(Constants.CHARACTERS.ALL)]["general"]["name"],
+			"num_people": len(Constants.CHARACTERS.ALL)
 		}
 	else:
 		cur_level = Constants.LEVELS[level]
-	Constants.CHARACTERS.shuffle()
+	Characters.ALL.shuffle()
 
-	for char in Constants.CHARACTERS:
-		if char["general"]["name"] == cur_level["character"]:
+	for char in Characters.ALL:
+		if char["general"]["name"] == cur_level["character"]["general"]["name"]:
 			var npc = npc_scene.instantiate()
 			npc.character = Gpt.jitter_schedule(char)
 			npc.character["character_traits"] += cur_level["traits"]
 			npc.active = true
-			npc.position = Vector3(randf() * 100, 0, randf() * 100)
+#			npc.position = Vector3(randf() * 100, 0, randf() * 100)
 			add_child(npc)
 			Gpt.set_active_character(npc)
 			%HUD.new_delivery(npc)
 			break
 			
 	for i in range(cur_level["num_people"]):
-		if Constants.CHARACTERS[i]["general"]["name"] == cur_level["character"]:
+		if Characters.ALL[i]["general"]["name"] == cur_level["character"]["general"]["name"]:
 			continue
 		var npc = npc_scene.instantiate()
-		npc.position = Vector3(randf() * 100, 0, randf() * 100)
-		npc.character = Gpt.jitter_schedule(Constants.CHARACTERS[i])
+		npc.character = Gpt.jitter_schedule(Characters.ALL[i])
+#		npc.position = Vector3(randf() * 100, 0, randf() * 100)
 		add_child(npc)
