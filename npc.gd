@@ -61,10 +61,9 @@ func go_to_random_place():
 	var places = get_tree().get_nodes_in_group("destination")
 	%Agent.target_position = places[randi()%len(places)].global_position
 
-
 func _on_body_entered(body):
 	if body.is_in_group("player") and body.velocity.length() > 0.1:
 		hud.deliver(active)
 
 func _on_timer_timeout():
-	%Agent.target_position = get_tree().get_nodes_in_group(last_place)[0].global_position + Vector3(randf() - 0.5, 0, randf() - 0.5) * 15
+	%Agent.target_position = get_tree().get_nodes_in_group(last_place)[0].global_position + Vector3(randf() - 0.5, 0, randf() - 0.5) * 10
