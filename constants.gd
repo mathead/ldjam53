@@ -26,19 +26,25 @@ var LEVELS = [
 	{
 		"character": "Alice Smith",
 		"num_people": 5,
+		"traits": [
+#			"Be very open about you schedule, share it truthfully",
+#			"Don't reveal what you're wearing.",
+#			"Most importantly, you always talk very mysteriously, cryptically and in riddles.", # Doesn't work very well
+			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works
+		]
 	},
-#	{
-#		"character": "Jackie Chan",
-#		"num_people": 7,
-#	},
-#	{
-#		"character": "Dr. Frankenstein",
-#		"num_people": 10,
-#	},
-#	{
-#		"character": "Yuki Nakamura",
-#		"num_people": 20,
-#	}
+	{
+		"character": "Jackie Chan",
+		"num_people": 7,
+	},
+	{
+		"character": "Dr. Frankenstein",
+		"num_people": 10,
+	},
+	{
+		"character": "Yuki Nakamura",
+		"num_people": 20,
+	}
 ]
 
 var CHARACTERS = [
