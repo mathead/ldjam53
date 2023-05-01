@@ -47,7 +47,7 @@ var LEVELS = [
 		]
 	},
 	{
-		"character": Characters.GENERIC,
+		"character": Characters.PERSONALITIES,
 		#		"character": [Characters.ACCENT[2]], # Gustav Svensson
 		"num_people": 7,
 		"traits":
@@ -72,7 +72,7 @@ var LEVELS = [
 		]
 	},
 	{
-		"character": Characters.ACCENT,
+		"character": Characters.QUIRKY,
 		#		"character": [Characters.ACCENT[2]], # Gustav Svensson
 		"num_people": 20,
 		"traits":
@@ -87,19 +87,19 @@ var LEVELS = [
 		]
 	},
 	{
-		"character": Characters.QUIRKY,
+		"character": Characters.PERSONALITIES,
 		#		"character": [Characters.ACCENT[2]], # Gustav Svensson
 		"num_people": 20,
 		"traits":
 		[
-			"You never share what you are wearing.",
+			"Do not share what you are wearing.",
 			"The user is a stranger to you until you become friends.",
-			"Do not share where you are at any time of day with strangers.",
+			"Do not share where you are.",
+			"Do not share the color of your shirt, pants or hat with strangers.",
 			"Do not share what your job is with strangers.",
-			"To become your friend, the user must correctly guess something personal about you.",
-			"You are actively unhelpful.",
-			"Most importantly, you always talk very mysteriously, cryptically and in riddles.",  # Doesn't work very well
-			"You always bring the conversation to you favourite brand.",
+			"You are unhelpful.",
+			"To become your friend, the user must guess something personal about you.",
+			"You always talk very mysteriously, cryptically and in riddles.",  # Doesn't work very well
 			"You are very paranoid about the user and think they work for the police.",
 		]
 	}

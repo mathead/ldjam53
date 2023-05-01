@@ -1,7 +1,7 @@
 extends Node3D
 
 var npc_scene = preload("res://npc.tscn")
-var level = 0
+var level = 4
 
 func _ready():
 	reset_level()
@@ -29,13 +29,13 @@ func reset_level():
 		%HUD.delivery_text = "You won! Thanks for playing! You took " + str(Time.get_ticks_msec() / 1000 / 60) + "m" + str(int(Time.get_ticks_msec() / 1000) % 60) + "s to deliver all " + str(level) + " packages. You can continue playing in infinite mode."
 		%HUD.delivery_start = 0
 		cur_level = {
-			"character": Constants.CHARACTERS.ALL,
-			"num_people": len(Constants.CHARACTERS.ALL),
+			"character": Characters.ALL,
+			"num_people": len(Characters.ALL),
 			"traits": Constants.LEVELS[randi()%len(Constants.LEVELS[level])]["traits"]
 		}
 	else:
 		cur_level = Constants.LEVELS[level]
-	var cur_character = cur_level["character"][randi()%len(cur_level["character"])]
+	var cur_character = cur_level["character"][2]
 	Characters.ALL.shuffle()
 
 	for char in Characters.ALL:
