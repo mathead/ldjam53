@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://di5oqinvnxa25" path="res://Assets/3dmodels/nature/tree_pineTallC.glb" id="1_80x6w"]
 
 [node name="tree_pineTallC" instance=ExtResource("1_80x6w")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
