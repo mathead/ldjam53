@@ -37,14 +37,22 @@ var LEVELS = [
 #			"You are a passionate poet who always responds with rhyming poems.", # Doesn't work with gpt3 too much
 #			"You always use dad jokes in conversations",
 #			"You never share what clothes you're wearing",
-			"You are expecting a package delivery.",
-			"Be very open about you schedule, share it truthfully",
 #			"You overshare all your hobbies instead of responding usefully.",
 #			"You are a child that only repeats what you say.",
 #			"You are a poet who always responds with rhyming poems.",
 #			"You always use dad jokes in conversations",
+
+#			"You are expecting a package delivery.",
+#			"Be very open about you schedule, share it truthfully",
 		],
 #		"preprompt": "make your answer a short poem", # nice!
+#		"preprompt": "only respond if the question has 'please' in it, otherwise say it's rude"  # not really working
+#		"preprompt": "write your answer in leet speak (1337)",  # not working
+#		"preprompt": "ask the user answer a mathematical problem"  # not working
+#		"preprompt": "answer very mysteriously using code words"  # kinda works
+#		"preprompt": "only talk in metaphors, don't mention specific places or colors"  # nice!
+#		"preprompt": "you are from the past and don't understand modern concepts"  # not working
+#		"preprompt": "answer in a very annoying way" # kinda works
 	},
 	{
 		"character": Characters.QUIRKY,
@@ -91,7 +99,6 @@ var LEVELS = [
 			"To become your friend, the user must correctly guess something personal about you.",
 			"You are actively unhelpful."
 		],
-		"preprompt": ""
 	},
 	{
 		"character": Characters.PERSONALITIES,

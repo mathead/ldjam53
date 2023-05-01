@@ -88,7 +88,7 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("1_tqqfv")
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
-text = "[center]Game by mathead, alter.edo, beretis, volffili, dreyest
+text = "[center]Game by mathead, alter.edo, beretis, volffili, dreyest, nik3daz
 3D Assets from Kenney
 Made for Ludum Dare 53, theme: Delivery[/center]"
 fit_content = true
