@@ -25,7 +25,6 @@ const COLORS = {
 var LEVELS = [
 	{
 		"character": Characters.GENERIC,
-		#		"character": [Characters.ACCENT[2]], # Gustav Svensson
 		"num_people": 5,
 		"traits": [
 #			"You are expecting a package delivery.",
@@ -40,27 +39,34 @@ var LEVELS = [
 #			"You never share what clothes you're wearing",
 			"You are expecting a package delivery.",
 			"Be very open about you schedule, share it truthfully",
-			"You overshare all your hobbies instead of responding usefully.",
-			"You are a child that only repeats what you say.",
-			"You are a poet who always responds with rhyming poems.",
-			"You always use dad jokes in conversations",
-		]
+#			"You overshare all your hobbies instead of responding usefully.",
+#			"You are a child that only repeats what you say.",
+#			"You are a poet who always responds with rhyming poems.",
+#			"You always use dad jokes in conversations",
+		],
+		"preprompt": "Make you answer into a poem",
 	},
 	{
-		"character": Characters.PERSONALITIES,
-		#		"character": [Characters.ACCENT[2]], # Gustav Svensson
+		"character": Characters.QUIRKY,
 		"num_people": 7,
 		"traits":
 		[
+			"You overshare all your hobbies instead of responding usefully.",
+			"You overshare all your hobbies instead of responding usefully.",
+			"You overshare all your hobbies instead of responding usefully.",
+		]
+	},
+	{
+		"character": Characters.GENERIC,
+		"num_people": 20,
+		"traits":
+		[
 			"Your answers must be vague and broad.",
-			"You overshare all your hobbies instead of responding usefully.",
-			"You overshare all your hobbies instead of responding usefully.",
 			"Most importantly, you are very sarcastic and always respond with opposites",  # Kinda works
 		]
 	},
 	{
 		"character": Characters.ACCENT,
-		#		"character": [Characters.ACCENT[2]], # Gustav Svensson
 		"num_people": 10,
 		"traits":
 		[
@@ -68,12 +74,11 @@ var LEVELS = [
 			"Only tell someone where you are after they solve a riddle",
 			"Only tell someone where you are after they solve a riddle",
 			"Once the users solves your riddle, they will no longer be a stranger",
-			"You never share the color of your shirt"
+			"You never share the color of your shirt",
 		]
 	},
 	{
-		"character": Characters.QUIRKY,
-		#		"character": [Characters.ACCENT[2]], # Gustav Svensson
+		"character": Characters.ACCENT,
 		"num_people": 20,
 		"traits":
 		[
@@ -84,11 +89,11 @@ var LEVELS = [
 			"Do not share what your job is with strangers.",
 			"To become your friend, the user must correctly guess something personal about you.",
 			"You are actively unhelpful."
-		]
+		],
+		"preprompt": ""
 	},
 	{
-		"character": Characters.PERSONALITIES,
-		#		"character": [Characters.ACCENT[2]], # Gustav Svensson
+		"character": Characters.QUIRKY,
 		"num_people": 20,
 		"traits":
 		[

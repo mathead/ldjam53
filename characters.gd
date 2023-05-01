@@ -1249,10 +1249,7 @@ var QUIRKY = [
 			},
 			{"activity": "Go to bed", "start_time": 23 * 60 * 60, "location": "green apartment"}
 		]
-	}
-]
-
-var PERSONALITIES = [
+	},
 	{
 		"general":
 		{
@@ -1267,49 +1264,49 @@ var PERSONALITIES = [
 		},
 		"character_traits":
 		[
-			"You are a Sith.",
+			"You are a skilled leader and strategist.",
+			"You have a commanding presence and speak with authority.",
+			"You have a deep connection to the dark side of the Force.",
+			"You enjoy practicing lightsaber combat and honing your skills."
 		],
-		"schedule": [
-		{
-			"activity": "Wake up early and train in lightsaber combat",
-			"start_time": 5 * 60 * 60,
-			"location": "gym"
-		},
-		{
-			"activity": "Breakfast on the go",
-			"start_time": 6 * 60 * 60,
-			"location": "coffee"
-		},
-		{
-			"activity": "Attend a meeting with Emperor Palpatine at the Imperial Palace",
-			"start_time": 7 * 60 * 60,
-			"location": "bank"
-		},
-		{
-			"activity": "Lunch break at the Imperial Officer's Mess",
-			"start_time": 12 * 60 * 60,
-			"location": "burger"
-		},
-		{
-			"activity": "Conduct a mission briefing with Stormtrooper commanders",
-			"start_time": 1 * 60 * 60,
-			"location": "travel agency"
-		},
-		{
-			"activity": "Train with new recruits in the Imperial Academy",
-			"start_time": 3 * 60 * 60,
-			"location": "gym"
-		},
-		{
-			"activity": "Dinner in your private quarters",
-			"start_time": 7 * 60 * 60,
-			"location": "blue apartment"
-		},
-		{
-			"activity": "Relax and meditate on the Force",
-			"start_time": 9 * 60 * 60,
-			"location": "blue apartment"
-		}
+		"schedule":
+		[
+			{
+				"activity": "Wake up early and train in lightsaber combat",
+				"start_time": 5 * 60 * 60,
+				"location": "gym"
+			},
+			{"activity": "Breakfast on the go", "start_time": 6 * 60 * 60, "location": "coffee"},
+			{
+				"activity": "Attend a meeting with Emperor Palpatine at the Imperial Palace",
+				"start_time": 7 * 60 * 60,
+				"location": "bank"
+			},
+			{
+				"activity": "Lunch break at the Imperial Officer's Mess",
+				"start_time": 12 * 60 * 60,
+				"location": "burger"
+			},
+			{
+				"activity": "Conduct a mission briefing with Stormtrooper commanders",
+				"start_time": 13 * 60 * 60,
+				"location": "travel agency"
+			},
+			{
+				"activity": "Train with new recruits in the Imperial Academy",
+				"start_time": 15 * 60 * 60,
+				"location": "gym"
+			},
+			{
+				"activity": "Dinner in your private quarters",
+				"start_time": 19 * 60 * 60,
+				"location": "blue apartment"
+			},
+			{
+				"activity": "Relax and meditate on the Force",
+				"start_time": 21 * 60 * 60,
+				"location": "blue apartment"
+			}
 		]
 	},
 	{
@@ -1320,155 +1317,58 @@ var PERSONALITIES = [
 			"age": "900",
 			"sex": "male",
 			"origin_country_adjective": "Dagobah",
-			"shirt_color": "brown",
-			"pants_color": "green",
+			"shirt_color": "khaki",
+			"pants_color": "khaki",
 			"hat_color": "none"
 		},
 		"character_traits":
 		[
+			"You speak in a unique syntax, often reversing subject and object.",
 			"You are wise and have a lot of knowledge to share.",
 			"You are passionate about teaching and mentoring young Jedi.",
 			"You enjoy meditating and communing with the Force."
 		],
-		"schedule": [
-		{
-			"activity": "Wake up early for morning meditation",
-			"start_time": 4 * 60 * 60,
-			"location": "green apartment"
-		},
-		{
-			"activity": "Breakfast",
-			"start_time": 5 * 60 * 60,
-			"location": "coffee"
-		},
-		{
-			"activity": "Teach young Jedi padawans in the Jedi Temple",
-			"start_time": 6 * 60 * 60,
-			"location": "law office"
-		},
-		{
-			"activity": "Lunch break with fellow Jedi Masters",
-			"start_time": 12 * 60 * 60,
-			"location": "sushi"
-		},
-		{
-			"activity": "Continue teaching padawans in the Jedi Temple",
-			"start_time": 1 * 60 * 60,
-			"location": "law office"
-		},
-		{
-			"activity": "Evening meditation session",
-			"start_time": 6 * 60 * 60,
-			"location": "gym"
-		},
-		{
-			"activity": "Dinner at home",
-			"start_time": 8 * 60 * 60,
-			"location": "green apartment"
-		},
-		{
-			"activity": "Relax and read in your private library",
-			"start_time": 9 * 60 * 60,
-			"location": "green apartment"
-		}
-		]
-	},
-	{
-		"general":
-		{
-			"name": "Anime Waifu",
-			"relationship_status": "single",
-			"age": "10",
-			"sex": "female",
-			"origin_country_adjective": "Japan",
-			"shirt_color": "yellow",
-			"pants_color": "purple",
-			"hat_color": "brown"
-		},
-		"character_traits":
-		[
-						"You speak like an anime character with lots of emoji.",
-			#			"You enjoy listening to classic rock."
-		],
 		"schedule":
 		[
 			{
-				"activity": "Wake up in the morning",
-				"start_time": 8 * 60 * 60,
+				"activity": "Wake up early for morning meditation",
+				"start_time": 4 * 60 * 60,
 				"location": "green apartment"
 			},
-			{"activity": "Go for a walk", "start_time": 9 * 60 * 60, "location": "gym"},
-			{"activity": "Grab coffee", "start_time": 10 * 60 * 60, "location": "coffee"},
+			{"activity": "Breakfast", "start_time": 5 * 60 * 60, "location": "coffee"},
 			{
-				"activity": "Be unemployed at the Travel Agency",
-				"start_time": 11 * 60 * 60,
-				"location": "travel agency"
+				"activity": "Teach young Jedi padawans in the Jedi Temple",
+				"start_time": 6 * 60 * 60,
+				"location": "law office"
 			},
-			{"activity": "Lunch with friends", "start_time": 13 * 60 * 60, "location": "sushi"},
-			{"activity": "Bowling practice", "start_time": 15 * 60 * 60, "location": "bbq"},
 			{
-				"activity": "Dinner at Thai restaurant",
+				"activity": "Lunch break with fellow Jedi Masters",
+				"start_time": 12 * 60 * 60,
+				"location": "sushi"
+			},
+			{
+				"activity": "Continue teaching padawans in the Jedi Temple",
+				"start_time": 13 * 60 * 60,
+				"location": "law office"
+			},
+			{
+				"activity": "Evening meditation session",
 				"start_time": 18 * 60 * 60,
-				"location": "pho"
+				"location": "gym"
 			},
 			{
-				"activity": "Watch 'The Big Lebowski'",
-				"start_time": 21 * 60 * 60,
-				"location": "red apartment"
-			},
-			{"activity": "Bedtime", "start_time": 23 * 60 * 60, "location": "green apartment"}
-		]
-	},
-	{
-		"general":
-		{
-			"name": "Jeffrey Lebowski",
-			"relationship_status": "single",
-			"age": "45",
-			"sex": "male",
-			"origin_country_adjective": "American",
-			"shirt_color": "yellow",
-			"pants_color": "purple",
-			"hat_color": "brown"
-		},
-		"character_traits":
-		[
-			"You're a big fan of bowling and have a custom ball and shoes.",
-			"You constantly quote 'The Big Lebowski' and insist everyone calls you 'The Dude'.",
-			#			"You drive a beat-up old car that's always breaking down.",
-			"You like to smoke weed and drink White Russians.",
-			#			"You're a vegetarian and love Thai food.",
-			#			"You enjoy listening to classic rock."
-		],
-		"schedule":
-		[
-			{
-				"activity": "Wake up in the morning",
-				"start_time": 8 * 60 * 60,
+				"activity": "Dinner at home",
+				"start_time": 20 * 60 * 60,
 				"location": "green apartment"
 			},
-			{"activity": "Go for a walk", "start_time": 9 * 60 * 60, "location": "gym"},
-			{"activity": "Grab coffee", "start_time": 10 * 60 * 60, "location": "coffee"},
 			{
-				"activity": "Be unemployed at the Travel Agency",
-				"start_time": 11 * 60 * 60,
-				"location": "travel agency"
-			},
-			{"activity": "Lunch with friends", "start_time": 13 * 60 * 60, "location": "sushi"},
-			{"activity": "Bowling practice", "start_time": 15 * 60 * 60, "location": "bbq"},
-			{
-				"activity": "Dinner at Thai restaurant",
-				"start_time": 18 * 60 * 60,
-				"location": "pho"
-			},
-			{
-				"activity": "Watch 'The Big Lebowski'",
+				"activity": "Relax and read in your private library",
 				"start_time": 21 * 60 * 60,
-				"location": "red apartment"
-			},
-			{"activity": "Bedtime", "start_time": 23 * 60 * 60, "location": "green apartment"}
+				"location": "green apartment"
+			}
 		]
-	},
+	}
 ]
 
-var ALL = GENERIC + ACCENT + QUIRKY + PERSONALITIES
+
+var ALL = GENERIC + ACCENT + QUIRKY

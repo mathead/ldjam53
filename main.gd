@@ -1,9 +1,10 @@
 extends Node3D
 
 var npc_scene = preload("res://npc.tscn")
-var level = 4
+var level = 0
 
 func _ready():
+	randomize()
 	reset_level()
 	%HUD.time_speed *= 50
 
@@ -35,7 +36,7 @@ func reset_level():
 		}
 	else:
 		cur_level = Constants.LEVELS[level]
-	var cur_character = cur_level["character"][2]
+	var cur_character = cur_level["character"][randi()%len(cur_level["character"])]
 	Characters.ALL.shuffle()
 
 	for char in Characters.ALL:
@@ -70,3 +71,9 @@ func _on_start_button_pressed():
 	$StartScreen.queue_free()
 	%HUD.delivery_text = "Time for your first delivery! Text the recipient to find out where they are and how they look."
 	%HUD.delivery_start = 0
+
+func _input(ev):
+	if %HUD.visible:
+		return
+	if Input.is_action_just_pressed("ui_accept"):
+		_on_start_button_pressed()
