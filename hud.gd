@@ -109,7 +109,7 @@ func _process(delta):
 	var dtime = int(time) % (60*60*24)
 	BuildingShader.set_shader_parameter("dtime", dtime)
 	SmallBuildingShader.set_shader_parameter("dtime", dtime)
-	if dtime > 7 * 60 * 60 and dtime < 21 * 60 * 60:
+	if dtime > 8 * 60 * 60 and dtime < 21 * 60 * 60:
 		time += delta * time_speed
 	else:
 		time += delta * time_speed * 10

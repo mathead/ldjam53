@@ -32,8 +32,6 @@ Act as a person named {name}.
 {name} is wearing a {shirt_color} shirt, {pants_color} pants and a {hat_color} hat.
 """
 
-var schedule_prompt = "Here is a JSON formatted schedule of your day to use in your responses:\n"
-
 # Context of a GPT session formatted as a list of messages. e.g.:
 # [{role: "user", name: "user_name", content:"Who are you?" }, {..} ]
 # Reference: https://platform.openai.com/docs/api-reference/chat/create
@@ -84,9 +82,13 @@ func set_active_character(npc):
 	]
 	
 func ask_gpt(input, time_of_day):
+	var preprompt = ""
+	if "preprompt" in active_npc.character:
+		preprompt = ", " + active_npc.character["preprompt"]
+	
 	# Prefix user input with context
-	var prompt = "(current time is {time_of_day}, you are {action} at {location})".format(
-		{"time_of_day": time_of_day, "location": active_npc.last_place, "action": "at" if active_npc.distance_to_dest() < 10 else "going to"})
+	var prompt = "(current time is {time_of_day}, you are {action} the {location}{preprompt})".format(
+		{"time_of_day": time_of_day, "location": active_npc.last_place, "action": "at" if active_npc.distance_to_dest() < 10 else "going to", "preprompt": preprompt})
 	print("Asking GPT - Context: ", prompt, "Prompt: ", input)
 	var context_message = {
 		"role": 	"system",

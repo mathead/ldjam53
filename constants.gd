@@ -44,7 +44,7 @@ var LEVELS = [
 #			"You are a poet who always responds with rhyming poems.",
 #			"You always use dad jokes in conversations",
 		],
-		"preprompt": "Make you answer into a poem",
+#		"preprompt": "make your answer a short poem", # nice!
 	},
 	{
 		"character": Characters.QUIRKY,
@@ -75,7 +75,8 @@ var LEVELS = [
 			"Only tell someone where you are after they solve a riddle",
 			"Once the users solves your riddle, they will no longer be a stranger",
 			"You never share the color of your shirt",
-		]
+		],
+		"preprompt": "make your answer a riddle",
 	},
 	{
 		"character": Characters.ACCENT,
