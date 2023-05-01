@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh0ql4ek5s0c1"]
-
-[ext_resource type="PackedScene" uid="uid://d1do1rwormt2c" path="res://Environment/CityCorporate/large_building_f.tscn" id="1_wl2nt"]
-
-[node name="large_buildingF_90" instance=ExtResource("1_wl2nt")]
-transform = Transform3D(-2.18557e-07, 1.74393e-15, 5, 1.74393e-15, 5, -1.74393e-15, -5, 1.74393e-15, -2.18557e-07, 0, 0, 0)

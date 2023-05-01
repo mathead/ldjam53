@@ -32,6 +32,7 @@ var LEVELS = [
 #			"Don't reveal what you're wearing.",
 #			"Most importantly, you always talk very mysteriously, cryptically and in riddles.", # Doesn't work very well
 			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works
+			"You are very cautious of strangers"
 		]
 	},
 	{

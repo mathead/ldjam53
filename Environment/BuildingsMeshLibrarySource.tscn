@@ -1,109 +1,37 @@
-[gd_scene load_steps=36 format=3 uid="uid://cg0tk2vxn6b55"]
+[gd_scene load_steps=12 format=3 uid="uid://cg0tk2vxn6b55"]
 
-[ext_resource type="PackedScene" uid="uid://b2e4vkbxsm1w6" path="res://Environment/CityCorporate/large_building_a.tscn" id="1_gbbeu"]
-[ext_resource type="PackedScene" uid="uid://dfqv5onjb0xoe" path="res://Environment/CityCorporate/large_building_a_90.tscn" id="2_0ctvj"]
-[ext_resource type="PackedScene" uid="uid://b4wrb6go0t3y6" path="res://Environment/CityCorporate/large_building_b.tscn" id="3_2cp0a"]
-[ext_resource type="PackedScene" uid="uid://drgrsh03q8sdr" path="res://Environment/CityCorporate/large_building_b_90.tscn" id="4_287u2"]
-[ext_resource type="PackedScene" uid="uid://b01mtl1nfolt2" path="res://Environment/CityCorporate/large_building_b_180.tscn" id="5_nocnj"]
-[ext_resource type="PackedScene" uid="uid://c0ppc0o4mf7ho" path="res://Environment/CityCorporate/large_building_b_270.tscn" id="6_xpyhl"]
-[ext_resource type="PackedScene" uid="uid://b0cxnvvw3rlsl" path="res://Environment/CityCorporate/large_building_c.tscn" id="7_0lasq"]
-[ext_resource type="PackedScene" uid="uid://1y7m7ujp10is" path="res://Environment/CityCorporate/large_building_c_90.tscn" id="8_7niq6"]
-[ext_resource type="PackedScene" uid="uid://bd7r15siqmwk5" path="res://Environment/CityCorporate/large_building_c_180.tscn" id="9_orm78"]
-[ext_resource type="PackedScene" uid="uid://dfjkl7338uy34" path="res://Environment/CityCorporate/large_building_c_270.tscn" id="10_13464"]
-[ext_resource type="PackedScene" uid="uid://ciysnfo306rxh" path="res://Environment/CityCorporate/large_building_d.tscn" id="11_qpaou"]
-[ext_resource type="PackedScene" uid="uid://d1jb2j8rrxcw0" path="res://Environment/CityCorporate/large_building_d_90.tscn" id="12_tx7lg"]
-[ext_resource type="PackedScene" uid="uid://3rsxkbrbxhmt" path="res://Environment/CityCorporate/large_building_d_180.tscn" id="13_ssfwt"]
-[ext_resource type="PackedScene" uid="uid://dumndv3870gkj" path="res://Environment/CityCorporate/large_building_d_270.tscn" id="14_6l8om"]
-[ext_resource type="PackedScene" uid="uid://bjswms5alcgub" path="res://Environment/CityCorporate/large_building_e.tscn" id="15_31etl"]
-[ext_resource type="PackedScene" uid="uid://b8umgydonsa18" path="res://Environment/CityCorporate/large_building_e_90.tscn" id="16_xxxl0"]
-[ext_resource type="PackedScene" uid="uid://bfxd4xtv4hqrr" path="res://Environment/CityCorporate/large_building_e_180.tscn" id="17_wyh0w"]
-[ext_resource type="PackedScene" uid="uid://cugah2xnac7q7" path="res://Environment/CityCorporate/large_building_e_270.tscn" id="18_5h00g"]
-[ext_resource type="PackedScene" uid="uid://d1do1rwormt2c" path="res://Environment/CityCorporate/large_building_f.tscn" id="19_bnvmj"]
-[ext_resource type="PackedScene" uid="uid://bh0ql4ek5s0c1" path="res://Environment/CityCorporate/large_building_f_90.tscn" id="20_41ogg"]
-[ext_resource type="PackedScene" uid="uid://c0icyhkn5ir5b" path="res://Environment/CityCorporate/large_building_f_180.tscn" id="21_ciif8"]
-[ext_resource type="PackedScene" uid="uid://ci62bsglb8q6o" path="res://Environment/CityCorporate/large_building_f_270.tscn" id="22_7qdyr"]
-[ext_resource type="PackedScene" uid="uid://dthltiad2rcr1" path="res://Environment/CityCorporate/skyscraper_a.tscn" id="23_ch34m"]
-[ext_resource type="PackedScene" uid="uid://bplopqd14rjmx" path="res://Environment/CityCorporate/skyscraper_a_90.tscn" id="24_q45oy"]
-[ext_resource type="PackedScene" uid="uid://ccdy5swun1os5" path="res://Environment/CityCorporate/skyscraper_a_180.tscn" id="25_nm6a3"]
-[ext_resource type="PackedScene" uid="uid://dqvyp40jsgsv4" path="res://Environment/CityCorporate/skyscraper_a_270.tscn" id="26_edysb"]
-[ext_resource type="PackedScene" uid="uid://5ujihmpmihmc" path="res://Environment/CityCorporate/skyscraper_b.tscn" id="27_e7ln8"]
-[ext_resource type="PackedScene" uid="uid://dnj1yrnnborlv" path="res://Environment/CityCorporate/small_building_a.tscn" id="28_288yd"]
-[ext_resource type="PackedScene" uid="uid://l4cu7sk7or3r" path="res://Environment/CityCorporate/small_building_a_90.tscn" id="29_2573d"]
-[ext_resource type="PackedScene" uid="uid://bgqrwve0itt7x" path="res://Environment/CityCorporate/small_building_a_180.tscn" id="30_0mlya"]
-[ext_resource type="PackedScene" uid="uid://bpk83nkvaqh15" path="res://Environment/CityCorporate/small_building_a_270.tscn" id="31_umfer"]
-[ext_resource type="PackedScene" uid="uid://fip24pn52pex" path="res://Environment/CityCorporate/small_building_c.tscn" id="32_yx04o"]
-[ext_resource type="PackedScene" uid="uid://b8vkwhuf2t7is" path="res://Environment/CityCorporate/small_building_c_90.tscn" id="33_dmw0a"]
-[ext_resource type="PackedScene" uid="uid://j272tck36hq0" path="res://Environment/CityCorporate/small_building_c_180.tscn" id="34_7mysx"]
-[ext_resource type="PackedScene" uid="uid://o0bmf2grw3sq" path="res://Environment/CityCorporate/small_building_c_270.tscn" id="35_pgwxp"]
+[ext_resource type="PackedScene" uid="uid://b2e4vkbxsm1w6" path="res://Environment/CityCorporate/HighResBuildings/large_building_a.tscn" id="1_erhn2"]
+[ext_resource type="PackedScene" uid="uid://b4wrb6go0t3y6" path="res://Environment/CityCorporate/HighResBuildings/large_building_b.tscn" id="2_lwjut"]
+[ext_resource type="PackedScene" uid="uid://b0cxnvvw3rlsl" path="res://Environment/CityCorporate/HighResBuildings/large_building_c.tscn" id="3_rg06b"]
+[ext_resource type="PackedScene" uid="uid://ciysnfo306rxh" path="res://Environment/CityCorporate/HighResBuildings/large_building_d.tscn" id="4_5dlro"]
+[ext_resource type="PackedScene" uid="uid://bjswms5alcgub" path="res://Environment/CityCorporate/HighResBuildings/large_building_e.tscn" id="5_gumr7"]
+[ext_resource type="PackedScene" uid="uid://d1do1rwormt2c" path="res://Environment/CityCorporate/HighResBuildings/large_building_f.tscn" id="6_db4rl"]
+[ext_resource type="PackedScene" uid="uid://n0rk28prhckx" path="res://Environment/CityCorporate/HighResBuildings/large_building_g.tscn" id="7_k14jy"]
+[ext_resource type="PackedScene" uid="uid://dthltiad2rcr1" path="res://Environment/CityCorporate/HighResBuildings/skyscraper_a.tscn" id="8_5dmou"]
+[ext_resource type="PackedScene" uid="uid://5ujihmpmihmc" path="res://Environment/CityCorporate/HighResBuildings/skyscraper_b.tscn" id="9_4h18r"]
+[ext_resource type="PackedScene" uid="uid://dnj1yrnnborlv" path="res://Environment/CityCorporate/HighResBuildings/small_building_a.tscn" id="10_q4ni8"]
+[ext_resource type="PackedScene" uid="uid://fip24pn52pex" path="res://Environment/CityCorporate/HighResBuildings/small_building_c.tscn" id="11_kt2f8"]
 
 [node name="BuildingsMeshLibrarySource" type="Node3D"]
 
-[node name="large_buildingA2" parent="." instance=ExtResource("1_gbbeu")]
+[node name="large_building_a" parent="." instance=ExtResource("1_erhn2")]
 
-[node name="large_buildingA3" parent="." instance=ExtResource("2_0ctvj")]
+[node name="large_building_b" parent="." instance=ExtResource("2_lwjut")]
 
-[node name="large_buildingB" parent="." instance=ExtResource("3_2cp0a")]
+[node name="large_building_c" parent="." instance=ExtResource("3_rg06b")]
 
-[node name="large_buildingB2" parent="." instance=ExtResource("4_287u2")]
+[node name="large_building_d" parent="." instance=ExtResource("4_5dlro")]
 
-[node name="large_buildingB3" parent="." instance=ExtResource("5_nocnj")]
+[node name="large_building_e" parent="." instance=ExtResource("5_gumr7")]
 
-[node name="large_buildingB2_270" parent="." instance=ExtResource("6_xpyhl")]
+[node name="large_building_f" parent="." instance=ExtResource("6_db4rl")]
 
-[node name="large_buildingC2" parent="." instance=ExtResource("7_0lasq")]
+[node name="large_building_g" parent="." instance=ExtResource("7_k14jy")]
 
-[node name="large_buildingC2_90" parent="." instance=ExtResource("8_7niq6")]
+[node name="skyscraper_a" parent="." instance=ExtResource("8_5dmou")]
 
-[node name="large_buildingC_180" parent="." instance=ExtResource("9_orm78")]
+[node name="skyscraper_b" parent="." instance=ExtResource("9_4h18r")]
 
-[node name="large_buildingC_270" parent="." instance=ExtResource("10_13464")]
+[node name="small_building_a" parent="." instance=ExtResource("10_q4ni8")]
 
-[node name="large_buildingD2" parent="." instance=ExtResource("11_qpaou")]
-
-[node name="large_buildingD_90" parent="." instance=ExtResource("12_tx7lg")]
-
-[node name="large_buildingD_180" parent="." instance=ExtResource("13_ssfwt")]
-
-[node name="large_buildingD_270" parent="." instance=ExtResource("14_6l8om")]
-
-[node name="large_buildingE2" parent="." instance=ExtResource("15_31etl")]
-
-[node name="large_buildingE_90" parent="." instance=ExtResource("16_xxxl0")]
-
-[node name="large_buildingE_180" parent="." instance=ExtResource("17_wyh0w")]
-
-[node name="large_buildingE_270" parent="." instance=ExtResource("18_5h00g")]
-
-[node name="large_buildingF2" parent="." instance=ExtResource("19_bnvmj")]
-
-[node name="large_buildingF_90" parent="." instance=ExtResource("20_41ogg")]
-
-[node name="large_buildingF_180" parent="." instance=ExtResource("21_ciif8")]
-
-[node name="large_buildingF_270" parent="." instance=ExtResource("22_7qdyr")]
-
-[node name="skyscraperA2" parent="." instance=ExtResource("23_ch34m")]
-
-[node name="skyscraperA_90" parent="." instance=ExtResource("24_q45oy")]
-
-[node name="skyscraperA_180" parent="." instance=ExtResource("25_nm6a3")]
-
-[node name="skyscraperA_270" parent="." instance=ExtResource("26_edysb")]
-
-[node name="skyscraperB2" parent="." instance=ExtResource("27_e7ln8")]
-
-[node name="small_buildingA2" parent="." instance=ExtResource("28_288yd")]
-
-[node name="small_buildingA_90" parent="." instance=ExtResource("29_2573d")]
-
-[node name="small_buildingA_180" parent="." instance=ExtResource("30_0mlya")]
-
-[node name="small_buildingA_270" parent="." instance=ExtResource("31_umfer")]
-
-[node name="small_buildingC2" parent="." instance=ExtResource("32_yx04o")]
-
-[node name="small_buildingC_90" parent="." instance=ExtResource("33_dmw0a")]
-
-[node name="small_buildingC_180" parent="." instance=ExtResource("34_7mysx")]
-
-[node name="small_buildingC_270" parent="." instance=ExtResource("35_pgwxp")]
+[node name="small_building_c" parent="." instance=ExtResource("11_kt2f8")]

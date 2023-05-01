@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1qu1kfehiobd"]
+[gd_scene load_steps=6 format=3 uid="uid://cs63xt6lpwbef"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6v4ar"]
 resource_name = "roof"

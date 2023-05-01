@@ -5,7 +5,6 @@ var answer_scene = preload("res://answer.tscn")
 var task_scene = preload("res://task.tscn")
 
 var focused = false
-var answer = ""
 var answer_start = 0
 var delivery_text = ""
 var delivery_start = 0
@@ -13,8 +12,9 @@ var time = 30000.0
 var battery = 100
 var lives = 3
 var deliver_timeout = 0.0
-@export var time_speed = 200
+@export var time_speed = 150
 @onready var BuildingShader = preload("res://Environment/BuildingMaterial.tres")
+@onready var SmallBuildingShader = preload("res://Environment/SmallBuildingMaterial.tres")
 
 func _ready():
 	Gpt.connect("gpt_answer", _on_chat_gpt_answer)
@@ -96,6 +96,7 @@ func _process(delta):
 #		answer = ""
 	var dtime = int(time) % (60*60*24)
 	BuildingShader.set_shader_parameter("dtime", dtime)
+	SmallBuildingShader.set_shader_parameter("dtime", dtime)
 	if dtime > 7 * 60 * 60 and dtime < 21 * 60 * 60:
 		time += delta * time_speed
 	else:
