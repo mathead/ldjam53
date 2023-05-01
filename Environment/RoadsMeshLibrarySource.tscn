@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://mra4l5itttsf"]
+[gd_scene load_steps=36 format=3 uid="uid://c0j7ll7v82vum"]
 
 [ext_resource type="PackedScene" uid="uid://c3u4ffia42nho" path="res://Environment/Roads/construction_light.tscn" id="1_8jaho"]
 [ext_resource type="PackedScene" uid="uid://dfrnw8eqoxkcb" path="res://Environment/Roads/road_straight.tscn" id="1_cl6g5"]
