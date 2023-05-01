@@ -8,6 +8,7 @@ var active = false
 func _ready():
 	#%Agent.target_position = get_tree().get_nodes_in_group("starbucks")[0].global_position
 	go_to_next_place()
+	global_position = %Agent.target_position + Vector3(randf() - 0.5, 0, randf() - 0.5)
 	var hat_mat = %Hat.get_active_material(0).duplicate()
 	hat_mat.albedo_color = Constants.COLORS[character["general"]["hat_color"]]  # Color.from_hsv(randf(), 0.8, 1)
 	%Hat.set_surface_override_material(0, hat_mat)

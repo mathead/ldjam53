@@ -41,7 +41,7 @@ func reset_level():
 			npc.character = Gpt.jitter_schedule(char)
 			npc.character["character_traits"] += cur_level["traits"]
 			npc.active = true
-			npc.position = Vector3(randf() * 100, 0, randf() * 100)
+#			npc.position = Vector3(randf() * 100, 0, randf() * 100)
 			add_child(npc)
 			Gpt.set_active_character(npc)
 			%HUD.new_delivery(npc)
@@ -51,6 +51,6 @@ func reset_level():
 		if Constants.CHARACTERS[i]["general"]["name"] == cur_level["character"]:
 			continue
 		var npc = npc_scene.instantiate()
-		npc.position = Vector3(randf() * 100, 0, randf() * 100)
+#		npc.position = Vector3(randf() * 100, 0, randf() * 100)
 		npc.character = Gpt.jitter_schedule(Constants.CHARACTERS[i])
 		add_child(npc)

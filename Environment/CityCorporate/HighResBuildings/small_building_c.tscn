@@ -115,7 +115,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j2j5p")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t32wq"]
-size = Vector3(0.8, 1.5, 0.8)
+size = Vector3(1.04316, 1.5, 1.15144)
 
 [node name="small_building_c" type="MeshInstance3D"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
