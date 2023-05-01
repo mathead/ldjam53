@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=56 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
@@ -240,7 +240,7 @@ navigation_mesh = SubResource("NavigationMesh_ittjc")
 [node name="Node3D" parent="NavigationRegion3D" instance=ExtResource("3_2o56n")]
 
 [node name="Node3D" parent="NavigationRegion3D" instance=ExtResource("4_h2q4t")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999999, 0, -0.999999, 0, -4.37114e-08, 28.8432, 0, -9.51809)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27, 0, 0)
 
 [node name="Destination" parent="." groups=["starbucks"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12799, 0.131404, 18.4126)
@@ -276,7 +276,7 @@ shadow_opacity = 0.62
 shadow_blur = 4.333
 
 [node name="Bank" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, -20.5014)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 11.982, -24.4)
 
 [node name="Mesh" parent="Bank" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
@@ -286,7 +286,7 @@ mesh = SubResource("QuadMesh_istlp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
 [node name="GreenApartment" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8644, 4.98166, -180.387)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8644, 4.98166, -19.387)
 
 [node name="Mesh" parent="GreenApartment" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
@@ -296,7 +296,7 @@ mesh = SubResource("QuadMesh_wstwt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
 [node name="LawOffice" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5628, 4.98166, -42.7617)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5628, 4.98166, 36.2383)
 
 [node name="Mesh" parent="LawOffice" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
@@ -316,7 +316,7 @@ mesh = SubResource("QuadMesh_y34fv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
 [node name="TravelOffice" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2037, 4.98166, -69.4739)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2037, 4.98166, -0.4739)
 
 [node name="Mesh" parent="TravelOffice" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
@@ -326,7 +326,7 @@ mesh = SubResource("QuadMesh_exk10")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
 [node name="BlueApartment" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5905, 4.98166, -150.652)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5905, 4.98166, 46.348)
 
 [node name="Mesh" parent="BlueApartment" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
@@ -336,7 +336,7 @@ mesh = SubResource("QuadMesh_y2psc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
 [node name="Pizza" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5622, 4.98166, 8.80397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.562, 3.982, -10.49)
 
 [node name="Mesh" parent="Pizza" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
@@ -346,7 +346,7 @@ mesh = SubResource("QuadMesh_xiwrd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
 
 [node name="Market" parent="." instance=ExtResource("7_2xvg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3931, 4.98166, 30.9918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 4.982, 20.6)
 
 [node name="Mesh" parent="Market" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
