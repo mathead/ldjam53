@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drsgjhjswwvkn"
-path.etc2="res://.godot/imported/law.png-af89fb823070757e1b8d783eb6f7cddb.etc2.ctex"
+path.s3tc="res://.godot/imported/law.png-af89fb823070757e1b8d783eb6f7cddb.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Environment/Textures/law.png"
-dest_files=["res://.godot/imported/law.png-af89fb823070757e1b8d783eb6f7cddb.etc2.ctex"]
+dest_files=["res://.godot/imported/law.png-af89fb823070757e1b8d783eb6f7cddb.s3tc.ctex"]
 
 [params]
 
