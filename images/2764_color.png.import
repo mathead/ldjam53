@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7db1mbmj22g"
-path.s3tc="res://.godot/imported/travel.png-f40906a9966120cbb5e18c11188c5df6.s3tc.ctex"
+uid="uid://tbfqajm0x0e5"
+path="res://.godot/imported/2764_color.png-e01630b2700bcc4b2ecfc471730093b0.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Textures/travel.png"
-dest_files=["res://.godot/imported/travel.png-f40906a9966120cbb5e18c11188c5df6.s3tc.ctex"]
+source_file="res://images/2764_color.png"
+dest_files=["res://.godot/imported/2764_color.png-e01630b2700bcc4b2ecfc471730093b0.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

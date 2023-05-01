@@ -2,6 +2,7 @@ extends Control
 
 var question_scene = preload("res://question.tscn")
 var answer_scene = preload("res://answer.tscn")
+var task_scene = preload("res://task.tscn")
 
 var focused = false
 var answer = ""
@@ -9,12 +10,13 @@ var answer_start = 0
 var delivery_text = ""
 var delivery_start = 0
 var time = 30000.0
+var battery = 100
+var lives = 3
+var deliver_timeout = 0.0
 @export var time_speed = 200
 @onready var BuildingShader = preload("res://Environment/BuildingMaterial.tres")
 
 func _ready():
-	%TextPanel.scale.y = 0
-	%AnswerPanel.scale.y = 0
 	Gpt.connect("gpt_answer", _on_chat_gpt_answer)
 
 func _input(ev):
@@ -41,7 +43,6 @@ func _input(ev):
 	else:
 		unfocus()
 
-
 func focus():
 	%TextEdit.grab_focus()
 	%TextEdit.placeholder_text = "Type your question and press [enter] to submit..."
@@ -49,7 +50,7 @@ func focus():
 	
 func unfocus():
 	%TextEdit.release_focus()
-	%TextEdit.placeholder_text = "Press [enter] to call the client"
+	%TextEdit.placeholder_text = "Press [enter] to text the client"
 	%Phone.modulate.a = 0.5
 
 func send_query(query):
@@ -65,6 +66,7 @@ func send_query(query):
 	Gpt.ask_gpt(query, format_time())
 	await get_tree().process_frame
 	%ScrollContainer.scroll_vertical = %ScrollContainer.get_v_scroll_bar().max_value
+	battery -= 5
 #	%Text.text = query
 	
 func _on_chat_gpt_answer(response):
@@ -77,6 +79,13 @@ func _on_chat_gpt_answer(response):
 	await get_tree().process_frame
 	%ScrollContainer.scroll_vertical = %ScrollContainer.get_v_scroll_bar().max_value
 #	cool_show(%TextEdit)
+
+func new_delivery(npc):
+	var task = task_scene.instantiate()
+	task.get_node("MarginContainer/PanelContainer/MarginContainer/Text").text = "[center]Your next delivery is for " + npc.character["general"]["name"] + "[/center]"
+	%Chats.add_child(task)
+	await get_tree().process_frame
+	%ScrollContainer.scroll_vertical = %ScrollContainer.get_v_scroll_bar().max_value
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -95,6 +104,17 @@ func _process(delta):
 	delivery_start += delta
 	%DeliveryText.text = "[center][fade start=" + str(int(round(delivery_start*30))) + " length=10]" + delivery_text + "[/fade][/center]"
 	%DeliveryText.modulate.a = min(0.75, len(delivery_text)/12.0 - delivery_start + 1)
+	battery -= delta / 10
+	%Battery.value = battery
+	var lives_text = ""
+	for i in range(lives):
+		lives_text += "❤"
+	%Lives.text = "[center]" + lives_text + "[/center]"
+	deliver_timeout -= delta
+	if battery <= 0:
+		focused = false
+		%TextEdit.release_focus()
+		%TextEdit.placeholder_text = "You ran out of battery, no more texts :("
 
 func format_time():
 	var dtime = int(time) % (60*60*24)
@@ -108,12 +128,41 @@ func cool_show(o):
 	o.modulate.a = 0
 	await get_tree().create_timer(5).timeout
 	create_tween().tween_property(o, "modulate", Color.WHITE, 1)
-	
-func set_delivery_text(t):
+
+func deliver(active):
+	if deliver_timeout > 0:
+		return
+	deliver_timeout = 3
 	delivery_start = 0
-	delivery_text = t
-
-
+	if not active:
+		delivery_text = "This package is not for me"
+		%Lives.pivot_offset = %Lives.get_rect().get_center()
+		await create_tween().tween_property(%Lives, "scale", Vector2(3, 3), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT).finished
+		lives -= 1
+		create_tween().tween_property(%Lives, "scale", Vector2(1, 1), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+		if lives <= 0:
+			delivery_text = "You took too many delivery attempts! Let's start over."
+			delivery_start = 0
+			get_tree().call_group("npc", "queue_free")
+			var orig_speed = time_speed
+			create_tween().tween_property(self, "time_speed", orig_speed*200, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+			await get_tree().create_timer(5).timeout
+			create_tween().tween_property(self, "time_speed", orig_speed, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+			delivery_text = "Your next delivery awaits!"
+			delivery_start = 0
+			get_node("/root/Main").reset_level()
+	else:
+		delivery_text = "Yes, that's for me, thanks!"
+		var orig_speed = time_speed
+		lives = 3
+		battery = 100
+		get_tree().call_group("npc", "queue_free")
+		create_tween().tween_property(self, "time_speed", orig_speed*200, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+		await get_tree().create_timer(5).timeout
+		create_tween().tween_property(self, "time_speed", orig_speed, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+		delivery_text = "Your next delivery awaits!"
+		delivery_start = 0
+		get_node("/root/Main").next_level()
 
 func _on_text_edit_focus_entered():
 	focus()

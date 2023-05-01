@@ -1,20 +1,10 @@
 extends Node3D
 
 var npc_scene = preload("res://npc.tscn")
+var level = 0
 
 func _ready():
-	Constants.CHARACTERS.shuffle()
-	for i in range(5):
-		var npc = npc_scene.instantiate()
-		npc.position = Vector3(randf() * 100, 0, randf() * 100)
-		npc.character = Gpt.jitter_schedule(Constants.CHARACTERS[i])
-		add_child(npc)
-	var npc = npc_scene.instantiate()
-	npc.character = Gpt.jitter_schedule(Constants.CHARACTERS[5])
-	npc.active = true
-	npc.position = Vector3(randf() * 100, 0, randf() * 100)
-	add_child(npc)
-	Gpt.set_active_character(npc)
+	reset_level()
 
 func _process(delta):
 	%SunPivot.rotation.z = (%HUD.time / (60*60*24) + 0.4) * 2 * PI
@@ -26,3 +16,40 @@ func _process(delta):
 	%Sun.light_color.g = 1 - r / 1.5
 	var sunheight = pow(sin(%SunPivot.rotation.z + PI/1.9), 1/3.)
 	%Sun.light_energy = max(0.001,sunheight * 2)
+
+func next_level():
+	level += 1
+	reset_level()
+	
+func reset_level():
+	get_tree().call_group("npc", "queue_free")
+	var cur_level
+	if level >= len(Constants.LEVELS):
+		%HUD.delivery_text = "You won! Thanks for playing! You took " + str(Time.get_ticks_msec() / 1000 / 60) + "m" + str(int(Time.get_ticks_msec() / 1000) % 60) + "s to deliver all " + str(level) + " packages. You can continue playing in infinite mode."
+		%HUD.delivery_start = 0
+		cur_level = {
+			"character": Constants.CHARACTERS[randi()%len(Constants.CHARACTERS)]["general"]["name"],
+			"num_people": len(Constants.CHARACTERS)
+		}
+	else:
+		cur_level = Constants.LEVELS[level]
+	Constants.CHARACTERS.shuffle()
+
+	for char in Constants.CHARACTERS:
+		if char["general"]["name"] == cur_level["character"]:
+			var npc = npc_scene.instantiate()
+			npc.character = Gpt.jitter_schedule(char)
+			npc.active = true
+			npc.position = Vector3(randf() * 100, 0, randf() * 100)
+			add_child(npc)
+			Gpt.set_active_character(npc)
+			%HUD.new_delivery(npc)
+			break
+			
+	for i in range(cur_level["num_people"]):
+		if Constants.CHARACTERS[i]["general"]["name"] == cur_level["character"]:
+			continue
+		var npc = npc_scene.instantiate()
+		npc.position = Vector3(randf() * 100, 0, randf() * 100)
+		npc.character = Gpt.jitter_schedule(Constants.CHARACTERS[i])
+		add_child(npc)

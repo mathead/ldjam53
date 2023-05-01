@@ -12,7 +12,9 @@ func _physics_process(delta):
 	
 	if direction != Vector3.ZERO:
 		# TODO make smooth
+		var orig = $Pivot.rotation.y
 		$Pivot.look_at(position + direction, Vector3.UP)
+		$Pivot.rotation.y = lerp_angle(orig, $Pivot.rotation.y, delta*10)
 		#footsteps sound
 		if $Timer.time_left <=0:
 			$SFXFootsteps.pitch_scale = randf_range(0.8,1.2)
