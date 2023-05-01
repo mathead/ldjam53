@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cg0tk2vxn6b55"]
+[gd_scene load_steps=12 format=3 uid="uid://cg0tk2vxn6b55"]
 
 [ext_resource type="PackedScene" uid="uid://b2e4vkbxsm1w6" path="res://Environment/CityCorporate/HighResBuildings/large_building_a.tscn" id="1_erhn2"]
 [ext_resource type="PackedScene" uid="uid://b4wrb6go0t3y6" path="res://Environment/CityCorporate/HighResBuildings/large_building_b.tscn" id="2_lwjut"]
@@ -11,11 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://5ujihmpmihmc" path="res://Environment/CityCorporate/HighResBuildings/skyscraper_b.tscn" id="9_4h18r"]
 [ext_resource type="PackedScene" uid="uid://dnj1yrnnborlv" path="res://Environment/CityCorporate/HighResBuildings/small_building_a.tscn" id="10_q4ni8"]
 [ext_resource type="PackedScene" uid="uid://fip24pn52pex" path="res://Environment/CityCorporate/HighResBuildings/small_building_c.tscn" id="11_kt2f8"]
-[ext_resource type="PackedScene" uid="uid://y1kb3na5jktd" path="res://Environment/CityCorporate/LowResBuildings/low_building_a.tscn" id="12_rgp42"]
-[ext_resource type="PackedScene" uid="uid://0k0xm37ma1ca" path="res://Environment/CityCorporate/LowResBuildings/low_building_b.tscn" id="13_lo8ne"]
-[ext_resource type="PackedScene" uid="uid://b4bcl2o5k3uqi" path="res://Environment/CityCorporate/LowResBuildings/low_building_c.tscn" id="14_dn1w5"]
-[ext_resource type="PackedScene" uid="uid://3qnlueoiiyjn" path="res://Environment/CityCorporate/LowResBuildings/low_building_d.tscn" id="15_7ug1w"]
-[ext_resource type="PackedScene" uid="uid://26wrmoknircl" path="res://Environment/CityCorporate/LowResBuildings/low_building_e.tscn" id="16_wts1y"]
 
 [node name="BuildingsMeshLibrarySource" type="Node3D"]
 
@@ -40,13 +35,3 @@
 [node name="small_building_a" parent="." instance=ExtResource("10_q4ni8")]
 
 [node name="small_building_c" parent="." instance=ExtResource("11_kt2f8")]
-
-[node name="low_buildingA2" parent="." instance=ExtResource("12_rgp42")]
-
-[node name="low_buildingB2" parent="." instance=ExtResource("13_lo8ne")]
-
-[node name="low_buildingC2" parent="." instance=ExtResource("14_dn1w5")]
-
-[node name="low_buildingD2" parent="." instance=ExtResource("15_7ug1w")]
-
-[node name="low_buildingE" parent="." instance=ExtResource("16_wts1y")]
