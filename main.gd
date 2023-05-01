@@ -29,8 +29,8 @@ func reset_level():
 		%HUD.delivery_text = "You won! Thanks for playing! You took " + str(Time.get_ticks_msec() / 1000 / 60) + "m" + str(int(Time.get_ticks_msec() / 1000) % 60) + "s to deliver all " + str(level) + " packages. You can continue playing in infinite mode."
 		%HUD.delivery_start = 0
 		cur_level = {
-			"character": Constants.CHARACTERS.ALL,
-			"num_people": len(Constants.CHARACTERS.ALL),
+			"character": Characters.ALL,
+			"num_people": len(Characters.ALL),
 			"traits": Constants.LEVELS[randi()%len(Constants.LEVELS[level])]["traits"]
 		}
 	else:
@@ -70,3 +70,9 @@ func _on_start_button_pressed():
 	$StartScreen.queue_free()
 	%HUD.delivery_text = "Time for your first delivery! Text the recipient to find out where they are and how they look."
 	%HUD.delivery_start = 0
+
+func _input(ev):
+	if %HUD.visible:
+		return
+	if Input.is_action_just_pressed("ui_accept"):
+		_on_start_button_pressed()

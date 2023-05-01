@@ -90,7 +90,7 @@ func _on_chat_gpt_answer(response):
 
 func new_delivery(npc):
 	var task = task_scene.instantiate()
-	task.get_node("MarginContainer/PanelContainer/MarginContainer/Text").text = "[center]Your next delivery is for " + npc.character["general"]["name"] + "[/center]"
+	task.get_node("MarginContainer/PanelContainer/MarginContainer/Text").text = "[center]You completed " + str(get_node("/root/Main").level) + " out of " + str(len(Constants.LEVELS)) + " deliveries.\nYour next delivery is for " + npc.character["general"]["name"] + ".[/center]"
 	%Chats.add_child(task)
 	await get_tree().process_frame
 	%ScrollContainer.scroll_vertical = %ScrollContainer.get_v_scroll_bar().max_value
@@ -162,7 +162,7 @@ func deliver(active):
 			delivery_start = 0
 			get_node("/root/Main").reset_level()
 	else:
-		delivery_text = "Yes, that's for me, thanks!"
+		delivery_text = "Yes, that's for me, thanks! :)"
 		lives = 3
 		battery = 100
 		get_tree().call_group("npc", "queue_free")
