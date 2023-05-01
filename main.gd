@@ -30,7 +30,8 @@ func reset_level():
 		%HUD.delivery_start = 0
 		cur_level = {
 			"character": Constants.CHARACTERS.ALL,
-			"num_people": len(Constants.CHARACTERS.ALL)
+			"num_people": len(Constants.CHARACTERS.ALL),
+			"traits": Constants.LEVELS[randi()%len(Constants.LEVELS[level])]["traits"]
 		}
 	else:
 		cur_level = Constants.LEVELS[level]
