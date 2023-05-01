@@ -9,7 +9,7 @@ var gpt_model = "gpt-3.5-turbo"
 #var gpt_model = "gpt-4"
 
 # Define text and input variables
-var text = "Who is the biggest prick in Slovakia?"
+var text = "text"
 var input = text
 
 var system_prompt = """
