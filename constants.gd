@@ -27,15 +27,16 @@ var LEVELS = [
 		"character": Characters.GENERIC,
 		"num_people": 5,
 		"traits": [
-			"You are expecting a package delivery.",
-			"Be very open about you schedule, share it truthfully",
+#			"You are expecting a package delivery.",
+#			"Be very open about you schedule, share it truthfully",
 #			"You are expecting a package delivery.",
 #			"Be very open about you schedule, share it truthfully",
 #			"You are Jehovah witness, you always try to convert everybody to your religion.", # Not working
-			"You overshare all your hobbies instead of responding usefully.",
-			"You are a child that only repeats what you say.",
-			"You are a poet who always responds with rhyming poems.",
-			"You always use dad jokes in conversations",
+#			"You overshare all your hobbies instead of responding usefully.", # Works copied 3 times
+#			"You are a child that only repeats what the other person says.", # Doesn't work
+			"You are a passionate poet who always responds with rhyming poems.", # Doesn't work with gpt3 too much
+#			"You always use dad jokes in conversations",
+#			"You never share what clothes you're wearing",
 		]
 	},
 	{
