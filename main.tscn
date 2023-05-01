@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=79 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
@@ -12,11 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://drsgjhjswwvkn" path="res://Environment/Textures/law.png" id="8_e2x8e"]
 [ext_resource type="Texture2D" uid="uid://b8bu0xdahbf1r" path="res://Environment/Textures/sushi.png.png" id="8_hp4dm"]
 [ext_resource type="Texture2D" uid="uid://dni4pqgf7ieh2" path="res://Environment/Textures/pizza-sign.png" id="8_iqp5p"]
+[ext_resource type="Texture2D" uid="uid://dcjybs2sb6dtq" path="res://Environment/Textures/green_apartment.png" id="8_qkjld"]
 [ext_resource type="Texture2D" uid="uid://c15h64p60rrba" path="res://Environment/Textures/tex-mex.png" id="9_5fqxs"]
 [ext_resource type="Texture2D" uid="uid://bosqvi2x4k0ch" path="res://Environment/Textures/ramen.png" id="9_mxdrb"]
+[ext_resource type="Texture2D" uid="uid://bysq6vwc4n3nf" path="res://Environment/Textures/red_apartment.png" id="10_c26xb"]
 [ext_resource type="Texture2D" uid="uid://ca71fiacw871q" path="res://Environment/Textures/market.png" id="10_dsegk"]
 [ext_resource type="Texture2D" uid="uid://cjc5dxodoo3uw" path="res://Environment/Textures/bbq.png" id="10_hjqp8"]
 [ext_resource type="Texture2D" uid="uid://dyiv2bs6ry3ux" path="res://Environment/Textures/burger.png" id="11_4jao8"]
+[ext_resource type="Texture2D" uid="uid://dhnbotab2x46d" path="res://Environment/Textures/blue_apartment.png" id="12_51e10"]
 [ext_resource type="Texture2D" uid="uid://bov443tr377sr" path="res://Environment/Textures/coffee.png" id="12_h8ajf"]
 [ext_resource type="Texture2D" uid="uid://ccdp5hawvm4i3" path="res://Environment/Textures/gym.png" id="17_f6c2h"]
 [ext_resource type="PackedScene" uid="uid://dici6pf13u2cu" path="res://Environment/Nature/tree_pine_small_a.tscn" id="20_0r6ht"]
@@ -93,7 +96,7 @@ size = Vector2(0.5, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4x1lk"]
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("8_qkjld")
 
 [sub_resource type="QuadMesh" id="QuadMesh_wstwt"]
 resource_local_to_scene = true
@@ -113,7 +116,7 @@ size = Vector2(0.5, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eragb"]
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("10_c26xb")
 
 [sub_resource type="QuadMesh" id="QuadMesh_y34fv"]
 resource_local_to_scene = true
@@ -133,7 +136,7 @@ size = Vector2(0.5, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j20ys"]
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0, 0, 1, 1)
+albedo_texture = ExtResource("12_51e10")
 
 [sub_resource type="QuadMesh" id="QuadMesh_y2psc"]
 resource_local_to_scene = true
