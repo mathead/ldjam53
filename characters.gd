@@ -1338,22 +1338,22 @@ var QUIRKY = [
 			},
 			{
 				"activity": "Conduct a mission briefing with Stormtrooper commanders",
-				"start_time": 1 * 60 * 60,
+				"start_time": 13 * 60 * 60,
 				"location": "travel agency"
 			},
 			{
 				"activity": "Train with new recruits in the Imperial Academy",
-				"start_time": 3 * 60 * 60,
+				"start_time": 15 * 60 * 60,
 				"location": "gym"
 			},
 			{
 				"activity": "Dinner in your private quarters",
-				"start_time": 7 * 60 * 60,
+				"start_time": 19 * 60 * 60,
 				"location": "blue apartment"
 			},
 			{
 				"activity": "Relax and meditate on the Force",
-				"start_time": 9 * 60 * 60,
+				"start_time": 21 * 60 * 60,
 				"location": "blue apartment"
 			}
 		]
@@ -1397,22 +1397,22 @@ var QUIRKY = [
 			},
 			{
 				"activity": "Continue teaching padawans in the Jedi Temple",
-				"start_time": 1 * 60 * 60,
+				"start_time": 13 * 60 * 60,
 				"location": "law office"
 			},
 			{
 				"activity": "Evening meditation session",
-				"start_time": 6 * 60 * 60,
+				"start_time": 18 * 60 * 60,
 				"location": "gym"
 			},
 			{
 				"activity": "Dinner at home",
-				"start_time": 8 * 60 * 60,
+				"start_time": 20 * 60 * 60,
 				"location": "green apartment"
 			},
 			{
 				"activity": "Relax and read in your private library",
-				"start_time": 9 * 60 * 60,
+				"start_time": 21 * 60 * 60,
 				"location": "green apartment"
 			}
 		]
