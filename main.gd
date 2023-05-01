@@ -31,7 +31,7 @@ func reset_level():
 		cur_level = {
 			"character": Characters.ALL,
 			"num_people": len(Characters.ALL),
-			"traits": Constants.LEVELS[randi()%len(Constants.LEVELS[level])]["traits"]
+			"traits": Constants.LEVELS[randi()%len(Constants.LEVELS)]["traits"]
 		}
 	else:
 		cur_level = Constants.LEVELS[level]

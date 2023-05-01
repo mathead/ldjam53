@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=87 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://cta3e7ijufgjb" path="res://Environment/Nature/fence_corner.tscn" id="36_fe1cs"]
 [ext_resource type="PackedScene" uid="uid://4fysplb1plsc" path="res://Environment/Nature/tree_blocks_dark.tscn" id="37_qgfsq"]
 [ext_resource type="AudioStream" uid="uid://5o1kmv46q8v8" path="res://Audio/SFX/ld53_sfx_cityambient_01.wav" id="41_524yh"]
+[ext_resource type="AudioStream" uid="uid://rn4ajr41q35f" path="res://Audio/Music/Ludum Dare 53 Music loop.ogg" id="42_0klbt"]
 [ext_resource type="AudioStream" uid="uid://c7liv2c3aq7rd" path="res://Audio/SFX/ld53_sfx_bikebell_01.wav" id="42_4xh8x"]
 [ext_resource type="AudioStream" uid="uid://3pr1la8gw2yh" path="res://Audio/SFX/ld53_sfx_carhorn_01.wav" id="43_55lxq"]
 [ext_resource type="AudioStream" uid="uid://d1cwlum7rdovo" path="res://Audio/SFX/ld53_sfx_police_01.wav" id="44_wsbll"]
@@ -683,12 +684,17 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -13.3458, 3.8147e-06, 36.957)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_524yh")
-volume_db = -15.865
+volume_db = -13.501
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("42_0klbt")
+volume_db = -9.989
 autoplay = true
 
 [node name="FX" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_m7f2x")
-volume_db = -19.39
+volume_db = -14.072
 
 [node name="FXTimer" type="Timer" parent="FX"]
 unique_name_in_owner = true

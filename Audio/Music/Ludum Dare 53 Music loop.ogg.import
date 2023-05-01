@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://rn4ajr41q35f"
+path="res://.godot/imported/Ludum Dare 53 Music loop.ogg-fba512c102f0da5c4e95f4a2c0c782fc.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Music/Ludum Dare 53 Music loop.ogg"
+dest_files=["res://.godot/imported/Ludum Dare 53 Music loop.ogg-fba512c102f0da5c4e95f4a2c0c782fc.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
