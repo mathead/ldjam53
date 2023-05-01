@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=85 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
@@ -40,6 +40,11 @@
 [ext_resource type="PackedScene" uid="uid://bsbe3s4xydpnf" path="res://Environment/Nature/fence_planks_double.tscn" id="35_mpyo0"]
 [ext_resource type="PackedScene" uid="uid://cta3e7ijufgjb" path="res://Environment/Nature/fence_corner.tscn" id="36_fe1cs"]
 [ext_resource type="PackedScene" uid="uid://4fysplb1plsc" path="res://Environment/Nature/tree_blocks_dark.tscn" id="37_qgfsq"]
+[ext_resource type="AudioStream" uid="uid://5o1kmv46q8v8" path="res://Audio/SFX/ld53_sfx_cityambient_01.wav" id="41_524yh"]
+[ext_resource type="AudioStream" uid="uid://c7liv2c3aq7rd" path="res://Audio/SFX/ld53_sfx_bikebell_01.wav" id="42_4xh8x"]
+[ext_resource type="AudioStream" uid="uid://3pr1la8gw2yh" path="res://Audio/SFX/ld53_sfx_carhorn_01.wav" id="43_55lxq"]
+[ext_resource type="AudioStream" uid="uid://d1cwlum7rdovo" path="res://Audio/SFX/ld53_sfx_police_01.wav" id="44_wsbll"]
+[ext_resource type="AudioStream" uid="uid://bkjh7dhub1axl" path="res://Audio/SFX/ld53_sfx_police_02.wav" id="45_7fd1e"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ow0er"]
 dof_blur_far_enabled = true
@@ -242,6 +247,18 @@ albedo_texture = ExtResource("17_f6c2h")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_fon0u")
 size = Vector2(0.5, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m7f2x"]
+streams_count = 4
+playback_mode = 1
+stream_0/stream = ExtResource("42_4xh8x")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("43_55lxq")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("44_wsbll")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("45_7fd1e")
+stream_3/weight = 1.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5i3m8")
@@ -661,6 +678,22 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -81.7147, 3.8147e-06, 17.218)
 
 [node name="tree_blocks_dark10" parent="." instance=ExtResource("37_qgfsq")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -13.3458, 3.8147e-06, 36.957)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_524yh")
+volume_db = -19.39
+autoplay = true
+
+[node name="FX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_m7f2x")
+volume_db = -19.39
+
+[node name="FXTimer" type="Timer" parent="FX"]
+unique_name_in_owner = true
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="FX/FXTimer" to="." method="_on_timer_timeout"]
 
 [editable path="Bank"]
 [editable path="GreenApartment"]

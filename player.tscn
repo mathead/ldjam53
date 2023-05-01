@@ -1,8 +1,28 @@
-[gd_scene load_steps=15 format=3 uid="uid://c5f0fyjyohm0n"]
+[gd_scene load_steps=20 format=3 uid="uid://c5f0fyjyohm0n"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3exsh"]
+[ext_resource type="AudioStream" uid="uid://xol5q1drkxku" path="res://Audio/SFX/ld53_sfx_walkcement_01.wav" id="2_ldk5c"]
+[ext_resource type="AudioStream" uid="uid://bxc4p3nc8xpqy" path="res://Audio/SFX/ld53_sfx_walkcement_02.wav" id="3_372vn"]
+[ext_resource type="AudioStream" uid="uid://d00flup65r0kf" path="res://Audio/SFX/ld53_sfx_walkcement_03.wav" id="4_pqajj"]
 [ext_resource type="Texture2D" uid="uid://co4feop703qke" path="res://images/survivor1_stand.png" id="4_topib"]
-[ext_resource type="AudioStream" uid="uid://dhaljlw5ylqpg" path="res://Audio/SFX/Footsteps/GWJ52 SFX - Footstep 1.wav" id="5_3jte6"]
+[ext_resource type="AudioStream" uid="uid://j3dgtkbjsavk" path="res://Audio/SFX/ld53_sfx_walkcement_04.wav" id="5_2yvuf"]
+[ext_resource type="AudioStream" uid="uid://vh3iav3382q4" path="res://Audio/SFX/ld53_sfx_walkcement_05.wav" id="6_602hi"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lb4c2"]
+streams_count = 6
+playback_mode = 1
+stream_0/stream = ExtResource("2_ldk5c")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_372vn")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("4_pqajj")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("5_2yvuf")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("6_602hi")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("6_602hi")
+stream_5/weight = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xw0eb"]
 custom_solver_bias = 0.74
@@ -54,7 +74,7 @@ wait_time = 0.314
 one_shot = true
 
 [node name="SFXFootsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_3jte6")
+stream = SubResource("AudioStreamRandomizer_lb4c2")
 volume_db = -5.53
 pitch_scale = 0.66
 mix_target = 2

@@ -55,3 +55,9 @@ func reset_level():
 		npc.character = Gpt.jitter_schedule(Characters.ALL[i])
 #		npc.position = Vector3(randf() * 100, 0, randf() * 100)
 		add_child(npc)
+
+
+func _on_timer_timeout():
+	$FX.play()
+	%FXTimer.wait_time = 10 + randf() * 5
+	
