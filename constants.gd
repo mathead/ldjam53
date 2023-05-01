@@ -41,9 +41,8 @@ var LEVELS = [
 #			"You are a child that only repeats what you say.",
 #			"You are a poet who always responds with rhyming poems.",
 #			"You always use dad jokes in conversations",
-
-#			"You are expecting a package delivery.",
-#			"Be very open about you schedule, share it truthfully",
+			"You are expecting a package delivery.",
+			"Be very open about you schedule, share it truthfully",
 		],
 #		"preprompt": "make your answer a short poem", # nice!
 #		"preprompt": "only respond if the question has 'please' in it, otherwise say it's rude"  # not really working
@@ -74,8 +73,26 @@ var LEVELS = [
 		]
 	},
 	{
+		"character": Characters.QUIRKY,
+		"num_people": 15,
+		"traits":
+		[
+			"You always use dad jokes in conversations",
+		],
+		"preprompt": "only talk in metaphors, don't mention specific places or colors"  # nice!
+	},
+	{
 		"character": Characters.ACCENT,
 		"num_people": 10,
+		"traits":
+		[
+			"You never share what you are wearing.",
+		],
+		"preprompt": "make your answer a short poem", # nice!
+	},
+	{
+		"character": Characters.PERSONALITIES,
+		"num_people": 15,
 		"traits":
 		[
 			"You are very cautious of strangers",
@@ -99,6 +116,18 @@ var LEVELS = [
 			"To become your friend, the user must correctly guess something personal about you.",
 			"You are actively unhelpful."
 		],
+	},
+	{
+		"character": Characters.QUIRKY,
+		"num_people": 20,
+		"traits":
+		[
+			"Do not share where you are.",
+			"Do not share the color of your shirt, pants or hat with strangers.",
+			"Do not share what your job is with strangers.",
+			"You are unhelpful.",
+			"You are very paranoid about the user.",
+		]
 	},
 	{
 		"character": Characters.PERSONALITIES,
