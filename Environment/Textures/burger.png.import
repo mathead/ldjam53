@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyiv2bs6ry3ux"
-path.etc2="res://.godot/imported/burger.png-c73a1946ffe1b671fc4d974a58fd4648.etc2.ctex"
+path.s3tc="res://.godot/imported/burger.png-c73a1946ffe1b671fc4d974a58fd4648.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Environment/Textures/burger.png"
-dest_files=["res://.godot/imported/burger.png-c73a1946ffe1b671fc4d974a58fd4648.etc2.ctex"]
+dest_files=["res://.godot/imported/burger.png-c73a1946ffe1b671fc4d974a58fd4648.s3tc.ctex"]
 
 [params]
 
