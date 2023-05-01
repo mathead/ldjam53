@@ -93,11 +93,10 @@ var LEVELS = [
 		"preprompt": ""
 	},
 	{
-		"character": Characters.QUIRKY,
+		"character": Characters.PERSONALITIES,
 		"num_people": 20,
 		"traits":
 		[
-			"Do not share what you are wearing.",
 			"The user is a stranger to you until you become friends.",
 			"Do not share where you are.",
 			"Do not share the color of your shirt, pants or hat with strangers.",
