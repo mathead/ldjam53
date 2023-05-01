@@ -46,12 +46,16 @@ func _input(ev):
 		unfocus()
 
 func focus():
+	if not visible:
+		return
 	%TextEdit.grab_focus()
 	%TextEdit.placeholder_text = "Type your question and press [enter] to submit..."
 	%Phone.modulate.a = 0.7
 	time_speed = time_speed_focus
 	
 func unfocus():
+	if not visible:
+		return
 	%TextEdit.release_focus()
 	%TextEdit.placeholder_text = "Press [enter] to text the client"
 	%Phone.modulate.a = 0.5
@@ -146,6 +150,8 @@ func deliver(active):
 		lives -= 1
 		create_tween().tween_property(%Lives, "scale", Vector2(1, 1), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 		if lives <= 0:
+			lives = 3
+			battery = 100
 			delivery_text = "You took too many delivery attempts! Let's start over."
 			delivery_start = 0
 			get_tree().call_group("npc", "queue_free")

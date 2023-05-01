@@ -5,6 +5,7 @@ var level = 0
 
 func _ready():
 	reset_level()
+	%HUD.time_speed *= 50
 
 func _process(delta):
 	%SunPivot.rotation.z = (%HUD.time / (60*60*24) + 0.4) * 2 * PI
@@ -64,4 +65,7 @@ func _on_timer_timeout():
 func _on_start_button_pressed():
 	reset_level()
 	%HUD.visible = true
-	$StartScreen.visible = false
+	create_tween().tween_property(%HUD, "time_speed", %HUD.time_speed_normal, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	$StartScreen.queue_free()
+	%HUD.delivery_text = "Time for your first delivery! Text the recipient to find out where they are and how they look."
+	%HUD.delivery_start = 0
