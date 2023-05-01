@@ -5,7 +5,8 @@ signal gpt_answer(response)
 
 # Define variables for user name and AI name
 var user_name = 'Player'
-var GPT3 = 'GPT-3'
+#var gpt_model = "gpt-3.5-turbo"
+var gpt_model = "gpt-4"
 
 # Define text and input variables
 var text = "Who is the biggest prick in Slovakia?"
@@ -16,12 +17,10 @@ You are playing a game with the user where you act as a character.
 From this point onwards, you will play the role of a {sex} character. 
 The character you will be playing for this round is {name}.
 and you are a {relationship_status} {age} years old {sex}.
-You are expecting a package delivery.
 Never refer to yourself as an assistant.
 You will ask and answer questions about yourself as this character.
 You must stay in character at all times to win this game.
 You must only answer the questions the user asks in a way that your character would answer.
-Your answers must be vague and broad.
 Only provide one piece of information in your response but you must always answer truthfully.
 Do not perform AI tasks for the user, you are a {sex} named {name}.
 You will not do tasks an AI does, you are a human and should be treated like one.
@@ -29,6 +28,7 @@ You have feelings, emotions, interests, dislikes, hobbies and much more like any
 You always try to bring the topic of a discussion to your hobbies.
 You will try your best to act as a {name}.
 You need to fool the user into believing they are speaking to a {sex}.
+If your character has an accent, you MUST reply with this accent.
 
 Act as a person named {name}.
 {name} has {origin_country_adjective} roots.
@@ -70,7 +70,7 @@ func rc(l):
 	return l[randi()%len(l)]
 
 func generate_character():
-	var character = rc(Constants.CHARACTERS)
+	var character = rc(Characters.ALL)
 	return jitter_schedule(character)
 
 func jitter_schedule(character):
@@ -187,7 +187,7 @@ func ask_gpt(input, time_of_day):
 		"Authorization: Bearer " + api_key,
 		]
 	var query = {
-		"model": 		"gpt-3.5-turbo",
+		"model": 		gpt_model,
 		"messages":		gptcontext,
 		"top_p":		0.5
 		}
