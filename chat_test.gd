@@ -150,18 +150,19 @@ func set_active_character(npc):
 		s = s.duplicate()
 		var t = s["start_time"]
 		s["start_time"] = "%02d:%02d" % [floori(t/60.0/60.0), floori((int(t) % (60*60))/60.0)]
-		prompt_data["schedule"].append(s)
+		prompt_data["schedule"].append("At {start_time}, you go to {location} to {activity}.".format(s))
+	
 	
 	gptcontext = [
 		{
 			"role": "system",
-			"content": system_prompt.format(prompt_data["general"]) + "\n".join(prompt_data["character_traits"]) + "\n".join(prompt_data["schedule"]),
+			"content": system_prompt.format(prompt_data["general"]) + "\n" + "\n".join(prompt_data["schedule"]) + "\n" + "\n".join(prompt_data["character_traits"]),
 		},
 	]
 	
 func ask_gpt(input, time_of_day):
 	# Prefix user input with context
-	var prompt = "(current time is {time_of_day}, you are {action} the {location})\n{input}".format(
+	var prompt = "(current time is {time_of_day}, you are {action} the {location})".format(
 		{"time_of_day": time_of_day, "location": active_npc.last_place, "action": "at" if active_npc.distance_to_dest() < 10 else "going to"})
 	print("Asking GPT - Context: ", prompt, "Prompt: ", input)
 	var context_message = {
