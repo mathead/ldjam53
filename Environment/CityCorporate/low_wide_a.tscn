@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc1iest3x4e5g"]
-
-[ext_resource type="PackedScene" uid="uid://b6cxrm81w8i5q" path="res://Assets/3dmodels/city_corporate/low_wideA.glb" id="1_v51kk"]
-
-[node name="low_wideA" instance=ExtResource("1_v51kk")]

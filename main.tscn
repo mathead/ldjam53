@@ -1,10 +1,11 @@
-[gd_scene load_steps=57 format=3 uid="uid://ct5wwent2uu4w"]
+[gd_scene load_steps=58 format=3 uid="uid://ct5wwent2uu4w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5i3m8"]
 [ext_resource type="PackedScene" uid="uid://c5f0fyjyohm0n" path="res://player.tscn" id="1_q6py4"]
 [ext_resource type="PackedScene" uid="uid://clp74uwlt2jo4" path="res://Environment/GridMap.tscn" id="2_a5ctk"]
-[ext_resource type="PackedScene" uid="uid://ni2hu8y6l2i2" path="res://destination.tscn" id="2_hr2fl"]
+[ext_resource type="PackedScene" path="res://destination.tscn" id="2_hr2fl"]
 [ext_resource type="PackedScene" uid="uid://daid6ny0rl1wm" path="res://hud.tscn" id="4_dlwsg"]
+[ext_resource type="PackedScene" uid="uid://db2hm1egpwbqt" path="res://Environment/GridMap2.tscn" id="4_h2q4t"]
 [ext_resource type="PackedScene" uid="uid://cy6adf2mn1prw" path="res://Environment/Props/Sign.tscn" id="7_2xvg0"]
 [ext_resource type="Texture2D" uid="uid://cwh377vakmvkc" path="res://Environment/Textures/bank.png" id="7_05bcn"]
 [ext_resource type="Texture2D" uid="uid://7db1mbmj22g" path="res://Environment/Textures/travel.png" id="8_3wu4s"]
@@ -78,7 +79,6 @@ material = SubResource("StandardMaterial3D_4x1lk")
 size = Vector2(0.5, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vurle"]
-load_path = "res://.godot/imported/law.png-af89fb823070757e1b8d783eb6f7cddb.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdfap"]
 cull_mode = 2
@@ -239,6 +239,9 @@ transform = Transform3D(1.76818, 0, 0, 0, 1.1314, 0, 0, 0, 2.41645, 0, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_ittjc")
 
 [node name="GridMap" parent="NavigationRegion3D" instance=ExtResource("2_a5ctk")]
+
+[node name="Node3D" parent="NavigationRegion3D" instance=ExtResource("4_h2q4t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999999, 0, -0.999999, 0, -4.37114e-08, 28.8432, 0, -9.51809)
 
 [node name="Destination" parent="." groups=["starbucks"] instance=ExtResource("2_hr2fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12799, 0.131404, 18.4126)

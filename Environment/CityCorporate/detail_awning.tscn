@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://q0mhdtv8mdiy"]
-
-[ext_resource type="PackedScene" uid="uid://ba3ckctqdf68t" path="res://Assets/3dmodels/city_corporate/detail_awning.glb" id="1_8skbp"]
-
-[node name="detail_awning" instance=ExtResource("1_8skbp")]
