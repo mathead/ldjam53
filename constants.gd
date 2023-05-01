@@ -24,15 +24,16 @@ const COLORS = {
 
 var LEVELS = [
 	{
-		"character": Characters.GENERIC[0],
+		"character": Characters.GENERIC,
 		"num_people": 5,
 		"traits": [
 			"You are expecting a package delivery.",
 			"Be very open about you schedule, share it truthfully",
+			"Only tell someone where you are after they solve a riddle"
 		]
 	},
 	{
-		"character": Characters.GENERIC[1],
+		"character": Characters.GENERIC,
 		"num_people": 7,
 		"traits": [
 			"Your answers must be vague and broad.",
@@ -40,21 +41,22 @@ var LEVELS = [
 		]
 	},
 	{
-		"character": Characters.ACCENT[0],
+		"character": Characters.ACCENT,
 		"num_people": 10,
 		"traits": [
-			"You are very cautious of strangers"
+			"You are very cautious of strangers",
+			"Before you answer, you always require the user to solve a riddle?",
 		]
 	},
 	{
-		"character": Characters.ACCENT[1],
+		"character": Characters.ACCENT,
 		"num_people": 20,
 		"traits": [
 			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works			
 		]
 	},
 	{
-		"character": Characters.QUIRKY[0],
+		"character": Characters.QUIRKY,
 		"num_people": 20,
 		"traits": [
 			"Most importantly, you always talk very mysteriously, cryptically and in riddles.", # Doesn't work very well

@@ -12,6 +12,8 @@ var time = 30000.0
 var battery = 100
 var lives = 3
 var deliver_timeout = 0.0
+var time_speed_normal = 150
+var time_speed_focus = 30
 @export var time_speed = 150
 @onready var BuildingShader = preload("res://Environment/BuildingMaterial.tres")
 @onready var SmallBuildingShader = preload("res://Environment/SmallBuildingMaterial.tres")
@@ -47,11 +49,13 @@ func focus():
 	%TextEdit.grab_focus()
 	%TextEdit.placeholder_text = "Type your question and press [enter] to submit..."
 	%Phone.modulate.a = 0.7
+	time_speed = time_speed_focus
 	
 func unfocus():
 	%TextEdit.release_focus()
 	%TextEdit.placeholder_text = "Press [enter] to text the client"
 	%Phone.modulate.a = 0.5
+	time_speed = time_speed_normal
 
 func send_query(query):
 	### INSERT MAGIC CODE HERE ###
@@ -145,22 +149,20 @@ func deliver(active):
 			delivery_text = "You took too many delivery attempts! Let's start over."
 			delivery_start = 0
 			get_tree().call_group("npc", "queue_free")
-			var orig_speed = time_speed
-			create_tween().tween_property(self, "time_speed", orig_speed*200, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+			create_tween().tween_property(self, "time_speed", time_speed_normal*200, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
 			await get_tree().create_timer(5).timeout
-			create_tween().tween_property(self, "time_speed", orig_speed, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+			create_tween().tween_property(self, "time_speed", time_speed_normal, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 			delivery_text = "Your next delivery awaits!"
 			delivery_start = 0
 			get_node("/root/Main").reset_level()
 	else:
 		delivery_text = "Yes, that's for me, thanks!"
-		var orig_speed = time_speed
 		lives = 3
 		battery = 100
 		get_tree().call_group("npc", "queue_free")
-		create_tween().tween_property(self, "time_speed", orig_speed*200, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+		create_tween().tween_property(self, "time_speed", time_speed_normal*200, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
 		await get_tree().create_timer(5).timeout
-		create_tween().tween_property(self, "time_speed", orig_speed, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+		create_tween().tween_property(self, "time_speed", time_speed_normal, 3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 		delivery_text = "Your next delivery awaits!"
 		delivery_start = 0
 		get_node("/root/Main").next_level()

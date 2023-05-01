@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://ni2hu8y6l2i2"]
+[gd_scene load_steps=2 format=3 uid="uid://ni2hu8y6l2i2"]
+
+[ext_resource type="Script" path="res://destination.gd" id="1_es0fy"]
 
 [node name="Destination" type="Marker3D" groups=["destination"]]
+script = ExtResource("1_es0fy")

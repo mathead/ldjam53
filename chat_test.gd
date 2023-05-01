@@ -5,8 +5,8 @@ signal gpt_answer(response)
 
 # Define variables for user name and AI name
 var user_name = 'Player'
-#var gpt_model = "gpt-3.5-turbo"
-var gpt_model = "gpt-4"
+var gpt_model = "gpt-3.5-turbo"
+#var gpt_model = "gpt-4"
 
 # Define text and input variables
 var text = "Who is the biggest prick in Slovakia?"
