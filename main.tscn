@@ -306,7 +306,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
 mesh = SubResource("QuadMesh_istlp")
 
 [node name="Destination" parent="Bank" groups=["bank"] instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0.955196)
 
 [node name="GreenApartment" parent="." instance=ExtResource("7_2xvg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6796, 4.98166, -23.6381)
@@ -346,7 +346,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.924767, 0, 0)
 mesh = SubResource("QuadMesh_exk10")
 
 [node name="Destination" parent="TravelOffice" groups=["travel agency"] instance=ExtResource("2_hr2fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15717, -4.99416, 1.49049)
 
 [node name="BlueApartment" parent="." instance=ExtResource("7_2xvg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.5101, 4.98166, 13.6089)
