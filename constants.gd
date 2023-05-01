@@ -29,7 +29,6 @@ var LEVELS = [
 		"traits": [
 			"You are expecting a package delivery.",
 			"Be very open about you schedule, share it truthfully",
-			"Only tell someone where you are after they solve a riddle"
 		]
 	},
 	{
@@ -45,7 +44,8 @@ var LEVELS = [
 		"num_people": 10,
 		"traits": [
 			"You are very cautious of strangers",
-			"Before you answer, you always require the user to solve a riddle?",
+			"Only tell someone where you are after they solve a riddle",
+			"Once the users solves your riddle, they will no longer be a stranger"
 		]
 	},
 	{
