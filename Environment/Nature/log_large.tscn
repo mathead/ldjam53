@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxak253rd2h6n"]
+
+[ext_resource type="PackedScene" uid="uid://s3p46rcgkn5b" path="res://Assets/3dmodels/nature/log_large.glb" id="1_p0qj0"]
+
+[node name="log_large" instance=ExtResource("1_p0qj0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

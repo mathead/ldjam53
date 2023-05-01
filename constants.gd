@@ -29,6 +29,7 @@ var LEVELS = [
 		"traits": [
 			"You are expecting a package delivery.",
 			"Be very open about you schedule, share it truthfully",
+			"Only tell someone where you are after they solve a riddle"
 		]
 	},
 	{
