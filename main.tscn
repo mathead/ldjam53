@@ -467,8 +467,38 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -81, 0, -28)
 [node name="tree_pineTallC" parent="." instance=ExtResource("22_fyxyf")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -49, 0, 50)
 
+[node name="tree_pineTallC2" parent="." instance=ExtResource("22_fyxyf")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -59.5005, 0, 24.511)
+
+[node name="tree_pineTallC3" parent="." instance=ExtResource("22_fyxyf")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -72.2222, 3.8147e-06, -0.303951)
+
+[node name="tree_pineTallC4" parent="." instance=ExtResource("22_fyxyf")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -60.4265, 3.8147e-06, -38.768)
+
 [node name="tree_tall" parent="." instance=ExtResource("23_8mcik")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -74, 0, 16)
+
+[node name="tree_tall2" parent="." instance=ExtResource("23_8mcik")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -74, 0, 23.0416)
+
+[node name="tree_tall3" parent="." instance=ExtResource("23_8mcik")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -74, 0, 28.075)
+
+[node name="tree_tall4" parent="." instance=ExtResource("23_8mcik")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -67.6993, 0, 30.173)
+
+[node name="tree_tall5" parent="." instance=ExtResource("23_8mcik")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -69.3312, 0, 36.4767)
+
+[node name="tree_tall6" parent="." instance=ExtResource("23_8mcik")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -73.4742, 0, 36.2571)
+
+[node name="tree_tall7" parent="." instance=ExtResource("23_8mcik")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -55.0002, 0, 35.4027)
+
+[node name="tree_tall8" parent="." instance=ExtResource("23_8mcik")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -56.6677, 0, 44.6681)
 
 [node name="tree_cone" parent="." instance=ExtResource("24_7a2xr")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -78, 0, -9)
@@ -489,7 +519,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -62, 0, -13)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -86, 0, -40)
 
 [node name="log_large" parent="." instance=ExtResource("30_mlshq")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -84, 0, -48)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -46.5171, 0, -26.3)
 
 [node name="flower_redB" parent="." instance=ExtResource("31_flvns")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -82, 0, -51)
@@ -511,6 +541,33 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -67, 0, -55)
 
 [node name="tree_blocks_dark" parent="." instance=ExtResource("37_qgfsq")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -51, 0, -36)
+
+[node name="tree_blocks_dark2" parent="." instance=ExtResource("37_qgfsq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -56.1264, 0, -21.7513)
+
+[node name="tree_blocks_dark3" parent="." instance=ExtResource("37_qgfsq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -67.0252, 0, -21.6449)
+
+[node name="tree_blocks_dark4" parent="." instance=ExtResource("37_qgfsq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -70.9389, 0, -9.85799)
+
+[node name="tree_blocks_dark5" parent="." instance=ExtResource("37_qgfsq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -65.404, 0, 1.42065)
+
+[node name="tree_blocks_dark6" parent="." instance=ExtResource("37_qgfsq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -62.3636, 0, 38.8801)
+
+[node name="tree_blocks_dark7" parent="." instance=ExtResource("37_qgfsq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -77.0563, 0, 44.372)
+
+[node name="tree_blocks_dark8" parent="." instance=ExtResource("37_qgfsq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -68.374, 0, 16.5263)
+
+[node name="tree_blocks_dark9" parent="." instance=ExtResource("37_qgfsq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -81.7147, 3.8147e-06, 17.218)
+
+[node name="tree_blocks_dark10" parent="." instance=ExtResource("37_qgfsq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -13.3458, 3.8147e-06, 36.957)
 
 [editable path="Bank"]
 [editable path="GreenApartment"]

@@ -1161,7 +1161,7 @@ var QUIRKY = [
 			{"activity": "Go for a walk", "start_time": 9 * 60 * 60, "location": "gym"},
 			{"activity": "Grab coffee", "start_time": 10 * 60 * 60, "location": "coffee"},
 			{
-				"activity": "Work at the travel agency",
+				"activity": "Be unemployed at the Travel Agency",
 				"start_time": 11 * 60 * 60,
 				"location": "travel agency"
 			},

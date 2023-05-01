@@ -27,6 +27,8 @@ var LEVELS = [
 		"character": Characters.GENERIC,
 		"num_people": 5,
 		"traits": [
+			"You are expecting a package delivery.",
+			"Be very open about you schedule, share it truthfully",
 #			"You are expecting a package delivery.",
 #			"Be very open about you schedule, share it truthfully",
 #			"You are Jehovah witness, you always try to convert everybody to your religion.", # Not working
@@ -49,7 +51,8 @@ var LEVELS = [
 		"num_people": 10,
 		"traits": [
 			"You are very cautious of strangers",
-			"Before you answer, you always require the user to solve a riddle?",
+			"Only tell someone where you are after they solve a riddle",
+			"Once the users solves your riddle, they will no longer be a stranger"
 		]
 	},
 	{
