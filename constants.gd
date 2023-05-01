@@ -29,38 +29,35 @@ var LEVELS = [
 		"traits": [
 			"You are expecting a package delivery.",
 			"Be very open about you schedule, share it truthfully",
-#			"Don't reveal what you're wearing.",
-#			"Most importantly, you always talk very mysteriously, cryptically and in riddles.", # Doesn't work very well
-			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works
-			"You are very cautious of strangers"
 		]
 	},
 	{
 		"character": Characters.GENERIC[1],
 		"num_people": 7,
 		"traits": [
-			"Your answers must be vague and broad."
+			"Your answers must be vague and broad.",
+			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works
 		]
 	},
 	{
 		"character": Characters.ACCENT[0],
 		"num_people": 10,
 		"traits": [
-			""
+			"You are very cautious of strangers"
 		]
 	},
 	{
 		"character": Characters.ACCENT[1],
 		"num_people": 20,
 		"traits": [
-			""
+			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works			
 		]
 	},
 	{
 		"character": Characters.QUIRKY[0],
 		"num_people": 20,
 		"traits": [
-			""
+			"Most importantly, you always talk very mysteriously, cryptically and in riddles.", # Doesn't work very well
 		]
 	}	
 ]
