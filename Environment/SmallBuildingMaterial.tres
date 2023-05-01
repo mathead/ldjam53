@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://rrjjthwmo7pl"]
+
+[ext_resource type="Shader" path="res://Environment/whole_window.gdshader" id="1_uvomc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_uvomc")
+shader_parameter/dtime = 86400.0
