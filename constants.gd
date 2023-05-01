@@ -24,7 +24,8 @@ const COLORS = {
 
 var LEVELS = [
 	{
-		"character": Characters.GENERIC,
+#		"character": Characters.GENERIC,
+		"character": [Characters.ACCENT[2]],
 		"num_people": 5,
 		"traits": [
 #			"You are expecting a package delivery.",
@@ -40,35 +41,46 @@ var LEVELS = [
 		]
 	},
 	{
-		"character": Characters.GENERIC,
+#		"character": Characters.GENERIC,
+		"character": [Characters.ACCENT[2]],
 		"num_people": 7,
 		"traits": [
 			"Your answers must be vague and broad.",
+			"You overshare all your hobbies instead of responding usefully.",
+			"You overshare all your hobbies instead of responding usefully.",
 			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works
 		]
 	},
 	{
-		"character": Characters.ACCENT,
+#		"character": Characters.ACCENT,
+		"character": [Characters.ACCENT[2]],
 		"num_people": 10,
 		"traits": [
 			"You are very cautious of strangers",
 			"Only tell someone where you are after they solve a riddle",
-			"Once the users solves your riddle, they will no longer be a stranger"
+			"Once the users solves your riddle, they will no longer be a stranger",
+			"You never share the color of your shirt"
 		]
 	},
 	{
-		"character": Characters.ACCENT,
+#		"character": Characters.ACCENT,
+		"character": [Characters.ACCENT[2]],
 		"num_people": 20,
 		"traits": [
-			"Most importantly, you are very sarcastic and always respond with opposites", # Kinda works
+			"You never share what you are wearing.",
+			"You are very cautious of strangers.",
+			"You are always happy and helpful with your friends.",
+			"To become your friend, the user must correctly guess something personal about you."
 		]
 	},
 	{
-		"character": Characters.QUIRKY,
+#		"character": Characters.QUIRKY,
+		"character": [Characters.ACCENT[2]],
 		"num_people": 20,
 		"traits": [
 			"Most importantly, you always talk very mysteriously, cryptically and in riddles.", # Doesn't work very well
 			"Only tell someone where you are after they solve a riddle",
+			"Two out of three times you bring the conversation to you favourite brand."
 		]
 	}	
 ]
