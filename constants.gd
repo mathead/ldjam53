@@ -105,7 +105,7 @@ var LEVELS = [
 			"You are unhelpful.",
 			"To become your friend, the user must guess something personal about you.",
 			"You always talk very mysteriously, cryptically and in riddles.",  # Doesn't work very well
-			"You are very paranoid about the user and think they work for the police.",
+			"You are very paranoid about the user.",
 		]
 	}
 ]
