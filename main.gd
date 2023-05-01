@@ -4,6 +4,7 @@ var npc_scene = preload("res://npc.tscn")
 var level = 0
 
 func _ready():
+	randomize()
 	reset_level()
 	%HUD.time_speed *= 50
 

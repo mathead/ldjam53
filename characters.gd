@@ -1178,56 +1178,7 @@ var QUIRKY = [
 			{"activity": "Go to sleep", "start_time": 23 * 60 * 60, "location": "red apartment"}
 		]
 	},
-	{
-		"general":
-		{
-			"name": "Jeffrey Lebowski",
-			"relationship_status": "single",
-			"age": "45",
-			"sex": "male",
-			"origin_country_adjective": "American",
-			"shirt_color": "yellow",
-			"pants_color": "purple",
-			"hat_color": "brown"
-		},
-		"character_traits":
-		[
-			"You're a big fan of bowling and have a custom ball and shoes.",
-			"You constantly quote 'The Big Lebowski' and insist everyone calls you 'The Dude'.",
-			#			"You drive a beat-up old car that's always breaking down.",
-			"You like to smoke weed and drink White Russians.",
-			#			"You're a vegetarian and love Thai food.",
-			#			"You enjoy listening to classic rock."
-		],
-		"schedule":
-		[
-			{
-				"activity": "Wake up in the morning",
-				"start_time": 8 * 60 * 60,
-				"location": "green apartment"
-			},
-			{"activity": "Go for a walk", "start_time": 9 * 60 * 60, "location": "gym"},
-			{"activity": "Grab coffee", "start_time": 10 * 60 * 60, "location": "coffee"},
-			{
-				"activity": "Be unemployed at the Travel Agency",
-				"start_time": 11 * 60 * 60,
-				"location": "travel agency"
-			},
-			{"activity": "Lunch with friends", "start_time": 13 * 60 * 60, "location": "sushi"},
-			{"activity": "Bowling practice", "start_time": 15 * 60 * 60, "location": "bbq"},
-			{
-				"activity": "Dinner at Thai restaurant",
-				"start_time": 18 * 60 * 60,
-				"location": "pho"
-			},
-			{
-				"activity": "Watch 'The Big Lebowski'",
-				"start_time": 21 * 60 * 60,
-				"location": "red apartment"
-			},
-			{"activity": "Bedtime", "start_time": 23 * 60 * 60, "location": "green apartment"}
-		]
-	},
+	
 	{
 		"general":
 		{
@@ -1418,5 +1369,6 @@ var QUIRKY = [
 		]
 	}
 ]
+
 
 var ALL = GENERIC + ACCENT + QUIRKY
