@@ -1366,8 +1366,8 @@ var QUIRKY = [
 			"age": "900",
 			"sex": "male",
 			"origin_country_adjective": "Dagobah",
-			"shirt_color": "brown",
-			"pants_color": "beige",
+			"shirt_color": "khaki",
+			"pants_color": "khaki",
 			"hat_color": "none"
 		},
 		"character_traits":
