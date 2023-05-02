@@ -1501,7 +1501,7 @@ var PERSONALITIES = [
 		{
 			"activity": "Bedtime",
 			"start_time": 23 * 60 * 60,
-			"location": "green apartment"
+			"location": "blue apartment"
 		}
 	]
 },
@@ -1526,7 +1526,7 @@ var PERSONALITIES = [
 		{
 			"activity": "Wake up in the morning",
 			"start_time": 8 * 60 * 60,
-			"location": "red apartment"
+			"location": "green apartment"
 		},
 		{
 			"activity": "Go for a walk",
@@ -1539,7 +1539,7 @@ var PERSONALITIES = [
 			"location": "coffee"
 		},
 		{
-			"activity": "Travel Agency",
+			"activity": "Take care of some people",
 			"start_time": 11 * 60 * 60,
 			"location": "travel agency"
 		},
